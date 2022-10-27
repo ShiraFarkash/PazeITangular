@@ -1,0 +1,26 @@
+<img class="whiteLogo" src="assets/whitelogo.png" alt="">
+<div class="Basic-background"></div>
+
+<div class="content">
+    <br> <br> 
+    <div class='form'>
+        <div class="topic">Sign up</div>
+        <form [formGroup]="SignUpForm">
+             <input #name formControlName="Name" type="text" placeholder='Name' class='text' id='username' ><br>
+             <input #fname formControlName="LastN" type="text" placeholder='Last Name' class='text' ><br>
+             <input #email formControlName="Email" type="email" placeholder='Email' class='text'><br>
+        </form>
+    </div>
+</div>
+
+  <button class="button1" (click)="goToSignUpCode()"   ng-style ="{ 'background' : (SignUpForm.valid)? '#7f7f7f' : '#ffffff' }" >Next</button>
+ 
+ 
+  <div class="container">
+    <div class="progress-container">
+      <div class="progress" ></div>
+      <div class="circle active" data-title="My Details" ></div>
+      <div class="circle" data-title="Validation"></div>
+      <div class="circle" data-title="Create Profile"></div>
+    </div>
+  </div>

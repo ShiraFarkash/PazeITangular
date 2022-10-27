@@ -1,0 +1,15 @@
+/* Ionic Variables and Theming. */
+/* This is just a placeholder file For more info, please see: */
+/* https://ionicframework.com/docs/theming/basics */
+
+/* To quickly generate your own theme, check out the color generator */
+/* https://ionicframework.com/docs/theming/color-generator */
+body {
+    /*    
+    background-color: #6cbce1; /* For browsers that do not support gradients */
+    /* background-image: linear-gradient(to bottom right, #6cbce1, #1e38e5);  */
+    font-family: "segoe ui", verdana, helvetica, arial, sans-serif;
+    background: rgb(108, 188, 225);
+    
+    background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
+}

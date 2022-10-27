@@ -1,0 +1,48 @@
+
+<img class="whiteLogo" src="assets/whitelogo.png" alt="">
+<div class="Basic-background"></div>
+<div class="content">
+  <br> <br> 
+  <div class='form'>
+ <div class="topic">Log in</div>
+    <form [formGroup]="loginForm">
+  <input type="text" #email formControlName="userName" placeholder='Email' class='form-control text ' id='username' ><br>
+
+  
+  <div *ngIf="(loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched) || loginForm.controls['userName'].dirty">
+    <small *ngIf="loginForm.controls['userName'].errors?.['required']" class="text-danger">Primary email is required</small>
+    <small *ngIf="loginForm.controls['userName'].errors?.['email']" class="text-danger">Please provide a valid email address</small>
+  </div>
+  
+  <input type="password" #pass formControlName="password" placeholder=' Password' class='text' required><br>
+  
+    </form>
+  </div>
+</div>
+
+<button class="button1" (click)="LogIn(email.value,pass.value)">LOG IN</button>
+
+<div class="center">
+  <a class='forgot' href="http://localhost:4200/forgotPass">Forgot Password?</a>
+  <p style="color:gray ; margin: 65px 0px 0px;">Don’t have an account?</p>
+  <a href="http://localhost:4200/Sign_up1" class='forgot'>Sign up</a>
+</div>
+<!-- 
+<table>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </tr>
+  <tr *ngFor="let i of AllUsers">
+    <td>{{i.Id}}</td>
+    <td>{{i.userName}}</td>
+    <td>{{i.userLastName}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.password}}</td>
+
+  </tr>
+</table>
+ -->

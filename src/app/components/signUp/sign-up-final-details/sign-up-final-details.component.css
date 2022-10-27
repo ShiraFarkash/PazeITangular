@@ -1,0 +1,20 @@
+.content{
+    height:300px;
+
+}
+
+.button1{
+    font-weight: lighter;
+    font-size: small;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    position: relative;
+    background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
+    width:210px ;
+    margin-top: 40px;
+  }
+  
+  .Basic-background{
+    height: 430px;
+  }
+  
+  

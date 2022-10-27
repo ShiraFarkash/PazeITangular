@@ -1,0 +1,26 @@
+<img class="whiteLogo" src="assets/whitelogo.png" alt="">
+<div class="Basic-background"></div>
+
+<div class="content">
+    <br> <br> 
+    <div class='form'>
+   <div class="topic">Sign up</div>
+      <form>
+
+    <input type="password" #pass placeholder='  Password' class='text'><br>
+    <input type="password" #ConPass placeholder='  Confirm Password' class='text'><br>
+
+      </form>
+    </div>
+  </div>
+
+  <button (click)="createUser(pass.value ,ConPass.value)" class="button1" >Sign Up</button>
+
+  <div class="container">
+    <div class="progress-container">
+      <div class="progress" ></div>
+      <div class="circle " data-title="My Details" ></div>
+      <div class="circle " data-title="Validation"></div>
+      <div class="circle active" data-title="Create Profile"></div>
+    </div>
+  </div>
