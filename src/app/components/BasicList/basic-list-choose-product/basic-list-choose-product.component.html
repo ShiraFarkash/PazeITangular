@@ -9,17 +9,15 @@
 <br>
 <br>
 
-<div class="content">
+<div class="content" >
 
-
-  <div class="topic">
-    <div class="h1BL">Basic List </div>
-    <div class="editName" ><img class="editNameImag" src="assets/edit-icon.png"></div>
-  </div>
-
-
-
-
+  <div class="topic" contententeditable="true">
+ 
+    <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
+    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag" src="assets/edit-icon.png"></div>
+    
+  </div> 
+  
 </div>
 
 
@@ -48,7 +46,7 @@
         <div class="DL"> <button class="doneList">Done</button></div>
 </div>
 
-<p>pushig code</p>
+
     <div class="menu">
     <nav class="nav">
           <ul>
@@ -57,7 +55,7 @@
                    <span class="icon">
                      <ion-icon name="home-outline"></ion-icon>
                    </span>
-                   <span class="text">Home</span>
+                   <span class="text">Home </span>
                  </a>
                </li>
                <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1)" class="list">
