@@ -14,7 +14,7 @@ export class BasicListChooseProductComponent implements OnInit {
   menuList=[false,false, false,true,false ]
   editable:boolean=false
   listName:string="Basic List"
-
+  chosenMod: string = "";
   constructor(private productService: ProductService, private router:Router,private ElByClassName: ElementRef) { }
  
   ngOnInit(): void {
@@ -43,12 +43,24 @@ export class BasicListChooseProductComponent implements OnInit {
   }
 
   sortByName(){
-    console.log("hello")
-    this.allMailProduct.sort((a,b) => a.productName.localeCompare(b.productName));
-    console.log(this.allMailProduct[0].productName)
-    console.log(this.allMailProduct)
+    
   }
 
+
+  modo(){
+    switch(this.chosenMod) {  
+       case "mod1": {
+        this.allMailProduct.sort((a,b) => a.productName.localeCompare(b.productName));
+        console.log(this.allMailProduct[0].productName)
+        console.log(this.allMailProduct)
+          break;
+       }
+       case "mod2": { 
+          //do something
+          break;
+       }
+    }
+  }
 
 
 }

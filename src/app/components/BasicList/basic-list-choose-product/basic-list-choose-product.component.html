@@ -24,17 +24,14 @@
 
 <div class="center">
     <div class="orderByBL">
-        <select class="eachOrderBy">
+        <select [(ngModel)]="chosenMod" (ngModelChange)="modo()" id="selectid"class="eachOrderBy">
           <option value="order by">-- Order by --</option>
           <hr>
-          <option value="name">
-            <button (click)="sortByName()">Name</button> 
-          </option>
-    
-          <option value="category">Category</option>
+          <option value="mod1">Name</option>
+          <option value="mod2">Category</option>
         </select>
       </div>
-
+   
     
         <div style="text-align:left ; left:0; ">
             <ul class="tableProduct" *ngFor="let a of allMailProduct ">
