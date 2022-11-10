@@ -7,52 +7,29 @@
     width: 3.5cm;
 }
 
-.search {
-    color: rgb(152, 149, 149);
-    background-color: white;
-    border-radius: 5px;
-    width: 150px;
-    height: 25px;
-    padding-right: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 150px;
-    display: inline;
-    border: 0px;
-    font-size: smaller;
-}
-
-.searchIcon {
-    width: 0.5cm;
-}
-
-.squareSearch {
-    position: relative;
-    bottom: 20px;
-}
-
-.btnSearch {
-    position: relative;
-    top: 5px;
-    width: 35px;
-    border-color: transparent;
-    background-color: transparent;
-}
-
 .content {
     position: relative;
-    bottom: 45px;
-    height: 50px;
-    border-radius: 15px;
+    bottom: 30px;
+    width: 280px;
+    height: 320px;
+    border-radius: 40px;
 }
 
-/* .content{
-    height:50px ;
-    width: 275px;
-    
- 
-} */
+div .topic{
+color: rgb(57, 149, 191);
+margin-left: 20px;
+font-size: 25px;
+top: 20px;
+font-weight: bolder;
+position: relative;
+  
+}
+div .details{
+    position: relative;
+    top:40px;
+    left: 20px;
+    width: 300px;
+}
 
 .h1BL {
     /* margin-top: 0px;
@@ -63,17 +40,6 @@
     top: 10px;
     width: 190px;
     /* display: block; */
-}
-
-
-
-div .topic {
-
-    text-align: left;
-    color: black;
-    position: relative;
-
-
 }
 
 .editNameImag {
@@ -107,16 +73,17 @@ div .editName img {
 
 }
 
-.doneList {
+.save {
     position: relative;
-    top:40px;
+    top:30px;
+    right: 70px;
     /* left: 20px; */
-    width: 100px;
+    width: 200px;
     color: white;
     background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     font-weight: lighter;
-    font-size: small;
+    font-size: medium;
     background-color: rgba(255, 255, 255, 0);
     border-color: white;
     border-width: 1px;
@@ -126,7 +93,7 @@ div .editName img {
     box-shadow: 2px 2px 4px #000000;
  
 }
-.DL {
+.SB {
     position: relative;
     display: block;
     text-align: right;

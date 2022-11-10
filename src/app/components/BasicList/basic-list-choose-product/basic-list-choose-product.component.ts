@@ -10,55 +10,62 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./basic-list-choose-product.component.css']
 })
 export class BasicListChooseProductComponent implements OnInit {
-  allMailProduct:Array<Product>=new Array<Product>;
-  menuList=[false,false, false,true,false ]
-  editable:boolean=false
-  listName:string="Basic List"
+  allMailProduct: Array<Product> = new Array<Product>;
+  menuList = [false, false, false, true, false]
+  editable: boolean = false
+  listName: string = "Basic List"
   chosenMod: string = "";
-  constructor(private productService: ProductService, private router:Router,private ElByClassName: ElementRef) { }
- 
+  search: string = "";
+  i:number=0;
+  constructor(private productService: ProductService, private router: Router, private ElByClassName: ElementRef) { }
+
   ngOnInit(): void {
     this.productService.gatMainProduct().subscribe(
-      data=>{this.allMailProduct=data}
+      data => { this.allMailProduct = data }
     );
 
-    
+
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
   }
 
-  setActiveLink(n:number){
+  setActiveLink(n: number) {
 
     for (let index = 0; index < this.menuList.length; index++) {
-       this.menuList[index]=false;
+      this.menuList[index] = false;
     }
-    this.menuList[n]=true
-     console.log(this.menuList)
+    this.menuList[n] = true
+    console.log(this.menuList)
   }
 
-  editableClick(s:string){
-    this.editable=!this.editable
-    this.listName=s
+  editableClick(s: string) {
+    this.editable = !this.editable
+    this.listName = s
 
   }
-
-  sortByName(){
-    
+  searchForItem() {
+    // console.log('Search Item: ' + this.search);
+    for(this.i=0;this.i<=this.allMailProduct.length;this.i++){
+       if(this.allMailProduct[this.i].productName==this.search){
+        console.log(this.allMailProduct[this.i].productName)
+        
+       }
+    }
+   
   }
 
-
-  modo(){
-    switch(this.chosenMod) {  
-       case "mod1": {
-        this.allMailProduct.sort((a,b) => a.productName.localeCompare(b.productName));
+  modoNorC() {
+    switch (this.chosenMod) {
+      case "mod1": {
+        this.allMailProduct.sort((a, b) => a.productName.localeCompare(b.productName));
         console.log(this.allMailProduct[0].productName)
         console.log(this.allMailProduct)
-          break;
-       }
-       case "mod2": { 
-          //do something
-          break;
-       }
+        break;
+      }
+      case "mod2": {
+        //do something
+        break;
+      }
     }
   }
 

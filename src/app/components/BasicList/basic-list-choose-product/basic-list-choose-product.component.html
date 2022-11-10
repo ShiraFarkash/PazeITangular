@@ -1,104 +1,104 @@
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 <div class="Basic-background"></div>
 <div class="squareSearch">
-  <input class="search" placeholder="Search for Item">
-  <button class="btnSearch"> <img class="searchIcon" src="assets/search-icon.png"></button>
+  <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
+  <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
 
 </div>
 
 <br>
 <br>
 
-<div class="content" >
+<div class="content">
 
   <div class="topic" contententeditable="true">
- 
+
     <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
-    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag" src="assets/edit-icon.png"></div>
-    
-  </div> 
-  
+    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag"
+        src="assets/edit-icon.png"></div>
+
+  </div>
+
 </div>
 
 
 
 <div class="center">
-    <div class="orderByBL">
-        <select [(ngModel)]="chosenMod" (ngModelChange)="modo()" id="selectid"class="eachOrderBy">
-          <option value="order by">-- Order by --</option>
-          <hr>
-          <option value="mod1">Name</option>
-          <option value="mod2">Category</option>
-        </select>
-      </div>
-   
-    
-        <div style="text-align:left ; left:0; ">
-            <ul class="tableProduct" *ngFor="let a of allMailProduct ">
-                <ion-icon name="caret-forward-outline"></ion-icon>
-                <li>{{a.productName}} </li>
-            </ul>
-        </div>
-        
-        <div class="DL"> <button class="doneList">Done</button></div>
+  <div class="orderByBL">
+    <select [(ngModel)]="chosenMod" (ngModelChange)="modoNorC()" id="selectid" class="eachOrderBy">
+      <option value="order by">-- Order by --</option>
+      <hr>
+      <option value="mod1">Name</option>
+      <option value="mod2">Category</option>
+    </select>
+  </div>
+
+
+  <div style="text-align:left ; left:0; ">
+    <ul class="tableProduct" *ngFor="let a of allMailProduct ">
+      <ion-icon name="caret-forward-outline"></ion-icon>
+      <li>{{a.productName}} </li>
+    </ul>
+  </div>
+
+  <div class="DL"> <button class="doneList">Done</button></div>
 </div>
 
 
-    <div class="menu">
-    <nav class="nav">
-          <ul>
-               <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0)" class="list">
-                 <a >
-                   <span class="icon">
-                     <ion-icon name="home-outline"></ion-icon>
-                   </span>
-                   <span class="text">Home </span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1)" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="person-outline"></ion-icon>
-                   </span>
-                   <span class="text">My account</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2)" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                   </span>
-                   <span class="text">History</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3)" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="reader-outline"></ion-icon>
-                   </span>
-                   <span class="text">Basics lists</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4)" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                   </span>
-                   <span class="text">my cart</span>
-                 </a>
-               </li>
-                     <div class="indicator"></div>
-         
-               
-          </ul>
-        </nav>
-     </div> 
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<div class="menu">
+  <nav class="nav">
+    <ul>
+      <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0)" class="list">
+        <a>
+          <span class="icon">
+            <ion-icon name="home-outline"></ion-icon>
+          </span>
+          <span class="text">Home </span>
+        </a>
+      </li>
+      <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1)" class="list">
+        <a>
+          <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+          </span>
+          <span class="text">My account</span>
+        </a>
+      </li>
+      <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2)" class="list">
+        <a>
+          <span class="icon">
+            <ion-icon name="refresh-circle-outline"></ion-icon>
+          </span>
+          <span class="text">History</span>
+        </a>
+      </li>
+      <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3)" class="list">
+        <a>
+          <span class="icon">
+            <ion-icon name="reader-outline"></ion-icon>
+          </span>
+          <span class="text">Basics lists</span>
+        </a>
+      </li>
+      <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4)" class="list">
+        <a>
+          <span class="icon">
+            <ion-icon name="cart-outline"></ion-icon>
+          </span>
+          <span class="text">my cart</span>
+        </a>
+      </li>
+      <div class="indicator"></div>
 
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </ul>
+  </nav>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

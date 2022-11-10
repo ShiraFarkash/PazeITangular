@@ -13,6 +13,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicListChooseProductComponent } from './components/BasicList/basic-list-choose-product/basic-list-choose-product.component';
 import { IonicModule } from '@ionic/angular';
+import { MyAccountComponent } from './components/my-account/my-account.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { IonicModule } from '@ionic/angular';
     SignUpFinalDetailsComponent,
     ForgotPasswordComponent,
     BasicListChooseProductComponent,
+    MyAccountComponent,
     
   ],
   imports: [
