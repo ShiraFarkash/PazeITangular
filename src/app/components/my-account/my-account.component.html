@@ -1,26 +1,32 @@
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 <div class="Basic-background"></div>
-
-<br>
-<br>
-
 <div class="content">
-    <div class="topic">My Account</div>
-    <div class="details">
+    <br> <br>
+    <div class='form'>
+        <div class="topic">My Account</div>
         <form>
-            <small>Name:  </small>
-            <input type="text" #email placeholder='Email' class='text' id='name'><br>
-            <small>Last Name:  </small>
-            <input type="text" #email placeholder='Email' class='text' id='name'><br>
-            <small>Phone Number:  </small>
-            <input type="text" #email placeholder='Email' class='text' id='name'><br>
-
-            <input type="password" #pass formControlName="password" placeholder=' Password' class='text' required><br>
+            <span class="details_myAccount">Name:</span>
+            <input type="text" value="" class='text'><br>
+            <span class="details_myAccount">Last Name:</span>
+            <input type="text" value="" class='text'><br>
+            <span class="details_myAccount">Telephone:</span>
+            <input type="number" value="" class='text'><br>
+            <span class="details_myAccount">Mail:</span>
+            <input type="email"  value="" class='text'><br>
+            <span class="details_myAccount">Password:</span>
+            <input type="password" value="" class='text'>
 
         </form>
     </div>
 </div>
-<div class="SB"> <button class="save">Save Changes</button></div>
+
+<button class="button1">Save Changes</button>
+
+<div class="center">
+    <a class='forgot' href="http://localhost:4200/">Sign out</a>
+
+</div>
+
 <div class="menu">
     <nav class="nav">
         <ul>

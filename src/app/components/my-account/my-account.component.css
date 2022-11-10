@@ -1,136 +1,66 @@
-.Basic-background {
-    height: 450px;
 
+.Basic-background{
+height: 450px;
 }
-
-.whiteLogo {
-    width: 3.5cm;
+.content{
+    height: 350px;
+    width: 270px;
 }
-
-.content {
+input.text{
+    margin-top: 20px !important;
     position: relative;
-    bottom: 30px;
-    width: 280px;
-    height: 320px;
-    border-radius: 40px;
+    left: 3px;
+    width: 170px !important;
 }
-
+.details_myAccount{
+    position: relative;
+    left: 10px;
+    font-weight: bold;
+}
 div .topic{
-color: rgb(57, 149, 191);
-margin-left: 20px;
-font-size: 25px;
-top: 20px;
-font-weight: bolder;
-position: relative;
-  
-}
-div .details{
+    color: rgb(57, 149, 191);
+    margin-left: 20px;
+    font-size: 25px;
+    
+    font-weight: bolder;
     position: relative;
-    top:40px;
-    left: 20px;
-    width: 300px;
-}
-
-.h1BL {
-    /* margin-top: 0px;
-    margin-right: 5px;
-    margin-bottom: 10px; */
-    position: relative;
-    color: black;
-    top: 10px;
-    width: 190px;
-    /* display: block; */
-}
-
-.editNameImag {
-    position: relative;
-    bottom: 17px;
-    right: 10px;
-}
-
-div .editName img {
-    height: 27px;
-
-}
-
-.content div .editName {
-    text-align: right;
-    height: 40px;
-}
-
-.orderByBL {
-    position: relative;
-    right: 14px;
-    display: block;
-    text-align: right;
-
-}
-
-.eachOrderBy {
-    padding-right: 10px !important;
-    padding: 5px;
-    right: 0;
-
-}
-
-.save {
-    position: relative;
-    top:30px;
-    right: 70px;
-    /* left: 20px; */
-    width: 200px;
-    color: white;
-    background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
-    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-    font-weight: lighter;
-    font-size: medium;
-    background-color: rgba(255, 255, 255, 0);
-    border-color: white;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 50px;
-    height: 40px;
-    box-shadow: 2px 2px 4px #000000;
- 
-}
-.SB {
-    position: relative;
-    display: block;
-    text-align: right;
-    margin-right: 0px;
-    right: 14px;
-
-}
-
-.tableProduct{
-    position: relative;
-    /* right: 200px; */
-    left: 0;
-    display: flex;
-    text-align: left;
-    border-bottom:1px solid #000000;
-    padding-bottom: 5px;
-}
-
-.tableProduct li{
-    list-style-type: none;
-    display: inline-block;
-   
-}
-
-
-    .tableProduct li ::before {
-    content: '';
-    position: absolute;
-    border-right:2px solid black;
-    border-bottom:2px solid black;
-    width:10px;
-    height:10px;
-    top: calc(50% - 4px);
-    left: -20px;
-    transform: translateY(-50%) rotate(-45deg);
-}
-.Test{
-    color: black;
-    position: relative;
-}
+      
+    }
+    
+    
+     .form .text{
+      border: #1349c9 solid 1px ;
+      position: relative;
+      border-radius: 5px;
+      width: 220px;
+      height:30px ;
+      margin-top: 30px;
+      margin-left: 10px;
+    
+    }
+     .center .forgot {
+      text-decoration: none;
+      color: #45a4fb;
+      
+      position: relative;
+    
+    } 
+    .center{
+      margin-top: 30px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .button1{
+      font-weight: lighter;
+      font-size: small;
+     font-weight: bolder;
+      position: relative;
+      background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
+      width:210px ;
+      margin-top: 40px;
+    }
+    
+    
+    
+    
