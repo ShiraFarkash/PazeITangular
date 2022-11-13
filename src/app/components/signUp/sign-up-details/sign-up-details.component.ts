@@ -13,7 +13,12 @@ import { HttpClient } from '@angular/common/http'
 export class SignUpDetailsComponent implements OnInit {
 
   @ViewChild('Fname') Fname: ElementRef | undefined;
-  SignUpForm :FormGroup = new FormGroup({});
+  SignUpForm :FormGroup = new FormGroup({
+    Name:new FormControl('',Validators.required),
+    LastN:new FormControl('',Validators.required),
+    Email:new FormControl('',[Validators.email, Validators.required])
+
+  });
   AllUsers: Array<User>=new Array<User>;
   NewUser:User=new User("","","");
 

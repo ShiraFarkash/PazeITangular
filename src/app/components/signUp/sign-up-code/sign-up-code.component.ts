@@ -16,8 +16,9 @@ export class SignUpCodeComponent implements OnInit {
     this.router.navigate(['/Sign_up1']);
 
   }
-  goToNext(){
+  goToNext(s:string){
+    if(s!='')
     this.router.navigate(['/Sign_up3']);
-    
+
   }
 }

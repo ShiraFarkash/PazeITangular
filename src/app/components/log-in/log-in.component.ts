@@ -36,6 +36,7 @@ export class LogInComponent implements OnInit {
 this.userService.GetAllUsers().subscribe(
   data=>{
     this.AllUsers=data
+    console.log(this.AllUsers)
   }
 );
 

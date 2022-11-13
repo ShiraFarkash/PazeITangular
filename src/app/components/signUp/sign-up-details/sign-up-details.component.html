@@ -6,14 +6,26 @@
     <div class='form'>
         <div class="topic">Sign up</div>
         <form [formGroup]="SignUpForm">
+
              <input #name formControlName="Name" type="text" placeholder='Name' class='text' id='username' ><br>
+              <small *ngIf="SignUpForm.controls['Name'].errors?.['required']&&SignUpForm.controls['Name'].touched" class="text-danger">Primary name is required</small>
+            
+
              <input #fname formControlName="LastN" type="text" placeholder='Last Name' class='text' ><br>
+             <small *ngIf="SignUpForm.controls['LastN'].errors?.['required']&&SignUpForm.controls['LastN'].touched" class="text-danger">Primary last name is required</small>
+
+
              <input #email formControlName="Email" type="email" placeholder='Email' class='text'><br>
+             <div *ngIf="(SignUpForm.controls['Email'].invalid && SignUpForm.controls['Email'].touched) || SignUpForm.controls['Email'].dirty">
+              <small *ngIf="SignUpForm.controls['Email'].errors?.['required']" class="text-danger">Primary email is required</small>
+              <small *ngIf="SignUpForm.controls['Email'].errors?.['email']" class="text-danger">Please provide a valid email address</small>
+            </div>
         </form>
     </div>
 </div>
 
-  <button class="button1" (click)="goToSignUpCode()"   ng-style ="{ 'background' : (SignUpForm.valid)? '#7f7f7f' : '#ffffff' }" >Next</button>
+  <button [formGroup]="SignUpForm" class="button1" (click)="goToSignUpCode()"  
+  [style.background] =" SignUpForm.valid ? 'linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%)' :('rgb(127, 126, 126)' )" >Next</button>
  
  
   <div class="container">

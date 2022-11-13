@@ -1,20 +1,21 @@
+<div>
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
-<div class="Basic-background"></div>
+
 <div class="squareSearch">
   <input class="search" placeholder="Search for Item">
   <button class="btnSearch"> <img class="searchIcon" src="assets/search-icon.png"></button>
 
 </div>
 
-<br>
-<br>
+
+<div class="Basic-background">
 
 <div class="content" >
 
   <div class="topic" contententeditable="true">
  
     <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
-    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag" src="assets/edit-icon.png"></div>
+    <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag" src="assets/edit-icon.png"></div>
     
   </div> 
   
@@ -22,7 +23,9 @@
 
 
 
-<div class="center">
+<div class="center" >
+
+
     <div class="orderByBL">
         <select class="eachOrderBy">
           <option value="order by">-- Order by --</option>
@@ -37,15 +40,20 @@
 
     
         <div style="text-align:left ; left:0; ">
-            <ul class="tableProduct" *ngFor="let a of allMailProduct ">
+            <ul class="tableProduct" *ngFor="let a of allMainProduct ">
                 <ion-icon name="caret-forward-outline"></ion-icon>
-                <li>{{a.productName}} </li>
+                <li (click)="fun(a)">{{a.productName}} </li>
             </ul>
         </div>
         
         <div class="DL"> <button class="doneList">Done</button></div>
+    
+       
+        <div > 
+          <app-add-product  [showPage]="clickedOnProduct" [Products]="allMyProducts"></app-add-product>
+        </div>
 </div>
-
+</div>
 
     <div class="menu">
     <nav class="nav">
@@ -105,3 +113,4 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
+</div>
