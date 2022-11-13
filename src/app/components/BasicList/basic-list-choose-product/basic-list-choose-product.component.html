@@ -8,7 +8,7 @@
 </div>
 
 
-<div class="Basic-background">
+<div class="Basic-background"></div>
 
 <div class="content">
 
@@ -45,6 +45,10 @@
         </div>
         
         <div class="DL"> <button class="doneList">Done</button></div>
+
+        <div>
+          <app-add-product [Products]="allMyProducts" [showPage]="clickedOnProduct" (chosenProduct)="allChosenProduct=$event"></app-add-product>
+        </div>
 </div>
 
 
