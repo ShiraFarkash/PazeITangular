@@ -1,21 +1,22 @@
 <div>
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
+<div class="Basic-background"></div>
 <div class="squareSearch">
   <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
   <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
 
 </div>
+<br>
+<br>
 
-
-<div class="Basic-background"></div>
 
 <div class="content">
 
   <div class="topic" contententeditable="true">
 
     <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
-    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag" src="assets/edit-icon.png"></div>
+    <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag" src="assets/edit-icon.png"></div>
     
   </div> 
   
@@ -47,7 +48,7 @@
         <div class="DL"> <button class="doneList">Done</button></div>
 
         <div>
-          <app-add-product [Products]="allMyProducts" [showPage]="clickedOnProduct" (chosenProduct)="allChosenProduct=$event"></app-add-product>
+          <app-add-product [Products]="allMyProducts" [showPage]="clickedOnProduct" (ALLchosenProduct)="allChosenProduct=$event"></app-add-product>
         </div>
 </div>
 
