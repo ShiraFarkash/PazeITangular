@@ -83,6 +83,8 @@ export class BasicListChooseProductComponent implements OnInit {
       console.log(this.allMyProducts)
     }
   );
+  this.clickedOnProduct=true;
+
  }
 
 }
