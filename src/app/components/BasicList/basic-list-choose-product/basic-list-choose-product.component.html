@@ -2,20 +2,20 @@
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
 <div class="squareSearch">
-  <input class="search" placeholder="Search for Item">
-  <button class="btnSearch"> <img class="searchIcon" src="assets/search-icon.png"></button>
+  <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
+  <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
 
 </div>
 
 
 <div class="Basic-background">
 
-<div class="content" >
+<div class="content">
 
   <div class="topic" contententeditable="true">
- 
+
     <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
-    <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag" src="assets/edit-icon.png"></div>
+    <div class="editName" (click)="editableClick(Editable.innerText)"><img class="editNameImag" src="assets/edit-icon.png"></div>
     
   </div> 
   
@@ -23,9 +23,7 @@
 
 
 
-<div class="center" >
-
-
+<div class="center">
     <div class="orderByBL">
         <select class="eachOrderBy">
           <option value="order by">-- Order by --</option>
@@ -40,20 +38,15 @@
 
     
         <div style="text-align:left ; left:0; ">
-            <ul class="tableProduct" *ngFor="let a of allMainProduct ">
+            <ul class="tableProduct" *ngFor="let a of allMailProduct ">
                 <ion-icon name="caret-forward-outline"></ion-icon>
-                <li (click)="fun(a)">{{a.productName}} </li>
+                <li>{{a.productName}} </li>
             </ul>
         </div>
         
         <div class="DL"> <button class="doneList">Done</button></div>
-    
-       
-        <div > 
-          <app-add-product  [showPage]="clickedOnProduct" [Products]="allMyProducts"></app-add-product>
-        </div>
 </div>
-</div>
+
 
     <div class="menu">
     <nav class="nav">
@@ -105,12 +98,11 @@
         </nav>
      </div> 
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-</div>

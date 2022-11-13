@@ -1,0 +1,66 @@
+
+.Basic-background{
+height: 450px;
+}
+.content{
+    height: 350px;
+    width: 270px;
+}
+input.text{
+    margin-top: 20px !important;
+    position: relative;
+    left: 3px;
+    width: 170px !important;
+}
+.details_myAccount{
+    position: relative;
+    left: 10px;
+    font-weight: bold;
+}
+div .topic{
+    color: rgb(57, 149, 191);
+    margin-left: 20px;
+    font-size: 25px;
+    
+    font-weight: bolder;
+    position: relative;
+      
+    }
+    
+    
+     .form .text{
+      border: #1349c9 solid 1px ;
+      position: relative;
+      border-radius: 5px;
+      width: 220px;
+      height:30px ;
+      margin-top: 30px;
+      margin-left: 10px;
+    
+    }
+     .center .forgot {
+      text-decoration: none;
+      color: #45a4fb;
+      
+      position: relative;
+    
+    } 
+    .center{
+      margin-top: 30px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .button1{
+      font-weight: lighter;
+      font-size: small;
+     font-weight: bolder;
+      position: relative;
+      background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
+      width:210px ;
+      margin-top: 40px;
+    }
+    
+    
+    
+    
