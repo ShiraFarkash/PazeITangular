@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ProductToBasicList } from '../models/product-to-basic-list.model';
 import{Product} from '../models/product.models';
 
 @Injectable({
@@ -9,7 +10,10 @@ import{Product} from '../models/product.models';
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
+  ChosenProduct:Array<ProductToBasicList>=new Array<ProductToBasicList>()
+  selectedProducts:{[mainProduct:number]:Array<ProductToBasicList>}={}
 
   gatMainProduct() :Observable<any>
   {

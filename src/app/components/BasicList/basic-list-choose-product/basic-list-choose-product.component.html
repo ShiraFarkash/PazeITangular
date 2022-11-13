@@ -48,7 +48,7 @@
         <div class="DL"> <button class="doneList">Done</button></div>
 
         <div>
-          <app-add-product [Products]="allMyProducts" [showPage]="clickedOnProduct" (ALLchosenProduct)="allChosenProduct=$event"></app-add-product>
+          <app-add-product [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event" [showPage]="clickedOnProduct" (ALLchosenProduct)="allChosenProduct=$event"></app-add-product>
         </div>
 </div>
 

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
 import { Product } from 'src/app/shared/models/product.models';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -10,21 +12,29 @@ export class AddProductComponent implements OnInit {
  
   @Input() showPage=false
   @Input() Products:Array<Product>=new Array<Product>()
+  @Input() parentId:number=0
+
   @Output() ALLchosenProduct=new EventEmitter<Array<Product>>()
+  @Output() show=new EventEmitter<boolean>()
   ChosenProduct:Array<Product>=new Array<Product>()
 
-  constructor() { }
+  constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
   }
 
-  addORincOne(i:number){
+  addORincOne( plus:number,i:number){
+    this.productService.selectedProducts[this.parentId][i].quantity+=plus
     
   }
-
-  addProduct(a:Product){
-    this.ChosenProduct.push(a)
-    console.log(this.ChosenProduct)
+  closeDiv(){
+    this.showPage=false;
+   this.ALLchosenProduct.emit(this.ChosenProduct)
+    this.show.emit(false)
+    console.log(this.showPage)
+  }
+  addProduct(i:number){
+    this.productService.selectedProducts[this.parentId][i].isSelected=!this.productService.selectedProducts[this.parentId][i].isSelected
  }
 
 

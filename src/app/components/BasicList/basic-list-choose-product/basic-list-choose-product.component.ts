@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/shared/models/product.models';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { FormsModule } from '@angular/forms';
+import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
 @Component({
   selector: 'app-basic-list-choose-product',
   templateUrl: './basic-list-choose-product.component.html',
@@ -74,15 +75,22 @@ export class BasicListChooseProductComponent implements OnInit {
             break;
           }
         }
-      }    
+      }   
+      
+      selectedParent:number=0;
  fun(p:Product){
   this.productService.GatProductsByMainProduct(p).subscribe(
     data=>{
       this.allMyProducts=data;
       console.log(this.allMyProducts)
+      this.selectedParent=p.Id!;
+
+      if(!(p.Id! in this.productService.selectedProducts))
+      this.productService.selectedProducts[p.Id!]= data.map((d:Product)=>new ProductToBasicList(d.Id!,0,0,d.productName))
     }
   );
   this.clickedOnProduct=true;
+  console.log(this.clickedOnProduct)
 
  }
 
