@@ -48,7 +48,6 @@ export class BasicListChooseProductComponent implements OnInit {
   }
 
   sortByName(){
-    console.log("hello")
     this.allMainProduct.sort((a,b) => a.productName.localeCompare(b.productName));
     console.log(this.allMainProduct[0].productName)
     console.log(this.allMainProduct)

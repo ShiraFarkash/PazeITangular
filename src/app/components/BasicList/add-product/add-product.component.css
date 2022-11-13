@@ -3,14 +3,16 @@ body{
     top:0;
 
 }
-.Xstyle{
+#Xstyle{
     right: 0; 
     margin-left: auto;
     text-align: right;
     margin-right: 15px;
     font-size: 20px;
     font-weight: bolder;
-
+    position: relative;
+    left: 170px;
+    background-color: white;
 }
 
 .backgroundForList{

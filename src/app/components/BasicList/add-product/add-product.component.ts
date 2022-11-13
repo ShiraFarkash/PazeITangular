@@ -7,6 +7,7 @@ import { Product } from 'src/app/shared/models/product.models';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+ 
   @Input() showPage=false
   @Input() Products:Array<Product>=new Array<Product>()
   @Output() chosenProduct=new EventEmitter<Array<Product>>()
@@ -15,6 +16,8 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // close(){
+    
+  // }
 
 }
