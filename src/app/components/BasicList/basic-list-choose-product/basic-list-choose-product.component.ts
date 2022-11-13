@@ -17,7 +17,9 @@ export class BasicListChooseProductComponent implements OnInit {
   tooltip="click to edit and clcik again to save changes"
   clickedOnProduct=false
   allChosenProduct:Array<Product>=new Array<Product>;
-
+  chosenMod: string = "";
+  search: string = "";
+  i:number=0;
 
   constructor(private productService: ProductService, private router:Router,private ElByClassName: ElementRef) { }
  
@@ -31,15 +33,14 @@ export class BasicListChooseProductComponent implements OnInit {
   ngAfterViewInit(){
   }
 
-  setActiveLink(n:number){
+  setActiveLink(n: number) {
 
     for (let index = 0; index < this.menuList.length; index++) {
-       this.menuList[index]=false;
+      this.menuList[index] = false;
     }
-    this.menuList[n]=true
-     console.log(this.menuList)
+    this.menuList[n] = true
+    console.log(this.menuList)
   }
-
   editableClick(s:string){
     this.editable=!this.editable
     this.listName=s
@@ -52,7 +53,29 @@ export class BasicListChooseProductComponent implements OnInit {
     console.log(this.allMainProduct[0].productName)
     console.log(this.allMainProduct)
   }
+  searchForItem() {
+    // console.log('Search Item: ' + this.search);
+    for(this.i=0;this.i<=this.allMyProducts.length;this.i++){
+       if(this.allMyProducts[this.i].productName==this.search){
+        console.log(this.allMyProducts[this.i].productName)
+        
+       }
+      }}
 
+      modoNorC() {
+        switch (this.chosenMod) {
+          case "mod1": {
+            this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+            console.log(this.allMainProduct[0].productName)
+            console.log(this.allMainProduct)
+            break;
+          }
+          case "mod2": {
+            //do something
+            break;
+          }
+        }
+      }    
  fun(p:Product){
   this.productService.GatProductsByMainProduct(p).subscribe(
     data=>{
