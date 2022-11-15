@@ -24,17 +24,26 @@ export class AddProductComponent implements OnInit {
   }
 
   addORincOne( plus:number,i:number){
+
     this.productService.selectedProducts[this.parentId][i].quantity+=plus
+    console.log(this.productService.selectedProducts[this.parentId][i])
+    
     
   }
   closeDiv(){
-    this.showPage=false;
+  this.showPage=false;
    this.ALLchosenProduct.emit(this.ChosenProduct)
     this.show.emit(false)
     console.log(this.showPage)
   }
-  addProduct(i:number){
+  addProduct(i:number, btName:string){
+    if(btName=="add"){
+      
+    }
+
+    
     this.productService.selectedProducts[this.parentId][i].isSelected=!this.productService.selectedProducts[this.parentId][i].isSelected
+   
  }
 
 

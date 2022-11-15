@@ -14,7 +14,8 @@ export class ProductService {
    }
   ChosenProduct:Array<ProductToBasicList>=new Array<ProductToBasicList>()
   selectedProducts:{[mainProduct:number]:Array<ProductToBasicList>}={}
-
+  
+ 
   gatMainProduct() :Observable<any>
   {
     return this.http.get<boolean>(environment.url + 'product/gatMainProduct')

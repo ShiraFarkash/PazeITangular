@@ -77,8 +77,8 @@ export class BasicListChooseProductComponent implements OnInit {
         }
       }   
       
-      selectedParent:number=0;
- fun(p:Product){
+ selectedParent:number=0;
+ getAllProducts(p:Product){
   this.productService.GatProductsByMainProduct(p).subscribe(
     data=>{
       this.allMyProducts=data;
@@ -86,7 +86,7 @@ export class BasicListChooseProductComponent implements OnInit {
       this.selectedParent=p.Id!;
 
       if(!(p.Id! in this.productService.selectedProducts))
-      this.productService.selectedProducts[p.Id!]= data.map((d:Product)=>new ProductToBasicList(d.Id!,0,0,d.productName))
+      this.productService.selectedProducts[p.Id!]= data.map((d:Product)=>new ProductToBasicList(0,d.Id!,0,d.productName))
     }
   );
   this.clickedOnProduct=true;
