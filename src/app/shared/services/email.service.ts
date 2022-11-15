@@ -12,7 +12,7 @@ export class EmailService {
 
   sendEmail(e:string, c:string):Observable<any>
   {
-    let parms1=new HttpParams().set('email',e).set('code',c)
+    // let parms1=new HttpParams().set('email',e).set('code',c)
     return this.http.get<boolean>(environment.url + 'email/sendEmail?e='+e+'&c='+c)
   }
 }

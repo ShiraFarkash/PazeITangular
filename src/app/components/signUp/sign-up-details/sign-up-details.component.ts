@@ -51,7 +51,13 @@ export class SignUpDetailsComponent implements OnInit {
         console.log("משתמש קיים")
       }
       else{
-        localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
+        // localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
+        localStorage.setItem("email" , this.NewUser.email)
+        localStorage.setItem("userName" , this.NewUser.userName)
+        localStorage.setItem("userLastName" , this.NewUser.userLastName!)
+
+
+
         
         this.router.navigate(['/Sign_up2']);
       }
