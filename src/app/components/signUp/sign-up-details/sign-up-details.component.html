@@ -19,6 +19,8 @@
              <div *ngIf="(SignUpForm.controls['Email'].invalid && SignUpForm.controls['Email'].touched) || SignUpForm.controls['Email'].dirty">
               <small *ngIf="SignUpForm.controls['Email'].errors?.['required']" class="text-danger">Primary email is required</small>
               <small *ngIf="SignUpForm.controls['Email'].errors?.['email']" class="text-danger">Please provide a valid email address</small>
+              <small *ngIf="IsExist==true" class="text-danger">Email exist</small>
+
             </div>
         </form>
     </div>

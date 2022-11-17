@@ -4,7 +4,7 @@ export class Product {
    productID :number|undefined
    categoryID: number
    barcode : string|undefined
-     
+   amount=0  
     constructor(productName:string,categoryID:number, id?:number
         ,productID?:number,barcode?:string){
             this.Id=undefined? undefined : id

@@ -17,7 +17,8 @@ export class BasicListChooseProductComponent implements OnInit {
   listName:string="Basic List"
   tooltip="click to edit and clcik again to save changes"
   clickedOnProduct=false
-  allChosenProduct:Array<Product>=new Array<Product>;
+  // allChosenProduct:Array<Product>=new Array<Product>;
+  
   chosenMod: string = "";
   search: string = "";
   i:number=0;
@@ -93,5 +94,11 @@ export class BasicListChooseProductComponent implements OnInit {
   console.log(this.clickedOnProduct)
 
  }
+ done(){
+  this.listName
+  
+
+ }
+
 
 }

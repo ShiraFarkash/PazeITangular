@@ -16,7 +16,7 @@ export class UserService {
   }
   GetAllUsers() :Observable<any>
   {
-    return this.http.get<boolean>(environment.url + 'User/getAllUsers')
+    return this.http.get<number>(environment.url + 'User/getAllUsers')
   }
 
 //  sendEmail(number: Number) :Observable<any>

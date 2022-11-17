@@ -55,7 +55,8 @@ this.userService.GetAllUsers().subscribe(
           console.log(true)
           if(element.Id!=undefined){
              var id:string=element.Id.toString()
-             localStorage.setItem(id,element.email);
+             localStorage.setItem("id",id);
+             localStorage.setItem("email",element.email)
             }
         }
          else{

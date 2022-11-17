@@ -5,8 +5,8 @@
     <br> <br> 
     <div class='form'>
    <div class="topic">Sign up</div>
-      <form>
-    <input #text type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
+      <form> 
+    <input [value]="EnteredCode" #text type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
     <h5 class="msgCode">Enter the code that was send to your email</h5>
     <br>
     
@@ -18,7 +18,7 @@
   <div class="centerButton"> 
   <button class="button1" (click)="goToPrevious()">Previous</button>
   <button  class="button2" (click)="goToNext(text.value)" 
-  [style.background] =" text.value!='' ? 'linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%)' :('rgb(127, 126, 126)')" 
+  [style.background] =" EnteredCode !='' &&EnteredCode==SendedCode? 'linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%)' :('rgb(127, 126, 126)')" 
   >Next</button>
 </div>
   <div class="container">

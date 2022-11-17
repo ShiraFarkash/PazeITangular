@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmailService } from 'src/app/shared/services/email.service';
 
@@ -8,26 +9,30 @@ import { EmailService } from 'src/app/shared/services/email.service';
   styleUrls: ['./sign-up-code.component.css']
 })
 export class SignUpCodeComponent implements OnInit {
-  code:string=""
+  SendedCode:string=""
+  EnteredCode:string=""
+  
   constructor(private router:Router, public email:EmailService) { }
 
   ngOnInit(): void {
     this.sendingEmail()
+
   }
+
   goToPrevious(){
     this.router.navigate(['/Sign_up1']);
 
   }
   goToNext(s:string){
-    if(s!='' && s==this.code)
+    if(s!='' && s==this.SendedCode)
       this.router.navigate(['/Sign_up3']);
   }
  
   sendingEmail(){
     
     let userEmail=localStorage.getItem("email")
-    this.code=String(Date.now())
-    this.email.sendEmail(userEmail!, this.code).subscribe(
+    this.SendedCode=String(Date.now())
+    this.email.sendEmail(userEmail!, this.SendedCode).subscribe(
       data=>{
         console.log(data)
       }

@@ -14,9 +14,9 @@ export class AddProductComponent implements OnInit {
   @Input() Products:Array<Product>=new Array<Product>()
   @Input() parentId:number=0
 
-  @Output() ALLchosenProduct=new EventEmitter<Array<Product>>()
+  // @Output() ALLchosenProduct=new EventEmitter<Array<Product>>()
   @Output() show=new EventEmitter<boolean>()
-  ChosenProduct:Array<Product>=new Array<Product>()
+  // ChosenProduct:Array<Product>=new Array<Product>()
 
   constructor(public productService:ProductService) { }
 
@@ -24,25 +24,25 @@ export class AddProductComponent implements OnInit {
   }
 
   addORincOne( plus:number,i:number){
-
-    this.productService.selectedProducts[this.parentId][i].quantity+=plus
-    console.log(this.productService.selectedProducts[this.parentId][i])
+    let qty=this.productService.selectedProducts[this.parentId][i].quantity+plus
+    if(qty>=0 && (plus==1||plus==-1))
+       this.productService.selectedProducts[this.parentId][i].quantity+=plus
+    // console.log(this.productService.selectedProducts[this.parentId][i])
+    else if(this.productService.selectedProducts[this.parentId][i].quantity<0 )
+      this.productService.selectedProducts[this.parentId][i].quantity=0
     
     
   }
   closeDiv(){
   this.showPage=false;
-   this.ALLchosenProduct.emit(this.ChosenProduct)
+  //  this.ALLchosenProduct.emit(this.ChosenProduct)
     this.show.emit(false)
     console.log(this.showPage)
   }
   addProduct(i:number, btName:string){
-    if(btName=="add"){
-      
-    }
-
+    this.productService.selectedProducts[this.parentId][i].quantity+=1
     
-    this.productService.selectedProducts[this.parentId][i].isSelected=!this.productService.selectedProducts[this.parentId][i].isSelected
+    // this.productService.selectedProducts[this.parentId][i].isSelected=!this.productService.selectedProducts[this.parentId][i].isSelected
    
  }
 

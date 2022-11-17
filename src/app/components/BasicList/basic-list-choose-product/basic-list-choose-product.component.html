@@ -1,7 +1,7 @@
-<div>
+<div  [ngClass]="clickedOnProduct==true? ' blur':'' ">
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
-<div class="Basic-background"></div>
+<div class="Basic-background"   ></div>
 <div class="squareSearch">
   <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
   <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
@@ -42,13 +42,15 @@
             <ul class="tableProduct" *ngFor="let a of allMainProduct ">
                 <ion-icon name="caret-forward-outline"></ion-icon>
                 <li (click)="getAllProducts(a) ">{{a.productName}} </li>
+                
             </ul>
         </div>
         
-        <div class="DL"> <button class="doneList">Done</button></div>
+        <div class="DL" (click)="done()"> <button class="doneList">Done</button></div>
 
         <div>
-          <app-add-product [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event" [showPage]="clickedOnProduct" (ALLchosenProduct)="allChosenProduct=$event"></app-add-product>
+          <app-add-product [parentId]="selectedParent" [Products]="allMyProducts"
+           (show)="clickedOnProduct=$event" [showPage]="clickedOnProduct" ></app-add-product>
         </div>
 </div>
 
@@ -111,3 +113,4 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
+</div>

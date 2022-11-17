@@ -6,7 +6,11 @@
 .whiteLogo {
     width: 3.5cm;
 }
-
+.blur{
+    /* position: fixed;
+    backdrop-filter: blur(50px);
+    background-color: rgba(111, 111, 111, 0.707); */
+}
 .search {
     color: rgb(152, 149, 149);
     background-color: white;

@@ -16,11 +16,16 @@ export class SignUpFinalDetailsComponent implements OnInit {
   }
   createUser(pass:string, ConPass:string){
     if(pass==ConPass){
-      const name = localStorage.getItem('');
-      const email = localStorage.getItem('');
-      
+      this.newUser.userName = localStorage.getItem('userName')!;
+      this.newUser.userLastName = localStorage.getItem('userLastName')!;
+      this.newUser.email=localStorage.getItem('email')!;
+      this.newUser.password=pass
+      this.userService.AddUser(this.newUser).subscribe(data=>{
 
-      
+        localStorage.setItem("userId",String(data))
+      })
+
+      this.router.navigate(['/BLchooseProduct']);
     }
 
   }

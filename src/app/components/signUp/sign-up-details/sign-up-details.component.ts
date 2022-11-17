@@ -21,7 +21,7 @@ export class SignUpDetailsComponent implements OnInit {
   });
   AllUsers: Array<User>=new Array<User>;
   NewUser:User=new User("","","");
-
+  IsExist:boolean=false
   constructor(private http: HttpClient ,private router: Router, private userService: UserService) {
     
    }
@@ -48,7 +48,8 @@ export class SignUpDetailsComponent implements OnInit {
       this.NewUser.userLastName=this.SignUpForm.controls['LastN'].value
       this.NewUser.email=this.SignUpForm.controls['Email'].value
       if(this.NewUser.email==this.AllUsers.find(u=> u.email==this.NewUser.email)?.email || this.NewUser.email==""){
-        console.log("משתמש קיים")
+          console.log("משתמש קיים")
+          this.IsExist=true
       }
       else{
         // localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
