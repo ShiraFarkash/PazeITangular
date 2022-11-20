@@ -1,11 +1,11 @@
 export class BasicList {
-    Id:number
-    userID:number
-    listName:string | undefined
+    Id:number | undefined
+    userID:number| undefined
+    name:string | undefined
 
-    constructor(Id:number, userID:number, listName?:string){
-        this.Id=Id;
-        this.userID=userID;
-        listName=undefined? undefined :listName
+    constructor( userID?:number,Id?:number, name?:string){
+        this.Id=undefined? undefined:Id;
+        this.userID=undefined? undefined:userID;
+        name=undefined? undefined :name
     }
 }

@@ -10,9 +10,9 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  AddUser(user: User) :Observable<boolean>
+  AddUser(user: User) :Observable<any>
   {
-    return this.http.post<boolean>(environment.url + 'User/addUser', user)
+    return this.http.post<number>(environment.url + 'User/addUser', user)
   }
   GetAllUsers() :Observable<any>
   {

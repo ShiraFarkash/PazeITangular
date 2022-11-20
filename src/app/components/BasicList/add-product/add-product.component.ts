@@ -24,12 +24,19 @@ export class AddProductComponent implements OnInit {
   }
 
   addORincOne( plus:number,i:number){
+    debugger
     let qty=this.productService.selectedProducts[this.parentId][i].quantity+plus
-    if(qty>=0 && (plus==1||plus==-1))
+    if(qty>=0 && (plus==1||plus==-1)){
        this.productService.selectedProducts[this.parentId][i].quantity+=plus
+       this.productService.selectedProducts[this.parentId][i].isSelected=true
+       if(qty==0)
+       this.productService.selectedProducts[this.parentId][i].isSelected=false
+      }
     // console.log(this.productService.selectedProducts[this.parentId][i])
-    else if(this.productService.selectedProducts[this.parentId][i].quantity<0 )
+    else if(this.productService.selectedProducts[this.parentId][i].quantity<0 ){
       this.productService.selectedProducts[this.parentId][i].quantity=0
+      this.productService.selectedProducts[this.parentId][i].isSelected=false
+    } 
     
     
   }
@@ -37,14 +44,16 @@ export class AddProductComponent implements OnInit {
   this.showPage=false;
   //  this.ALLchosenProduct.emit(this.ChosenProduct)
     this.show.emit(false)
-    console.log(this.showPage)
+   
+    console.log(this.productService.selectedProducts)
   }
-  addProduct(i:number, btName:string){
-    this.productService.selectedProducts[this.parentId][i].quantity+=1
+  
+  // addProduct(i:number, btName:string){
+  //   this.productService.selectedProducts[this.parentId][i].quantity+=1
     
     // this.productService.selectedProducts[this.parentId][i].isSelected=!this.productService.selectedProducts[this.parentId][i].isSelected
    
- }
+//  }
 
 
 }

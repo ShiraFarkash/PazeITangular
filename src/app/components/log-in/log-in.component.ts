@@ -18,6 +18,7 @@ export class LogInComponent implements OnInit {
   constructor(private userService: UserService, private router:Router) { }
 
   ngOnInit(): void {
+    
     // this.userService.GetAllUsers().subscribe(
     //   res => res.forEach(a => {
     //     this.AllUsers.push(a)
@@ -49,13 +50,14 @@ this.userService.GetAllUsers().subscribe(
     // newUser.email= this.loginForm.controls['userName'].value;
     // newUser.password= this.loginForm.controls['password'].value
     if(this.loginForm.valid){
+     
       this.AllUsers.forEach(element => {
         if(element.email==email && element.password==pass)
         {
           console.log(true)
           if(element.Id!=undefined){
              var id:string=element.Id.toString()
-             localStorage.setItem("id",id);
+             localStorage.setItem("userId",id);
              localStorage.setItem("email",element.email)
             }
         }

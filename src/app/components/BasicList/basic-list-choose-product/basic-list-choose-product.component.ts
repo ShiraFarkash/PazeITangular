@@ -4,6 +4,7 @@ import { Product } from 'src/app/shared/models/product.models';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { FormsModule } from '@angular/forms';
 import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
+import { BasicList } from 'src/app/shared/models/basic-list.model';
 @Component({
   selector: 'app-basic-list-choose-product',
   templateUrl: './basic-list-choose-product.component.html',
@@ -95,7 +96,23 @@ export class BasicListChooseProductComponent implements OnInit {
 
  }
  done(){
-  this.listName
+  let userId=Number(localStorage.getItem("userId"))
+  let b:BasicList=new BasicList()
+  b.name=this.listName
+  b.userID=userId
+  this.productService.addContantList(b).subscribe(data=>{
+    localStorage.setItem("contantListName",String(data))
+    console.log(data)
+  })
+
+  let productToList:ProductToBasicList[]=[]
+ for(let key of  Object.keys(this.productService.selectedProducts))
+   productToList= productToList.concat(this.productService.selectedProducts[Number(key)].filter(p=>p.isSelected));
+
+
+  console.log(productToList);
+  
+   
   
 
  }
