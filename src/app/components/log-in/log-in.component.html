@@ -18,6 +18,7 @@
   
     </form>
   </div>
+  <small  class="text-danger" *ngIf="userExist==false">one or more details are incorrect</small>
 </div>
 
 <button class="button1" (click)="LogIn(email.value,pass.value)">LOG IN</button>

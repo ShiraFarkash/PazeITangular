@@ -14,6 +14,7 @@ export class LogInComponent implements OnInit {
 
  AllUsers:Array<User>= new Array<User>;
  loginForm: FormGroup = new FormGroup({});
+ userExist:boolean=true
 
   constructor(private userService: UserService, private router:Router) { }
 
@@ -50,22 +51,38 @@ this.userService.GetAllUsers().subscribe(
     // newUser.email= this.loginForm.controls['userName'].value;
     // newUser.password= this.loginForm.controls['password'].value
     if(this.loginForm.valid){
-     
-      this.AllUsers.forEach(element => {
-        if(element.email==email && element.password==pass)
-        {
-          console.log(true)
-          if(element.Id!=undefined){
-             var id:string=element.Id.toString()
-             localStorage.setItem("userId",id);
-             localStorage.setItem("email",element.email)
-            }
-        }
-         else{
-          console.log(false)
-         } 
-      });
+      this.userService.isUserExist(email,pass).subscribe(
+        data=>{
+          if(Number(data)!=-1){
+            console.log(true)
+            localStorage.setItem("userId",String(data));
+            localStorage.setItem("email",email)
+          }
+          else{
+            console.log(false)
+            this.userExist=false
+          }
+        
+        })
+
+
+      // this.AllUsers.forEach(element => {
+      //   if(element.email==email && element.password==pass)
+      //   {
+      //     console.log(true)
+      //     if(element.Id!=undefined){
+      //        var id:string=element.Id.toString()
+      //        localStorage.setItem("userId",id);
+      //        localStorage.setItem("email",element.email)
+      //       }
+      //   }
+      //    else{
+      //     console.log(false)
+      //    } 
+      // });
+
    }
+
   }
 
 }
