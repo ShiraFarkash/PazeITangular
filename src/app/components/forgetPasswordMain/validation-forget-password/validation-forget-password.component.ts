@@ -26,8 +26,9 @@ export class ValidationForgetPasswordComponent implements OnInit {
     console.log("sended")
   }
 
-  goToNext(){
-    
+  goToNext(s:string){
+    if(s!='' && s==this.SendedCode)
+      this.router.navigate(['/resetPassword']);
   }
 
 }

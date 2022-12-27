@@ -18,6 +18,7 @@ import { AddProductComponent } from './components/BasicList/add-product/add-prod
 
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
+import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ValidationForgetPasswordComponent } from './components/forgetPasswordMa
 
     MyAccountComponent,
       ValidationForgetPasswordComponent,
+      ResetPasswordComponent,
     
 
     
