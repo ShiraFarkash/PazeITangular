@@ -9,7 +9,7 @@ import { EntryComponent } from './components/entry/entry.component';
 import { SignUpDetailsComponent } from './components/signUp/sign-up-details/sign-up-details.component';
 import { SignUpCodeComponent } from './components/signUp/sign-up-code/sign-up-code.component';
 import { SignUpFinalDetailsComponent } from './components/signUp/sign-up-final-details/sign-up-final-details.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './components/forgetPasswordMain/forgot-password/forgot-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicListChooseProductComponent } from './components/BasicList/basic-list-choose-product/basic-list-choose-product.component';
 import { IonicModule } from '@ionic/angular';
@@ -17,6 +17,7 @@ import { IonicModule } from '@ionic/angular';
 import { AddProductComponent } from './components/BasicList/add-product/add-product.component';
 
 import { MyAccountComponent } from './components/my-account/my-account.component';
+import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MyAccountComponent } from './components/my-account/my-account.component
     AddProductComponent,
 
     MyAccountComponent,
+      ValidationForgetPasswordComponent,
     
 
     
