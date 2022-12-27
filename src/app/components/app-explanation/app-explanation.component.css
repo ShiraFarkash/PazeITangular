@@ -1,0 +1,34 @@
+body{
+    background: white !important;
+    background-color: white !important;
+}
+.my-container {
+    /*    
+    background-color: #6cbce1; /* For browsers that do not support gradients */
+    /* background-image: linear-gradient(to bottom right, #6cbce1, #1e38e5);  */
+    font-family: "segoe ui", verdana, helvetica, arial, sans-serif;
+    background: rgb(255, 255, 255)!important;
+    
+    background:rgb(255, 255, 255) !important;
+}
+
+.logo{
+    width: 300px;
+    position: relative;
+    left: 40px;
+    top: 30px;
+
+}
+.explanation {
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+}
+.explanation p{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 40px;
+  top:0px;
+  margin-top: 0px;
+}

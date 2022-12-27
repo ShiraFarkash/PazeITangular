@@ -1,5 +1,11 @@
+<div class="my-container" style="background-color: rgba(101, 102, 101, 0.678); position: absolute !important; z-index: 1000;">
+
+<div style="width: 250px; height: 350px; background-color: white; position: absolute;"></div>
+
 <div  [ngClass]="clickedOnProduct==true? ' blur':'' ">
+
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
+
 
 <div class="Basic-background"   ></div>
 <div class="squareSearch">
@@ -58,7 +64,7 @@
     <div class="menu">
     <nav class="nav">
           <ul>
-               <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0)" class="list">
+               <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'myAccount')" class="list">
                  <a >
                    <span class="icon">
                      <ion-icon name="home-outline"></ion-icon>
@@ -66,7 +72,7 @@
                    <span class="text">Home </span>
                  </a>
                </li>
-               <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1)" class="list">
+               <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
                  <a >
                    <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
@@ -74,7 +80,7 @@
                    <span class="text">My account</span>
                  </a>
                </li>
-               <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2)" class="list">
+               <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
                  <a >
                    <span class="icon">
                     <ion-icon name="refresh-circle-outline"></ion-icon>
@@ -82,7 +88,7 @@
                    <span class="text">History</span>
                  </a>
                </li>
-               <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3)" class="list">
+               <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
                  <a >
                    <span class="icon">
                     <ion-icon name="reader-outline"></ion-icon>
@@ -90,7 +96,7 @@
                    <span class="text">Basics lists</span>
                  </a>
                </li>
-               <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4)" class="list">
+               <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
                  <a >
                    <span class="icon">
                     <ion-icon name="cart-outline"></ion-icon>
@@ -112,5 +118,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+
+</div>
 
 </div>

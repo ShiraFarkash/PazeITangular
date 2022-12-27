@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
 import { BasicListChooseProductComponent } from './components/BasicList/basic-list-choose-product/basic-list-choose-product.component';
 import { EntryComponent } from './components/entry/entry.component';
 import { ForgotPasswordComponent } from './components/forgetPasswordMain/forgot-password/forgot-password.component';
@@ -23,7 +24,8 @@ const routes: Routes = [
  {path:'BLchooseProduct', component:BasicListChooseProductComponent},
  {path:'myAccount',component:MyAccountComponent},
  {path:'validationForgetPassword',component:ValidationForgetPasswordComponent},
- {path:"resetPassword",component:ResetPasswordComponent}
+ {path:"resetPassword",component:ResetPasswordComponent},
+ {path:"AppExplanation",component:AppExplanationComponent},
 
 
 ];

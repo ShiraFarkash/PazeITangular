@@ -36,13 +36,14 @@ export class BasicListChooseProductComponent implements OnInit {
   ngAfterViewInit(){
   }
 
-  setActiveLink(n: number) {
+  setActiveLink(n: number, navigateTo:string) {
 
     for (let index = 0; index < this.menuList.length; index++) {
       this.menuList[index] = false;
     }
     this.menuList[n] = true
     console.log(this.menuList)
+  this.router.navigate(["/"+navigateTo])
   }
   editableClick(s:string){
     this.editable=!this.editable
