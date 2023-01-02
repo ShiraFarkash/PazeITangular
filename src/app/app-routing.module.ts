@@ -6,6 +6,8 @@ import { EntryComponent } from './components/entry/entry.component';
 import { ForgotPasswordComponent } from './components/forgetPasswordMain/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
 import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
+import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
+import { HomeComponent } from './components/Home/homeListCategory/home.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { SignUpCodeComponent } from './components/signUp/sign-up-code/sign-up-code.component';
@@ -26,6 +28,9 @@ const routes: Routes = [
  {path:'validationForgetPassword',component:ValidationForgetPasswordComponent},
  {path:"resetPassword",component:ResetPasswordComponent},
  {path:"AppExplanation",component:AppExplanationComponent},
+ {path:"home",component:HomeComponent},
+ {path:"homeCategory",component:HomeCategoryComponent},
+
 
 
 ];

@@ -65,7 +65,7 @@ this.userService.GetAllUsers().subscribe(
             console.log(false)
             this.userExist=false
           }
-        
+        this.router.navigate(['/home']);
         })
 
 
