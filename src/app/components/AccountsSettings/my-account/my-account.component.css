@@ -13,7 +13,25 @@ input.text {
   width: 250px !important;
 
 }
-
+.changePass{
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  color: black;
+  border-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  display: block;
+  box-shadow: 2px 2px 4px #0000005b;
+  position: relative;
+  top: 20px;
+  background:rgba(232, 232, 232, 0.834);
+  font-size: 13px;
+  
+  
+}
 
 .details_myAccount {
   position: relative;
@@ -25,7 +43,7 @@ input.text {
 div .topic {
   color: rgb(57, 149, 191);
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bolder;
   position: relative;
 }

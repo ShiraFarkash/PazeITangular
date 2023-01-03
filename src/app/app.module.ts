@@ -16,12 +16,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { AddProductComponent } from './components/BasicList/add-product/add-product.component';
 
-import { MyAccountComponent } from './components/my-account/my-account.component';
+import { MyAccountComponent } from './components/AccountsSettings/my-account/my-account.component';
 import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
 import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
 import { HomeComponent } from './components/Home/homeListCategory/home.component';
 import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
+import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { HomeCategoryComponent } from './components/Home/home-category/home-cate
       AppExplanationComponent,
        HomeComponent,
        HomeCategoryComponent,
+       ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

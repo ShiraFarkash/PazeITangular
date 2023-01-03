@@ -22,5 +22,8 @@ export class MyAccountComponent implements OnInit {
     console.log(this.menuList)
   this.router.navigate(["/"+navigateTo])
   }
+  goToChangePass(){
+    this.router.navigate(["/changePass"])
+  }
 
 }
