@@ -71,11 +71,11 @@ ul.CategoryProducts {
     width: 300px;
     height: 150px;
     background-color: white;
-    border-radius: 35px;
+    border-radius: 25px;
     position: relative;
     box-shadow: 2px 2px 4px #000000;
     padding: 0px;
-    
+
 
 }
 
@@ -84,40 +84,56 @@ ul.CategoryProducts {
     margin: 0px;
     padding-bottom: 1px;
     border-radius: 10px;
- 
-    
-}
-#FandV{
-    background-image:url("/../assets/FandV.png");
-    background-size: cover; 
-    color: rgba(255, 255, 255, 0.921);
-    
+    background-size: cover;
+    color: rgb(255, 255, 255);
 
 }
-#FandV::before{
+
+.titleCategory::before {
     content: "";
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(149, 131, 131, 0.551);
+    background-color: rgba(82, 82, 82, 0.558);
+    border-radius: 10px;
 }
-#Dairy{
-    background-image:url("/../assets/milkdairy.png");
-    background-size: cover; 
-    color: rgba(255, 255, 255, 0.921);
-}
-#Dairy::before{
+
+#recentPro::before {
     content: "";
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(149, 131, 131, 0.636);
+    background-color: rgb(255, 255, 255, 0);
+    border-radius: 10px;
+
 }
-.titleCategory p{
+
+#recentPro {
+    color: #000000;
+}
+
+#FandV {
+    background-image: url("/../assets/FandV.png");
+    background-color: rgba(82, 82, 82, 0.558);
+}
+
+#Dairy {
+    background-image: url("/../assets/milkdairy.png");
+}
+
+#BandB {
+    background-image: url("/../assets/bakery.png");
+}
+
+#Beverages {
+    background-image: url("/../assets/drinks.png");
+}
+
+.titleCategory p {
     position: relative;
     left: 20px;
     top: 5px;
@@ -125,7 +141,7 @@ ul.CategoryProducts {
 
 .allProducts {
     overflow: scroll;
-     overflow-y: hidden;
+    overflow-y: hidden;
     position: relative;
     min-width: 0px;
     margin: 0px;
@@ -133,22 +149,22 @@ ul.CategoryProducts {
     height: 100;
     display: flex;
     border-top: 1px solid rgb(239, 239, 239);
-  list-style: none;
-  scroll-snap-type: x mandatory;
+    list-style: none;
+    scroll-snap-type: x mandatory;
 
 
 }
 
 li.products {
     width: 100px;
-    height: 113px;
+    height: 112px;
     border-left: 1px solid rgb(239, 239, 239);
     border-right: 1px solid rgb(239, 239, 239);
     display: flex;
     flex-direction: column;
     flex: 0 0 35%;
     scroll-snap-align: start;
-  
+
 
 }
 
@@ -164,7 +180,8 @@ li.products {
     position: relative;
     left: 110px;
 }
-.arrowFV{
+
+.arrowFV {
     border: solid rgb(198, 194, 194);
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -183,12 +200,13 @@ hr {
     border-radius: 5px;
 
 }
-.addIcon{
-    width:50px;
+
+.addIcon {
+    width: 50px;
     position: relative;
     top: 60px;
     left: 50px;
-   
+
 }
 
 .button1 {
