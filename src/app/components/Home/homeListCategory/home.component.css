@@ -40,75 +40,190 @@
     background-color: transparent;
 }
 
-.content{
+.content {
     height: 400px;
     width: 300px;
     position: relative;
     bottom: 40px;
 
+
 }
 
 
-div .topic{
+div .topic {
     color: rgb(57, 149, 191);
     font-size: 25px;
     font-weight: bolder;
     position: relative;
-    left:85px;
-      
-    }
-    .button1{
-        font-weight: lighter;
-        background-color:rgb(240, 100, 98);
-        font-size: small;
-       font-weight: bolder;
-        position: relative;
-        bottom: 35px;
-        background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
-        width:150px;
-        height: 30px;
-        right: 5px;
-        margin: 0px;
-        display: inline-block;
-      }
-      .button2{
-        font-weight: lighter;
-        background-color:rgb(240, 100, 98);
-        font-size: small;
-       font-weight: bolder;
-        position: relative;
-        bottom: 35px;
-        left: 5px;
-        background: rgb(250, 180, 179);
-        width:150px;
-        height: 30px;
-        margin: 0px;
-        border-radius: 50px;
-        color: white;
-        border-color: white;
-        border-width: 1px;
-        border-style: solid;
-        font-weight: bold;
-        box-shadow: 2px 2px 4px #000000;
-        display: inline;
-      }
+    left: 85px;
+
+}
+
+div .contentHome {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 320px;
 
 
+}
+
+ul.CategoryProducts {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    border-radius: 35px;
+    position: relative;
+    box-shadow: 2px 2px 4px #000000;
+    padding: 0px;
+    
+
+}
+
+.titleCategory {
+    position: relative;
+    margin: 0px;
+    padding-bottom: 1px;
+    border-radius: 10px;
+ 
+    
+}
+#FandV{
+    background-image:url("/../assets/FandV.png");
+    background-size: cover; 
+    color: rgba(255, 255, 255, 0.921);
+    
+
+}
+#FandV::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(149, 131, 131, 0.551);
+}
+#Dairy{
+    background-image:url("/../assets/milkdairy.png");
+    background-size: cover; 
+    color: rgba(255, 255, 255, 0.921);
+}
+#Dairy::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(149, 131, 131, 0.636);
+}
+.titleCategory p{
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+.allProducts {
+    overflow: scroll;
+     overflow-y: hidden;
+    position: relative;
+    min-width: 0px;
+    margin: 0px;
+    width: 300px;
+    height: 100;
+    display: flex;
+    border-top: 1px solid rgb(239, 239, 239);
+  list-style: none;
+  scroll-snap-type: x mandatory;
 
 
+}
 
+li.products {
+    width: 100px;
+    height: 113px;
+    border-left: 1px solid rgb(239, 239, 239);
+    border-right: 1px solid rgb(239, 239, 239);
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 35%;
+    scroll-snap-align: start;
+  
 
+}
 
+.CategoryProducts:first-child {
+    margin-right: 20px;
+}
 
+.arrow {
+    border: solid rgb(198, 194, 194);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    left: 110px;
+}
+.arrowFV{
+    border: solid rgb(198, 194, 194);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: relative;
+    left: 90px;
+}
 
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
 
+hr {
+    border: 1px solid rgb(239, 239, 239);
+    border-radius: 5px;
 
+}
+.addIcon{
+    width:50px;
+    position: relative;
+    top: 60px;
+    left: 50px;
+   
+}
 
+.button1 {
+    font-weight: lighter;
+    background-color: rgb(240, 100, 98);
+    font-size: small;
+    font-weight: bolder;
+    position: relative;
+    bottom: 65px;
+    background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
+    width: 150px;
+    height: 30px;
+    right: 5px;
+    margin: 0px;
+    display: inline-block;
+}
 
-
-
-
-
-
-
-
+.button2 {
+    font-weight: lighter;
+    background-color: rgb(240, 100, 98);
+    font-size: small;
+    font-weight: bolder;
+    position: relative;
+    bottom: 65px;
+    left: 5px;
+    background: rgb(250, 180, 179);
+    width: 150px;
+    height: 30px;
+    margin: 0px;
+    border-radius: 50px;
+    color: white;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px #000000;
+    display: inline;
+}
