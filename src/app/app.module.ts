@@ -20,6 +20,8 @@ import { MyAccountComponent } from './components/my-account/my-account.component
 import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
 import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
+import { HomeComponent } from './components/Home/homeListCategory/home.component';
+import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
 
 
 @NgModule({
@@ -33,17 +35,13 @@ import { AppExplanationComponent } from './components/app-explanation/app-explan
     SignUpFinalDetailsComponent,
     ForgotPasswordComponent,
     BasicListChooseProductComponent,
-
     AddProductComponent,
-
     MyAccountComponent,
       ValidationForgetPasswordComponent,
       ResetPasswordComponent,
-
       AppExplanationComponent,
-    
-
-    
+       HomeComponent,
+       HomeCategoryComponent,
   ],
   imports: [
     BrowserModule,

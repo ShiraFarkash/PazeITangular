@@ -1,0 +1,113 @@
+.Basic-background {
+    height: 400px;
+
+}
+
+.whiteLogo {
+    width: 3.5cm;
+}
+
+.search {
+    color: rgb(152, 149, 149);
+    background-color: white;
+    border-radius: 5px;
+    width: 150px;
+    height: 25px;
+    padding-right: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 150px;
+    display: inline;
+    border: 0px;
+    font-size: smaller;
+}
+
+.searchIcon {
+    width: 0.5cm;
+}
+
+.squareSearch {
+    position: relative;
+    bottom: 20px;
+}
+
+.btnSearch {
+    position: relative;
+    top: 5px;
+    width: 35px;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.content{
+    height: 400px;
+    width: 300px;
+    position: relative;
+    bottom: 40px;
+
+}
+
+
+div .topic{
+    color: rgb(57, 149, 191);
+    font-size: 25px;
+    font-weight: bolder;
+    position: relative;
+    left:85px;
+      
+    }
+    .button1{
+        font-weight: lighter;
+        font-size: small;
+       font-weight: bolder;
+        position: relative;
+        bottom: 35px;
+        background: rgb(250, 180, 179);
+        width:150px;
+        height: 30px;
+        right: 5px;
+        margin: 0px;
+        display: inline-block;
+      }
+      .button2{
+        font-weight: lighter;
+        background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
+
+        font-size: small;
+       font-weight: bolder;
+        position: relative;
+        bottom: 35px;
+        left: 5px;
+        width:150px;
+        height: 30px;
+        margin: 0px;
+        border-radius: 50px;
+        color: white;
+        border-color: white;
+        border-width: 1px;
+        border-style: solid;
+        font-weight: bold;
+        box-shadow: 2px 2px 4px #000000;
+        display: inline;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
