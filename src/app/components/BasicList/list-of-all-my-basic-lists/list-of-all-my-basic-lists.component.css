@@ -1,0 +1,19 @@
+.Basic-background {
+    height: 430px;
+
+}
+.topic{
+    text-align: center;
+    margin: 0px;
+}
+.content{
+    width: 300px;
+    height: 450px;
+}
+div .InnerContent {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 320px;
+
+
+}

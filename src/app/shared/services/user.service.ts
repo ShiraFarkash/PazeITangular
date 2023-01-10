@@ -18,9 +18,9 @@ export class UserService {
   {
     return this.http.get<number>(environment.url + 'User/getAllUsers')
   }
-  isUserExist(email:string, pass:string):Observable<any>
+  isUserExist(email:string):Observable<any>
   {
-    return this.http.get<number>(environment.url + 'User/isUserExist?email='+email+'&pass='+pass)
+    return this.http.get<number>(environment.url + 'user/isUserExist?email='+email)
   }
 //  sendEmail(number: Number) :Observable<any>
 //  {

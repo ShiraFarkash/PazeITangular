@@ -54,7 +54,7 @@ this.userService.GetAllUsers().subscribe(
     // newUser.email= this.loginForm.controls['userName'].value;
     // newUser.password= this.loginForm.controls['password'].value
     if(this.loginForm.valid){
-      this.userService.isUserExist(email,pass).subscribe(
+      this.userService.isUserExist(email).subscribe(
         data=>{
           if(Number(data)!=-1){
             console.log(true)

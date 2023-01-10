@@ -24,7 +24,7 @@ export class AddProductComponent implements OnInit {
   }
 
   addORincOne( plus:number,i:number){
-    debugger
+
     let qty=this.productService.selectedProducts[this.parentId][i].quantity+plus
     if(qty>=0 && (plus==1||plus==-1)){
        this.productService.selectedProducts[this.parentId][i].quantity+=plus

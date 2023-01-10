@@ -1,0 +1,88 @@
+<div class="my-container">
+    <img class="whiteLogo" src="assets/whitelogo.png" alt="">
+    <div class="Basic-background"></div>
+    <div class="content">
+
+        <div class="topic">BasicList</div>
+        <div class="InnerContent">
+           
+            <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Add</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">View List</th>
+                    <th scope="col">Delete</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let a of BasicListLists">
+                    <th scope="row">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                      </div>
+                    </th>
+                    <td>{{a.name}}</td>
+                    <td (click)="ViewList(a)">click</td>
+                    <td (click)="DelelteList(a)">dalete</td>
+                  </tr>
+                 
+    
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+
+    <div class="menu">
+        <nav class="nav">
+            <ul>
+                <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home </span>
+                    </a>
+                </li>
+                <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">My account</span>
+                    </a>
+                </li>
+                <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="refresh-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">History</span>
+                    </a>
+                </li>
+                <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="reader-outline"></ion-icon>
+                        </span>
+                        <span class="text">Basics lists</span>
+                    </a>
+                </li>
+                <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">my cart</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+
+
+            </ul>
+        </nav>
+    </div>
+</div>

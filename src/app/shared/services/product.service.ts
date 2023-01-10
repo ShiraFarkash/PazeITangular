@@ -30,10 +30,14 @@ export class ProductService {
 
   addContantList(b:BasicList) :Observable<any>
   {
-    return this.http.post<number>(environment.url +'product/addContantList',b)
+    return this.http.post<number>(environment.url +'constantList/addContantList',b)
   }
-  addProductToBasicList(b:ProductToBasicList) :Observable<any>
+
+  GatContantList(userId:number):Observable<any>
   {
-    return this.http.post<boolean>(environment.url +'product/addProductToBasicList',b)
+    return this.http.get<Array<BasicList>>(environment.url +'product/GatContantList?userId='+ userId )
+  }
+  addProductToContantList(b:ProductToBasicList[]):Observable<any>{
+    return this.http.post<any>(environment.url +'product/addProductToContantList',b)
   }
 }

@@ -81,6 +81,7 @@ export class BasicListChooseProductComponent implements OnInit {
       }   
       
  selectedParent:number=0;
+ 
  getAllProducts(p:Product){
   this.productService.GatProductsByMainProduct(p).subscribe(
     data=>{
@@ -96,25 +97,32 @@ export class BasicListChooseProductComponent implements OnInit {
   console.log(this.clickedOnProduct)
 
  }
+ contantListID:number=0
  done(){
   let userId=Number(localStorage.getItem("userId"))
   let b:BasicList=new BasicList()
   b.name=this.listName
   b.userID=userId
-  this.productService.addContantList(b).subscribe(data=>{
-    localStorage.setItem("contantListName",String(data))
-    console.log(data)
-  })
 
   let productToList:ProductToBasicList[]=[]
- for(let key of  Object.keys(this.productService.selectedProducts))
+  this.productService.addContantList(b).subscribe(data=>{
+    localStorage.setItem("contantListName",String(data))
+    this.contantListID=data
+    console.log(data)
+ for(let key of  Object.keys(this.productService.selectedProducts)){
    productToList= productToList.concat(this.productService.selectedProducts[Number(key)].filter(p=>p.isSelected));
+
+ }
+ productToList.forEach(element => {
+  element.constantListID=this.contantListID
+ });
 
 
   console.log(productToList);
-  
-   
-  
+  debugger
+  this.productService.addProductToContantList(productToList).subscribe()
+  this.router.navigate(['/listOfAllMyBasicLists']);
+  })
 
  }
 

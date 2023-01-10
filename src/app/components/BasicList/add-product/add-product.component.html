@@ -9,7 +9,7 @@
 
  <div class="fill" style="text-align:left ; left:0; ">
     <ul class="tableProduct"  *ngFor="let a of productService.selectedProducts[parentId];let i=index ">
-        <li class="productName" >{{a.productName}} </li>
+        <li class="productName">{{a.productName}} </li>
        
         <div class="wrapper" *ngIf="productService.selectedProducts[parentId][i].quantity!=0 ">
 

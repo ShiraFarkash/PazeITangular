@@ -1,123 +1,125 @@
 <div class="my-container">
 
 
-<div  [ngClass]="clickedOnProduct==true? ' blur':'' ">
+  <div [ngClass]="clickedOnProduct==true? ' blur':'' ">
 
-<img class="whiteLogo" src="assets/whitelogo.png" alt="">
-
-
-<div class="Basic-background"   ></div>
-<div class="squareSearch">
-  <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
-  <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
-
-</div>
-<br>
-<br>
+    <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
 
-<div class="content">
+    <div class="Basic-background"></div>
+    <div class="squareSearch">
+      <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
+      <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon"
+          src="assets/search-icon.png"></button>
 
-  <div class="topic" contententeditable="true">
-
-    <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
-    <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag" src="assets/edit-icon.png"></div>
-    
-  </div> 
-  
-</div>
-
+    </div>
+    <br>
+    <br>
 
 
-<div class="center">
-    <div class="orderByBL">
+    <div class="content">
+
+      <div class="topic" contententeditable="true">
+
+        <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
+        <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag"
+            src="assets/edit-icon.png"></div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="center">
+      <div class="orderByBL">
         <select class="eachOrderBy">
           <option value="order by">-- Order by --</option>
           <hr>
           <option value="name">
-            <button (click)="sortByName()">Name</button> 
+            <button (click)="sortByName()">Name</button>
           </option>
-    
+
           <option value="category">Category</option>
         </select>
       </div>
 
-    
-        <div style="text-align:left ; left:0; ">
-            <ul class="tableProduct" *ngFor="let a of allMainProduct ">
-                <ion-icon name="caret-forward-outline"></ion-icon>
-                <li (click)="getAllProducts(a) ">{{a.productName}} </li>
-                
-            </ul>
-        </div>
-        
-        <div class="DL" (click)="done()"> <button class="doneList">Done</button></div>
 
-        <div>
-          <app-add-product [parentId]="selectedParent" [Products]="allMyProducts"
-           (show)="clickedOnProduct=$event" [showPage]="clickedOnProduct" ></app-add-product>
-        </div>
-</div>
+      <div style="text-align:left ; left:0; ">
+        <ul class="tableProduct" *ngFor="let a of allMainProduct ">
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          <li (click)="getAllProducts(a) ">{{a.productName}} </li>
+
+        </ul>
+      </div>
+
+      <div class="DL" (click)="done()"> <button class="doneList">Done</button></div>
+
+      <div>
+        <app-add-product [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event"
+          [showPage]="clickedOnProduct"></app-add-product>
+      </div>
+    </div>
 
 
     <div class="menu">
-    <nav class="nav">
-          <ul>
-               <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
-                 <a >
-                   <span class="icon">
-                     <ion-icon name="home-outline"></ion-icon>
-                   </span>
-                   <span class="text">Home </span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="person-outline"></ion-icon>
-                   </span>
-                   <span class="text">My account</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="refresh-circle-outline"></ion-icon>
-                   </span>
-                   <span class="text">History</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="reader-outline"></ion-icon>
-                   </span>
-                   <span class="text">Basics lists</span>
-                 </a>
-               </li>
-               <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
-                 <a >
-                   <span class="icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                   </span>
-                   <span class="text">my cart</span>
-                 </a>
-               </li>
-                     <div class="indicator"></div>
-         
-               
-          </ul>
-        </nav>
-     </div> 
-
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <nav class="nav">
+        <ul>
+          <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Home </span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="text">My account</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="refresh-circle-outline"></ion-icon>
+              </span>
+              <span class="text">History</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="reader-outline"></ion-icon>
+              </span>
+              <span class="text">Basics lists</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="cart-outline"></ion-icon>
+              </span>
+              <span class="text">my cart</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
 
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </ul>
+      </nav>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-</div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  </div>
 
 </div>

@@ -22,7 +22,9 @@ import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-pa
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
 import { HomeComponent } from './components/Home/homeListCategory/home.component';
 import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
 
 @NgModule({
   declarations: [
@@ -42,6 +44,10 @@ import { HomeCategoryComponent } from './components/Home/home-category/home-cate
       AppExplanationComponent,
        HomeComponent,
        HomeCategoryComponent,
+       CartComponent,
+       ListOfAllMyBasicListsComponent,
+       
+       
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { HomeCategoryComponent } from './components/Home/home-category/home-cate
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    IonicModule.forRoot()
+    BrowserAnimationsModule,
+    IonicModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

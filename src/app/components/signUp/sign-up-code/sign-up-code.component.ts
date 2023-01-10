@@ -15,10 +15,12 @@ export class SignUpCodeComponent implements OnInit {
   constructor(private router:Router, public email:EmailService) { }
 
   ngOnInit(): void {
-    this.sendingEmail()
+   
 
   }
-
+  ngAfterViewInit(){
+    this.sendingEmail()
+  }
   goToPrevious(){
     this.router.navigate(['/Sign_up1']);
 

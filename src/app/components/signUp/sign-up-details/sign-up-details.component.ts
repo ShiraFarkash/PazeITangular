@@ -32,36 +32,47 @@ export class SignUpDetailsComponent implements OnInit {
       LastN: new FormControl('', Validators.required),
       Email: new FormControl('', [Validators.required,Validators.email])
     })
-    this.userService.GetAllUsers().subscribe(
-      data=>{
-        this.AllUsers=data
-      }
-    );
+    // this.userService.GetAllUsers().subscribe(
+    //   data=>{
+    //     this.AllUsers=data
+    //   }
+    // );
 
    
 
   }
-
+ isExistId=-2
   goToSignUpCode(){
     if(this.SignUpForm.valid){
       this.NewUser.userName=this.SignUpForm.controls['Name'].value
       this.NewUser.userLastName=this.SignUpForm.controls['LastN'].value
       this.NewUser.email=this.SignUpForm.controls['Email'].value
-      if(this.NewUser.email==this.AllUsers.find(u=> u.email==this.NewUser.email)?.email || this.NewUser.email==""){
-          console.log("משתמש קיים")
-          this.IsExist=true
-      }
-      else{
-        // localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
-        localStorage.setItem("email" , this.NewUser.email)
-        localStorage.setItem("userName" , this.NewUser.userName)
-        localStorage.setItem("userLastName" , this.NewUser.userLastName!)
-
-
-
-        
-        this.router.navigate(['/Sign_up2']);
-      }
+      // if(this.NewUser.email==this.AllUsers.find(u=> u.email==this.NewUser.email)?.email || this.NewUser.email==""){
+      //     console.log("משתמש קיים")
+      //     this.IsExist=true
+      // }
+   
+      this.userService.isUserExist(this.NewUser.email,).subscribe(
+       data=>{
+       this.isExistId=data
+       if(data>-1){
+        console.log("משתמש קיים")
+        this.IsExist=true
+        console.log(this.isExistId)
+    }
+    else{
+      console.log(this.isExistId)
+      // localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
+      localStorage.setItem("email" , this.NewUser.email)
+      localStorage.setItem("userName" , this.NewUser.userName)
+      localStorage.setItem("userLastName" , this.NewUser.userLastName!)
+       this.router.navigate(['/Sign_up2']);
+    }
+  }
+      )
+      
+     
+     
      
     }
 

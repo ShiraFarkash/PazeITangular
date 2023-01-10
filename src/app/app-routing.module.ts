@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
 import { BasicListChooseProductComponent } from './components/BasicList/basic-list-choose-product/basic-list-choose-product.component';
+import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component';
 import { EntryComponent } from './components/entry/entry.component';
 import { ForgotPasswordComponent } from './components/forgetPasswordMain/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
  {path:"AppExplanation",component:AppExplanationComponent},
  {path:"home",component:HomeComponent},
  {path:"homeCategory",component:HomeCategoryComponent},
-
+ {path:"listOfAllMyBasicLists", component:ListOfAllMyBasicListsComponent}
 
 
 ];
