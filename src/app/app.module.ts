@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { EntryComponent } from './components/entry/entry.component';
@@ -23,7 +23,7 @@ import { AppExplanationComponent } from './components/app-explanation/app-explan
 import { HomeComponent } from './components/Home/homeListCategory/home.component';
 import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
 import { CartComponent } from './components/cart/cart.component';
-import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 
@@ -40,12 +40,13 @@ import { ChangePasswordComponent } from './components/AccountsSettings/change-pa
     BasicListChooseProductComponent,
     AddProductComponent,
     MyAccountComponent,
-      ValidationForgetPasswordComponent,
-      ResetPasswordComponent,
-      AppExplanationComponent,
-       HomeComponent,
-       HomeCategoryComponent,
-       ChangePasswordComponent,
+    ValidationForgetPasswordComponent,
+    ResetPasswordComponent,
+    AppExplanationComponent,
+    HomeComponent,
+    HomeCategoryComponent,
+    ChangePasswordComponent,
+    ListOfAllMyBasicListsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,7 @@ import { ChangePasswordComponent } from './components/AccountsSettings/change-pa
     FormsModule,
     BrowserAnimationsModule,
     IonicModule.forRoot(),
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
