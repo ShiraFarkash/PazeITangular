@@ -16,7 +16,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AddProductComponent } from './components/BasicList/add-product/add-product.component';
 
-import { MyAccountComponent } from './components/my-account/my-account.component';
+import { MyAccountComponent } from './components/AccountsSettings/my-account/my-account.component';
 import { ValidationForgetPasswordComponent } from './components/forgetPasswordMain/validation-forget-password/validation-forget-password.component';
 import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-password/reset-password.component';
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
@@ -25,6 +25,7 @@ import { HomeCategoryComponent } from './components/Home/home-category/home-cate
 import { CartComponent } from './components/cart/cart.component';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
+import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +45,7 @@ import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-a
       AppExplanationComponent,
        HomeComponent,
        HomeCategoryComponent,
-       CartComponent,
-       ListOfAllMyBasicListsComponent,
-       
-       
+       ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
