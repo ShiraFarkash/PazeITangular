@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BasicList } from '../models/basic-list.model';
+import { Category } from '../models/category.models';
 import { ProductToBasicList } from '../models/product-to-basic-list.model';
 import{Product} from '../models/product.models';
 
@@ -33,11 +34,21 @@ export class ProductService {
     return this.http.post<number>(environment.url +'constantList/addContantList',b)
   }
 
-  GatContantList(userId:number):Observable<any>
+  GatContantList(userId:Number):Observable<any>
   {
-    return this.http.get<Array<BasicList>>(environment.url +'product/GatContantList?userId='+ userId )
+    return this.http.get<any>(environment.url +'constantList/GatContantList?userId='+ userId )
   }
+
   addProductToContantList(b:ProductToBasicList[]):Observable<any>{
     return this.http.post<any>(environment.url +'product/addProductToContantList',b)
   }
+
+  GatCategory():Observable<any>{
+    return this.http.get<Array<Category>>(environment.url +'product/GatCategory') 
+  }
+
+  DeleteContantList(c:BasicList):Observable<any>{
+    return this.http.post<any>(environment.url +'constantList/DeleteContantList',c);
+  }
+
 }

@@ -45,7 +45,9 @@
       </div>
 
 
-      <div style="text-align:left ; left:0; ">
+      <div style="text-align:left ; left:0;   overflow: scroll;
+      overflow-x: hidden;
+      height: 320px;">
         <ul class="tableProduct" *ngFor="let a of allMainProduct ">
           <ion-icon name="caret-forward-outline"></ion-icon>
           <li (click)="getAllProducts(a) ">{{a.productName}} </li>

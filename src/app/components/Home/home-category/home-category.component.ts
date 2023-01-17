@@ -5,6 +5,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
 import { FormsModule } from '@angular/forms';
 import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
 import { BasicList } from 'src/app/shared/models/basic-list.model';
+import { Category } from 'src/app/shared/models/category.models';
 @Component({
   selector: 'app-home-category',
   templateUrl: './home-category.component.html',
@@ -18,6 +19,7 @@ export class HomeCategoryComponent implements OnInit {
   clickedOnProduct=false
   search: string = "";
   i:number=0;
+  allCategory:Array<Category>=new Array<Category>;
 
   constructor(private productService: ProductService, private router:Router,private ElByClassName: ElementRef) { }
  
@@ -27,6 +29,9 @@ export class HomeCategoryComponent implements OnInit {
     
   }
   ngAfterViewInit(){
+    this.productService.GatCategory().subscribe(data=>{
+      this.allCategory=data
+    })
   }
 
   setActiveLink(n: number, navigateTo:string) {

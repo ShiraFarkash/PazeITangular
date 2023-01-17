@@ -1,5 +1,5 @@
 
-<div  class="backgroundForList" style="border: 3px, black, solid;" data-closable  *ngIf="showPage==true">
+<div  class="backgroundForList" style="border: 3px, black, solid; height: 250px;" data-closable  *ngIf="showPage==true">
 <button (click)="closeDiv()" id="Xstyle" class="close-button" aria-label="Close alert" type="button" data-close >
   <span  id="closeX"aria-hidden="true">&times;</span>
 </button>
@@ -7,7 +7,9 @@
 
 
 
- <div class="fill" style="text-align:left ; left:0; ">
+ <div class="fill" style="text-align:left ; left:0;  overflow: scroll;
+ overflow-x: hidden;
+ height: 250px; ">
     <ul class="tableProduct"  *ngFor="let a of productService.selectedProducts[parentId];let i=index ">
         <li class="productName">{{a.productName}} </li>
        

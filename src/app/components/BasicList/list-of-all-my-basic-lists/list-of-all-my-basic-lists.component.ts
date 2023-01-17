@@ -34,11 +34,16 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
     console.log(this.menuList)
   this.router.navigate(["/"+navigateTo])
   }
-  ViewList(a:BasicList){
-    
-  }
-  DelelteList(a:BasicList){
 
+  ViewList(a:BasicList){
+
+  }
+
+  DelelteList(a:BasicList){
+    debugger
+    this.productService.DeleteContantList(a).subscribe(data=>{
+      console.log(data)
+    })
   }
 
 }

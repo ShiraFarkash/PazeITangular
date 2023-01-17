@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   clickedOnProduct=false
   search: string = "";
   i:number=0;
+  
 
   constructor(private productService: ProductService, private router:Router,private ElByClassName: ElementRef) { }
  
