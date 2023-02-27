@@ -15,7 +15,7 @@ export class BasicListChooseProductComponent implements OnInit {
   allMyProducts:Array<Product>=new Array<Product>;
   menuList=[false,false, false,true,false ]
   editable:boolean=false
-  listName:string="Basic List"
+  listName:string="Must Have"
   tooltip="click to edit and clcik again to save changes"
   clickedOnProduct=false
   // allChosenProduct:Array<Product>=new Array<Product>;
