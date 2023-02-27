@@ -6,7 +6,7 @@
     <div class='form'>
    <div class="topic">Sign up</div>
       <form> 
-    <input [value]="EnteredCode" #text type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
+    <input [(ngModel)]="EnteredCode"  #text name="entercode" type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
     <h5 class="msgCode">Enter the code that was send to your email</h5>
     <br>
     
