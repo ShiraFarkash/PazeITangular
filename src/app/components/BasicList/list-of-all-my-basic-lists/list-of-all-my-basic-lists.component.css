@@ -41,6 +41,10 @@ font-weight: bolder;
     left: 20px;
     width: max-content;
 }
-.table thead{
-    width: max-content;
+div .InnerContent {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 320px;
+
+
 }
