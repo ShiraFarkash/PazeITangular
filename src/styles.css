@@ -325,3 +325,10 @@ align-items: center;
 .nav ul li:nth-child(5).active ~ .indicator{
   transform: translateX(calc(70px * 4))
 }
+.msgCode {
+  font-weight: lighter;
+  position: relative;
+  color: rgb(135, 141, 141);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  text-align: center;
+}

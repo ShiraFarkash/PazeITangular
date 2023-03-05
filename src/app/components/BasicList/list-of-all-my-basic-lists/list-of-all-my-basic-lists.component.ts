@@ -21,7 +21,7 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
     console.log(data)  
     })
   }
-  
+
   ngAfterViewInit(){
 
   }
@@ -40,11 +40,16 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
 
   }
 
+  goToBasicListComponent(){
+    this.router.navigate(['/BLchooseProduct']);
+  }
+
   DelelteList(a:BasicList){
-    debugger
     this.productService.DeleteContantList(a).subscribe(data=>{
       console.log(data)
+      this.BasicListLists=this.BasicListLists.filter(m=> m!=a)
     })
+    // location.reload();
   }
 
 }

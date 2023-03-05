@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 import { ProductsComponent } from './components/Home/products/products.component';
+import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { ProductsComponent } from './components/Home/products/products.component
     HomeCategoryComponent,
     ChangePasswordComponent,
     ListOfAllMyBasicListsComponent,
-    ProductsComponent
+    ProductsComponent,
+    ViewMustHaveListComponent
   ],
   imports: [
     BrowserModule,

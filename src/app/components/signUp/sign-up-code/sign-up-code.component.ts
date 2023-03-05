@@ -23,7 +23,6 @@ export class SignUpCodeComponent implements OnInit {
   }
   goToPrevious(){
     this.router.navigate(['/Sign_up1']);
-
   }
   goToNext(s:string){
     if(s!='' && s==this.SendedCode)

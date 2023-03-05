@@ -19,7 +19,7 @@
 
     <div class="topic" contententeditable="true">
 
-      <div #Editable class="h1BL" [contentEditable]="editable">{{listName}}</div>
+      <div #Editable class="h1BL" [contentEditable]="editable" >{{listName}}</div>
       <div class="editName" (click)="editableClick(Editable.innerText)" [title]="tooltip"><img class="editNameImag"
           src="assets/edit-icon.png"></div>
 
