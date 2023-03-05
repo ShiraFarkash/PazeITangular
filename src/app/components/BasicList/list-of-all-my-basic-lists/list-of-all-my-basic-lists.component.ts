@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/shared/services/product.service';
   styleUrls: ['./list-of-all-my-basic-lists.component.css']
 })
 export class ListOfAllMyBasicListsComponent implements OnInit {
-  menuList=[false,false, false,true,false ]
+  menuList=[false,false,false,true,false ]
   BasicListLists:Array<BasicList>=new Array<BasicList>()
   constructor(private router:Router, private productService:ProductService) { }
 
@@ -21,6 +21,7 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
     console.log(data)  
     })
   }
+  
   ngAfterViewInit(){
 
   }

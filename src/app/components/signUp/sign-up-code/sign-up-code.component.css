@@ -12,6 +12,8 @@
     width: 100px;
     margin-top: 40px;
     display: inline-block;
+    margin-left: auto;
+    
     /* margin-left: 50px; */
 }
 

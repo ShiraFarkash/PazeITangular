@@ -4,23 +4,29 @@ body{
 
 }
 #Xstyle{
-    right: 0; 
-    margin-left: auto;
+   
+    
     text-align: right;
-    margin-right: 15px;
+    margin-right: 40px;
     font-size: 20px;
     font-weight: bolder;
-    position: relative;
+    /* position: relative; */
     left: 170px;
     background-color: white;
+    margin-bottom: 15px;
+    border: 2px black solid;
+    border-radius: 50px;
+    margin-top: 5px;
+    
 }
 
 .backgroundForList{
     background-color: #FFF;
-    border-radius: 12px;
+    border-radius: 50px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     width: 100%;
-    overflow: auto  ;
+    height: 200px;
+    /* overflow: auto  ; */
     position: absolute;
     top:0;
     bottom: 0;
@@ -36,7 +42,7 @@ body{
     list-style-type: none;
     text-align: center;
     font-family: "Poppins" , sans-serif;
-    position: relative;
+    /* position: relative; */
     margin: auto auto auto auto;
     top: auto;
     bottom: auto;

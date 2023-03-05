@@ -1,15 +1,21 @@
 .Basic-background {
     height: 450px;
-
+   
 }
 
 .whiteLogo {
     width: 3.5cm;
 }
 .blur{
-    /* position: fixed;
-    backdrop-filter: blur(50px);
-    background-color: rgba(111, 111, 111, 0.707); */
+    position:absolute; 
+    width: 104%; 
+    height: 104%; 
+    top: -2%; 
+    left: -2%;
+    backdrop-filter: 
+    blur(2.5px);
+    z-index: 4;
+    background-color: rgba(128, 128, 128, 0.452);
 }
 .search {
     color: rgb(152, 149, 149);
@@ -85,7 +91,9 @@ div .topic {
     bottom: 17px;
     right: 10px;
 }
-
+div .center{
+    margin-top: 0px;
+}
 div .editName img {
     height: 27px;
 
@@ -112,7 +120,7 @@ div .editName img {
 }
 
 .doneList {
-    position: relative;
+    /* position: relative; */
     top:40px;
     /* left: 20px; */
     width: 100px;
@@ -131,11 +139,13 @@ div .editName img {
  
 }
 .DL {
+    width: auto;
     position: relative;
-    display: block;
+    /* display: block; */
     text-align: right;
     margin-right: 0px;
     right: 14px;
+    margin-top: 0px;
 
 }
 

@@ -1,96 +1,97 @@
 <div class="my-container">
-    <img class="whiteLogo" src="assets/whitelogo.png" alt="">
-    <div class="Basic-background"></div>
-    <div class="content">
+  <img class="whiteLogo" src="assets/whitelogo.png" alt="">
+  <div class="Basic-background"></div>
+  <div class="content">
 
-        <div class="topic">BasicList</div>
-        <div class="InnerContent">
-           
-            <table class="table">
-                <thead>
-                  <tr>
-                    
-                    <th scope="col">Add</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">View List</th>
-                    <th scope="col">Delete</th>
+    <div class="topic">BasicList</div>
+    <div class="InnerContent">
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let a of BasicListLists">
-                    <th scope="row">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                      </div>
-                    </th>
-                    <td>{{a.name}}</td>
-                    <td ><button (click)="ViewList(a)">click</button> </td>
-                    
-                    <td ><button (click)="DelelteList(a)">Delete</button> </td>
-                  </tr>
-                 
-    
-                </tbody>
-              </table>
-        </div>
+      <table class="table">
+        <thead >
+          <tr>
+            <th style="margin-right: 10px;"  >Name</th>
+            <th scope="col"class="th" >Add</th>
+            <th scope="col" class="th">View List</th>
+            <th scope="col" class="th">Delete</th>
 
+          </tr>
+        </thead>
+        <hr>
+        <tbody>
+          <tr *ngFor="let a of BasicListLists">
+            <td class="name">{{a.name}}</td>
+            <td scope="row">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+              </div>
+            </td>
+          
+            <td class="list" id="click"><button (click)="ViewList(a)">Click</button> </td>
+
+            <td class="delete" id="delete"><button (click)="DelelteList(a)">Delete</button> </td>
+          </tr>
+
+
+        </tbody>
+      </table>
     </div>
 
-  <div class="menu">
-      <nav class="nav">
-        <ul>
-          <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
-            <a>
-              <span class="icon">
-                <ion-icon name="home-outline"></ion-icon>
-              </span>
-              <span class="text">Home </span>
-            </a>
-          </li>
-          <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
-            <a>
-              <span class="icon">
-                <ion-icon name="person-outline"></ion-icon>
-              </span>
-              <span class="text">My account</span>
-            </a>
-          </li>
-          <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
-            <a>
-              <span class="icon">
-                <ion-icon name="refresh-circle-outline"></ion-icon>
-              </span>
-              <span class="text">History</span>
-            </a>
-          </li>
-          <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
-            <a>
-              <span class="icon">
-                <ion-icon name="reader-outline"></ion-icon>
-              </span>
-              <span class="text">Basics lists</span>
-            </a>
-          </li>
-          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
-            <a>
-              <span class="icon">
-                <ion-icon name="cart-outline"></ion-icon>
-              </span>
-              <span class="text">my cart</span>
-            </a>
-          </li>
-          <div class="indicator"></div>
+  </div>
+
+  <div class="menu" style="z-index: 3;">
+    <nav class="nav">
+      <ul>
+        <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="text">Home </span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="text">My account</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'myAccount')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="refresh-circle-outline"></ion-icon>
+            </span>
+            <span class="text">History</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'BLchooseProduct')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="reader-outline"></ion-icon>
+            </span>
+            <span class="text">Must-Have</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+            <span class="text">my cart</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
 
 
-        </ul>
-      </nav>
-    </div>
+      </ul>
+    </nav>
+  </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </div>

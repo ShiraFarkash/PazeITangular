@@ -1,18 +1,50 @@
+/* 
+
+
+
+div .InnerContent {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 400px;
+}
+#click{
+   border-radius: 20px; 
+font-weight: bolder;
+   text-align: center;
+}
+.name{
+    position: relative;
+    left: 10px;
+}
+.list{
+    position: relative;
+    left: 25px;
+}
+.delete{
+    position: relative;
+    left: 35px;
+} */
 .Basic-background {
     height: 430px;
 
-}
-.topic{
-    text-align: center;
-    margin: 0px;
 }
 .content{
     width: 300px;
     height: 450px;
 }
+.topic{
+    text-align: center;
+    margin: 0px;
+}
+.table{
+    position: relative;
+    left: 20px;
+    width: max-content;
+}
 div .InnerContent {
     overflow: scroll;
     overflow-x: hidden;
     height: 320px;
+
 
 }

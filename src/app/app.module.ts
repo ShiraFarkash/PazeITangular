@@ -26,6 +26,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
+import { ProductsComponent } from './components/Home/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { ChangePasswordComponent } from './components/AccountsSettings/change-pa
     HomeComponent,
     HomeCategoryComponent,
     ChangePasswordComponent,
-    ListOfAllMyBasicListsComponent
+    ListOfAllMyBasicListsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
