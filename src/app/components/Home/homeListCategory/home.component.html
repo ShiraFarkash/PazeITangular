@@ -21,28 +21,9 @@
       <br>
       <div class="topic">Home</div>
       <div class="contentHome">
-
-        <!-- <ul class="CategoryProducts">
-          <div class="titleCategory" id="recentPro">
-            <p>Recent Products <i class="arrow right"></i></p>
-          </div>
-          <div class="allProducts">
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-
-          </div>
-        </ul> -->
         <ul class="CategoryProducts">
           <div class="titleCategory" id="FandV">
-            <p>Fruits & Vegetables<i class="arrowFV right"></i></p>
+            <p>Fruits & Vegetables</p>
           </div>
           <div class="allProducts">
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
@@ -60,7 +41,7 @@
 
         <ul class="CategoryProducts">
           <div class="titleCategory" id="Dairy">
-            <p>Dairy & Eggs<i class="arrow right"></i></p>
+            <p>Dairy & Eggs</p>
           </div>
           <div class="allProducts">
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
@@ -77,9 +58,16 @@
         </ul>
         <ul class="CategoryProducts">
           <div class="titleCategory" id="BandB">
-            <p>Bread & Bakery<i class="arrow right"></i></p>
+            <p>Bread & Bakery</p>
           </div>
           <div class="allProducts">
+            <div>
+        <ul class="tableProduct" *ngFor="let a of allMainProduct ">
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          <li (click)="getAllProducts(a) ">{{a.productName}} </li>
+
+        </ul>
+      </div>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
@@ -94,7 +82,7 @@
         </ul>
             <ul class="CategoryProducts">
           <div class="titleCategory" id="Beverages">
-            <p>Beverages<i class="arrow right"></i></p>
+            <p>Beverages</p>
           </div>
           <div class="allProducts">
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>

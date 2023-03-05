@@ -11,13 +11,13 @@ import { BasicList } from 'src/app/shared/models/basic-list.model';
   styleUrls: ['./basic-list-choose-product.component.css']
 })
 export class BasicListChooseProductComponent implements OnInit {
-  allMainProduct: Array<Product> = new Array<Product>;
-  allMyProducts: Array<Product> = new Array<Product>;
-  menuList = [false, false, false, true, false]
-  editable: boolean = false
-  listName: string = "Must-Have"
-  tooltip = "click to edit and clcik again to save changes"
-  clickedOnProduct = false
+  allMainProduct:Array<Product>=new Array<Product>;
+  allMyProducts:Array<Product>=new Array<Product>;
+  menuList=[false,false, false,true,false ]
+  editable:boolean=false
+  listName:string="Must-Have"
+  tooltip="click to edit and clcik again to save changes"
+  clickedOnProduct=false
   // allChosenProduct:Array<Product>=new Array<Product>;
   toAdd = { i: 0, amount: 0 }
   allMainProductQuntity = new Array<{ id: number, amount: number }>()
