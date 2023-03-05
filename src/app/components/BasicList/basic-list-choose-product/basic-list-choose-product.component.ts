@@ -34,7 +34,6 @@ export class BasicListChooseProductComponent implements OnInit {
         for (let i = 0; i < this.allMainProduct.length; i++) {
           let pId: number;
           pId = this.allMainProduct[i].Id!
-        
           this.allMainProductQuntity.push({id:pId,amount:0});
         }
         console.log(this.allMainProductQuntity)
@@ -127,9 +126,9 @@ export class BasicListChooseProductComponent implements OnInit {
     }
 
     return count
-
   }
   contantListID: number = 0
+
   done() {
 
     let productToList: ProductToBasicList[] = []
@@ -144,9 +143,9 @@ export class BasicListChooseProductComponent implements OnInit {
       b.userID = userId
 
       this.productService.addContantList(b).subscribe(data => {
-        localStorage.setItem("contantListName", String(data))
+        localStorage.setItem("contantListId", String(data))
         this.contantListID = data
-        console.log(data)
+        // console.log(data)
         for (let key of Object.keys(this.productService.selectedProducts)) {
           productToList = productToList.concat(this.productService.selectedProducts[Number(key)].filter(p => p.isSelected));
 
@@ -155,7 +154,7 @@ export class BasicListChooseProductComponent implements OnInit {
           element.constantListID = this.contantListID
         });
         console.log(productToList);
-        debugger
+    
         this.productService.addProductToContantList(productToList).subscribe()
         this.router.navigate(['/listOfAllMyBasicLists']);
       })

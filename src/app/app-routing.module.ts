@@ -16,6 +16,7 @@ import { SignUpDetailsComponent } from './components/signUp/sign-up-details/sign
 import { SignUpFinalDetailsComponent } from './components/signUp/sign-up-final-details/sign-up-final-details.component';
 import { UserComponent } from './components/user/user.component';
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
+import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
 
 const routes: Routes = [
  {path:'logIn' ,component:LogInComponent} ,
@@ -33,8 +34,8 @@ const routes: Routes = [
  {path:"AppExplanation",component:AppExplanationComponent},
  {path:"home",component:HomeComponent},
  {path:"homeCategory",component:HomeCategoryComponent},
- {path:"listOfAllMyBasicLists", component:ListOfAllMyBasicListsComponent}
-
+ {path:"listOfAllMyBasicLists", component:ListOfAllMyBasicListsComponent},
+ {path:"viewMustHaveList", component:ViewMustHaveListComponent}
 
 ];
 
