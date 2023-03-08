@@ -28,6 +28,9 @@ import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-a
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 import { ProductsComponent } from './components/Home/products/products.component';
 import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
+import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
+import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
+import { HistoryListsComponent } from './components/history-lists/history-lists.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,10 @@ import { ViewMustHaveListComponent } from './components/BasicList/view-must-have
     ChangePasswordComponent,
     ListOfAllMyBasicListsComponent,
     ProductsComponent,
-    ViewMustHaveListComponent
+    ViewMustHaveListComponent,
+    ChangeEmailComponent,
+    ChangeEmailValidationComponent,
+    HistoryListsComponent
   ],
   imports: [
     BrowserModule,

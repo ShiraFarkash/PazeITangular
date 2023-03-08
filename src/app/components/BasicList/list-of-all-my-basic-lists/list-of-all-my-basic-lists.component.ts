@@ -37,7 +37,8 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
   }
 
   ViewList(a:BasicList){
-
+    localStorage.setItem('contantListId',(String)(a.Id))
+    this.router.navigate(['/viewMustHaveList']);
   }
 
   goToBasicListComponent(){
@@ -52,4 +53,5 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
     // location.reload();
   }
 
+ 
 }
