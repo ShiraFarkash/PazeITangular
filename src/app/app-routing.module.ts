@@ -20,28 +20,32 @@ import { ViewMustHaveListComponent } from './components/BasicList/view-must-have
 import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
 import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
 import { HistoryListsComponent } from './components/history-lists/history-lists.component';
+import { CartComponent } from './components/Shopping/cart/cart.component';
+import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
 
 const routes: Routes = [
- {path:'logIn' ,component:LogInComponent} ,
- {path:'' , component:EntryComponent},
- {path:'user' , component:UserComponent},
- {path:'Sign_up1' , component:SignUpDetailsComponent},
- {path:'Sign_up2' , component:SignUpCodeComponent},
- {path:'Sign_up3' , component:SignUpFinalDetailsComponent},
- {path:'forgotPass',component:ForgotPasswordComponent},
- {path:'BLchooseProduct', component:BasicListChooseProductComponent},
- {path:'myAccount',component:MyAccountComponent},
- {path:"changePass",component:ChangePasswordComponent},
- {path:'validationForgetPassword',component:ValidationForgetPasswordComponent},
- {path:"resetPassword",component:ResetPasswordComponent},
- {path:"AppExplanation",component:AppExplanationComponent},
- {path:"home",component:HomeComponent},
- {path:"homeCategory",component:HomeCategoryComponent},
- {path:"listOfAllMyBasicLists", component:ListOfAllMyBasicListsComponent},
- {path:"viewMustHaveList", component:ViewMustHaveListComponent},
- {path:"changeEmail", component:ChangeEmailComponent},
- {path:"changeEmailValidation", component:ChangeEmailValidationComponent},
- {path:"HistoryLists", component:HistoryListsComponent}
+  { path: 'logIn', component: LogInComponent },
+  { path: '', component: EntryComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'Sign_up1', component: SignUpDetailsComponent },
+  { path: 'Sign_up2', component: SignUpCodeComponent },
+  { path: 'Sign_up3', component: SignUpFinalDetailsComponent },
+  { path: 'forgotPass', component: ForgotPasswordComponent },
+  { path: 'BLchooseProduct', component: BasicListChooseProductComponent },
+  { path: 'myAccount', component: MyAccountComponent },
+  { path: "changePass", component: ChangePasswordComponent },
+  { path: 'validationForgetPassword', component: ValidationForgetPasswordComponent },
+  { path: "resetPassword", component: ResetPasswordComponent },
+  { path: "AppExplanation", component: AppExplanationComponent },
+  { path: "home", component: HomeComponent },
+  { path: "homeCategory", component: HomeCategoryComponent },
+  { path: "listOfAllMyBasicLists", component: ListOfAllMyBasicListsComponent },
+  { path: "viewMustHaveList", component: ViewMustHaveListComponent },
+  { path: "changeEmail", component: ChangeEmailComponent },
+  { path: "changeEmailValidation", component: ChangeEmailValidationComponent },
+  { path: "HistoryLists", component: HistoryListsComponent },
+  { path: "myCart", component: CartComponent },
+  {path:"chooseSuper",component:ChooseSuperComponent}
 
 ];
 

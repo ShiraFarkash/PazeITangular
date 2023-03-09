@@ -22,7 +22,7 @@ import { ResetPasswordComponent } from './components/forgetPasswordMain/reset-pa
 import { AppExplanationComponent } from './components/app-explanation/app-explanation.component';
 import { HomeComponent } from './components/Home/homeListCategory/home.component';
 import { HomeCategoryComponent } from './components/Home/home-category/home-category.component';
-import { CartComponent } from './components/cart/cart.component';
+import { CartComponent } from './components/Shopping/cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfAllMyBasicListsComponent } from './components/BasicList/list-of-all-my-basic-lists/list-of-all-my-basic-lists.component'
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
@@ -31,6 +31,8 @@ import { ViewMustHaveListComponent } from './components/BasicList/view-must-have
 import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
 import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
 import { HistoryListsComponent } from './components/history-lists/history-lists.component';
+import { CommonModule } from '@angular/common';
+import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,9 @@ import { HistoryListsComponent } from './components/history-lists/history-lists.
     ViewMustHaveListComponent,
     ChangeEmailComponent,
     ChangeEmailValidationComponent,
-    HistoryListsComponent
+    HistoryListsComponent,
+    CartComponent,
+    ChooseSuperComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ import { HistoryListsComponent } from './components/history-lists/history-lists.
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    CommonModule,
     IonicModule.forRoot(),
     
 

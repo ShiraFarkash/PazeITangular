@@ -1,13 +1,13 @@
 .Basic-background {
-    height: 430px;
-
-}
-
-.whiteLogo {
+    height: 380px;
+  
+  }
+  
+  .whiteLogo {
     width: 3.5cm;
-}
-
-.search {
+  }
+  
+  .search {
     color: rgb(152, 149, 149);
     background-color: white;
     border-radius: 5px;
@@ -21,53 +21,74 @@
     display: inline;
     border: 0px;
     font-size: smaller;
-}
-
-.searchIcon {
+  }
+  
+  .searchIcon {
     width: 0.5cm;
-}
-
-.squareSearch {
+  }
+  
+  .squareSearch {
     position: relative;
     bottom: 20px;
-}
-
-.btnSearch {
+  }
+  
+  .btnSearch {
     position: relative;
     top: 5px;
     width: 35px;
     border-color: transparent;
     background-color: transparent;
-}
-
-.content {
+  }
+  
+  .content {
     height: 400px;
     width: 300px;
     position: relative;
-    bottom: 40px;
-
-
-}
-
-
-div .topic {
+  
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .eachOrderBy {
+    padding-right: 10px !important;
+    right: 0;
+    position: relative;
+    left: 130px;
+    display: flex;
+  
+  }
+  .addPeople{
+  position: relative;
+    left: 20px;
+    font-size: 25px;
+    display: flex;
+  
+   
+  }
+  div .topic {
     color: rgb(57, 149, 191);
     font-size: 25px;
     font-weight: bolder;
     position: relative;
-    left: 85px;
-
-}
-
-div .contentHome {
+    left: 40px;
+  
+  }
+  .explanationSuper{
+    position: relative;
+    left: 10px;
+    text-align: center;
+  }
+  
+  div .contentHome {
     overflow: scroll;
     overflow-x: hidden;
     height: 320px;
-
-
-}
-
-ul.CategoryProducts {
+  
+  
+  }
+  
+  ul.CategoryProducts {
     width: 300px;
     height: 150px;
     background-color: white;
@@ -75,21 +96,21 @@ ul.CategoryProducts {
     position: relative;
     box-shadow: 2px 2px 4px #000000;
     padding: 0px;
-
-
-}
-
-.titleCategory {
+  
+  
+  }
+  
+  .titleCategory {
     position: relative;
     margin: 0px;
     padding-bottom: 1px;
     border-radius: 10px;
     background-size: cover;
     color: rgb(255, 255, 255);
-
-}
-
-.titleCategory::before {
+  
+  }
+  
+  .titleCategory::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -98,9 +119,9 @@ ul.CategoryProducts {
     left: 0px;
     background-color: rgba(82, 82, 82, 0.558);
     border-radius: 10px;
-}
-
-#recentPro::before {
+  }
+  
+  #recentPro::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -109,37 +130,37 @@ ul.CategoryProducts {
     left: 0px;
     background-color: rgb(255, 255, 255, 0);
     border-radius: 10px;
-
-}
-
-#recentPro {
+  
+  }
+  
+  #recentPro {
     color: #000000;
-}
-
-#FandV {
+  }
+  
+  #FandV {
     background-image: url("/../assets/FandV.png");
     background-color: rgba(82, 82, 82, 0.558);
-}
-
-#Dairy {
+  }
+  
+  #Dairy {
     background-image: url("/../assets/milkdairy.png");
-}
-
-#BandB {
+  }
+  
+  #BandB {
     background-image: url("/../assets/bakery.png");
-}
-
-#Beverages {
+  }
+  
+  #Beverages {
     background-image: url("/../assets/drinks.png");
-}
-
-.titleCategory p {
+  }
+  
+  .titleCategory p {
     position: relative;
     left: 20px;
     top: 5px;
-}
-
-.allProducts {
+  }
+  
+  .allProducts {
     overflow: scroll;
     overflow-y: hidden;
     position: relative;
@@ -151,11 +172,11 @@ ul.CategoryProducts {
     border-top: 1px solid rgb(239, 239, 239);
     list-style: none;
     scroll-snap-type: x mandatory;
-
-
-}
-
-li.products {
+  
+  
+  }
+  
+  li.products {
     width: 100px;
     height: 112px;
     border-left: 1px solid rgb(239, 239, 239);
@@ -164,67 +185,67 @@ li.products {
     flex-direction: column;
     flex: 0 0 35%;
     scroll-snap-align: start;
-
-
-}
-
-.CategoryProducts:first-child {
+  
+  
+  }
+  
+  .CategoryProducts:first-child {
     margin-right: 20px;
-}
-
-.arrow {
+  }
+  
+  .arrow {
     border: solid rgb(198, 194, 194);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
     position: relative;
     left: 110px;
-}
-
-.arrowFV {
+  }
+  
+  .arrowFV {
     border: solid rgb(198, 194, 194);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
     position: relative;
     left: 90px;
-}
-
-.right {
+  }
+  
+  .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-}
-
-hr {
+  }
+  
+  hr {
     border: 1px solid rgb(239, 239, 239);
     border-radius: 5px;
-
-}
-
-.addIcon {
+  
+  }
+  
+  .addIcon {
     width: 50px;
     position: relative;
     top: 60px;
     left: 50px;
-
-}
-
-.button1 {
+  
+  }
+  
+  .button1 {
     font-weight: lighter;
     background-color: rgb(240, 100, 98);
     font-size: small;
     font-weight: bolder;
     position: relative;
-    bottom: 65px;
-    background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
+  bottom: 10px;
+    /* background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%); */
     width: 150px;
     height: 30px;
-    right: 5px;
+  left: 200px;
     margin: 0px;
-    display: inline-block;
-}
-
-.button2 {
+  
+  }
+  
+  .button2 {
     font-weight: lighter;
     background-color: rgb(240, 100, 98);
     font-size: small;
@@ -244,4 +265,4 @@ hr {
     font-weight: bold;
     box-shadow: 2px 2px 4px #000000;
     display: inline;
-}
+  }

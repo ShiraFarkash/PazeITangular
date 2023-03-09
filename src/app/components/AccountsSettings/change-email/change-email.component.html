@@ -4,7 +4,7 @@
 <div class="content">
     <br> <br> 
     <div class='form'>
-        <div class="topic">My account <br> change Email</div>
+        <div class="topic">Change Email</div>
         <form [formGroup]="EmailForm">
 
              <input #email formControlName="Email" type="email" placeholder='Email' class='text'><br>
@@ -74,7 +74,7 @@
             <span class="text">Basics lists</span>
           </a>
         </li>
-        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
           <a>
             <span class="icon">
               <ion-icon name="cart-outline"></ion-icon>

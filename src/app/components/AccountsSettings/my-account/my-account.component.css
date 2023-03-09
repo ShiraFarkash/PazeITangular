@@ -1,12 +1,17 @@
 .Basic-background {
-  height: 440px;
+  height: 400px;
 }
 
 .content {
   height: 350px;
   width: 270px;
 }
-
+.text-danger{
+  position: relative;
+  left: 20px;
+  color: red;
+  font-style: italic;
+}
 input.text {
   margin-top: 3px !important;
   position: relative;
@@ -62,9 +67,10 @@ div .topic {
 }
 
 .center .forgot {
-  text-decoration: none;
-  color: #45a4fb;
+  text-decoration:underline;
+  color: #ffffff;
   position: relative;
+  /* font-weight: bold; */
 
 }
 

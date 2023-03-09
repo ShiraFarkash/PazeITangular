@@ -7,7 +7,7 @@
 <div class="content">
     <br> <br> 
     <div class='form'>
-   <div class="topic">My account <br> change Email</div>
+   <div class="topic"><br>Change Email</div>
       <form> 
     <input [(ngModel)]="EnteredCode"  #text name="entercode" type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
     <h5 class="msgCode">Enter the code that was send to your email</h5>
@@ -59,7 +59,7 @@
             <span class="text">Basics lists</span>
           </a>
         </li>
-        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
           <a>
             <span class="icon">
               <ion-icon name="cart-outline"></ion-icon>
@@ -67,6 +67,7 @@
             <span class="text">my cart</span>
           </a>
         </li>
+        
         <div class="indicator"></div>
   
   

@@ -13,7 +13,7 @@
         </div>
 
         <div *ngIf="(userForm.controls['userName'].invalid)">
-          <small *ngIf="Name.value==''" class="text-danger">Primary name is required</small>
+          <small *ngIf="Name.value==''" class="text-danger">*Name is required</small>
         </div>
 
         <div class="personalInfo"><span class="details_myAccount">Last Name:</span><br>
@@ -22,7 +22,7 @@
         </div>
 
         <div *ngIf="(userForm.controls['userLstName'].invalid)">
-          <small *ngIf="userLastName.value==''" class="text-danger">Primary name is required</small>
+          <small *ngIf="userLastName.value==''" class="text-danger">*Last name is required</small>
         </div>
 
 
@@ -85,7 +85,7 @@
           <span class="text">Basics lists</span>
         </a>
       </li>
-      <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myAccount')" class="list">
+      <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
         <a>
           <span class="icon">
             <ion-icon name="cart-outline"></ion-icon>
