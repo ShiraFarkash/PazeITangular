@@ -49,7 +49,7 @@
       <ul class="tableProduct" *ngFor="let a of allMainProduct ">
         <ion-icon name="caret-forward-outline"></ion-icon>
         <li (click)="getAllProducts(a) ">{{a.productName}}</li>
-        <input  *ngIf="quntity(a.Id)>0" [value]="" >
+        <input  *ngIf="quntity(a.Id)>0" [value]="">
       </ul>
     </div>
 
