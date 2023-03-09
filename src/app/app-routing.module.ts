@@ -17,6 +17,9 @@ import { SignUpFinalDetailsComponent } from './components/signUp/sign-up-final-d
 import { UserComponent } from './components/user/user.component';
 import { ChangePasswordComponent } from './components/AccountsSettings/change-password/change-password.component';
 import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
+import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
+import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
+import { HistoryListsComponent } from './components/history-lists/history-lists.component';
 
 const routes: Routes = [
  {path:'logIn' ,component:LogInComponent} ,
@@ -35,7 +38,10 @@ const routes: Routes = [
  {path:"home",component:HomeComponent},
  {path:"homeCategory",component:HomeCategoryComponent},
  {path:"listOfAllMyBasicLists", component:ListOfAllMyBasicListsComponent},
- {path:"viewMustHaveList", component:ViewMustHaveListComponent}
+ {path:"viewMustHaveList", component:ViewMustHaveListComponent},
+ {path:"changeEmail", component:ChangeEmailComponent},
+ {path:"changeEmailValidation", component:ChangeEmailValidationComponent},
+ {path:"HistoryLists", component:HistoryListsComponent}
 
 ];
 

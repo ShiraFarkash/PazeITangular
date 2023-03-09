@@ -26,4 +26,13 @@ export class UserService {
 //  {
 
 //  }
+GetUserById(userId:number) :Observable<any>
+{
+  return this.http.get<User>(environment.url + 'User/GetUserById?userId='+userId)
+}
+EditUserDetails(user:User) :Observable<any>
+{
+  return this.http.post(environment.url + 'User/EditUserDetails',user)
+}
+
 }
