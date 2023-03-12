@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   search: string = "";
   i:number=0;
   allMainProduct: Array<Product> = new Array<Product>;
+ count=0;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -36,5 +37,14 @@ export class CartComponent implements OnInit {
   }
   startShopping(){
     this.router.navigate(["/chooseSuper"])
+  }
+  addOne(){
+
+this.count++;
+  }
+  onScroll(event: any) {
+    if (event.target.scrollTop > 0) {
+
+    }
   }
 }

@@ -22,6 +22,7 @@ import { ChangeEmailValidationComponent } from './components/AccountsSettings/ch
 import { HistoryListsComponent } from './components/history-lists/history-lists.component';
 import { CartComponent } from './components/Shopping/cart/cart.component';
 import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
+import { AddUserToListComponent } from './components/Shopping/add-user-to-list/add-user-to-list.component';
 
 const routes: Routes = [
   { path: 'logIn', component: LogInComponent },
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: "changeEmailValidation", component: ChangeEmailValidationComponent },
   { path: "HistoryLists", component: HistoryListsComponent },
   { path: "myCart", component: CartComponent },
-  {path:"chooseSuper",component:ChooseSuperComponent}
+  {path:"chooseSuper",component:ChooseSuperComponent},
+  {path:"addUserList",component:AddUserToListComponent}
 
 ];
 

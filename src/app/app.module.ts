@@ -33,6 +33,7 @@ import { ChangeEmailValidationComponent } from './components/AccountsSettings/ch
 import { HistoryListsComponent } from './components/history-lists/history-lists.component';
 import { CommonModule } from '@angular/common';
 import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
+import { AddUserToListComponent } from './components/Shopping/add-user-to-list/add-user-to-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,8 @@ import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-
     ChangeEmailValidationComponent,
     HistoryListsComponent,
     CartComponent,
-    ChooseSuperComponent
+    ChooseSuperComponent,
+    AddUserToListComponent
   ],
   imports: [
     BrowserModule,

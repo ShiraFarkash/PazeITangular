@@ -5,9 +5,16 @@
   <br>
   <div class="topic">Cart</div>
   <br>
-  <div class="wrapper">
-  <div class="addPeople"> <ion-icon name="person-add"></ion-icon></div>
-  <div class="orderByBL">
+  <div class="wrapper"
+ >
+    <span id="count"
+    (scroll)="onScroll($event)" #container style="text-align:left ;    overflow: scroll;
+    overflow-x: hidden;"
+    >{{count}}</span>
+    <button (click)="addOne()"class="addPeople">
+   <ion-icon name="person-add"></ion-icon>
+ </button> 
+ <div class="orderByBL">
     <select class="eachOrderBy">
       <option value="order by">-- Order by --</option>
       <hr>
@@ -21,7 +28,10 @@
 </div>
   <hr>
 <!-- the list is here -->
-
+<div class="center" style=" z-index:5;">
+  <app-add-user-list [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event"
+    [showPage]="clickedOnProduct" ></app-add-user-list>
+</div>
    <hr>
   </div>
 

@@ -46,6 +46,9 @@
   position: relative;
 
 }
+
+
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -54,7 +57,7 @@
   padding-right: 10px !important;
   right: 0;
   position: relative;
-  left: 130px;
+  left: 110px;
   display: flex;
 
 }
@@ -63,8 +66,20 @@ position: relative;
   left: 20px;
   font-size: 25px;
   display: flex;
+  background-color:white;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 0px;
+  font-size: 18px;
+  margin-right:10px;
 
- 
+}
+#count{
+  font-weight: bolder;
+  font-size: 10px;
+  position: relative;
+  bottom: 3px;
+  left: 19px;
 }
 div .topic {
   color: rgb(57, 149, 191);

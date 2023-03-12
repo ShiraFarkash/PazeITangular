@@ -1,0 +1,21 @@
+
+<div  class="backgroundForList" style="border: 3px, black, solid; height: 250px;" data-closable  
+*ngIf="showPage==false">
+
+<div style="width: 100%; align-items: flex-end;text-align: right;">
+<button (click)="closeDiv()" id="Xstyle" class="close-button" aria-label="Close alert" type="button" data-close >
+  <span  id="closeX"aria-hidden="true"><ion-icon name="close-circle-outline"></ion-icon>
+  </span>
+  
+</button>
+</div>
+<div class="topic">Share the List</div>
+<p>This list will be editable by the users you choose:</p>
+<div class="squareSearch">
+    <input class="search" placeholder="Type User Email">
+    <button class="btnSearch" > <ion-icon name="search"></ion-icon>
+    </button>
+  
+  </div>
+</div>
+
