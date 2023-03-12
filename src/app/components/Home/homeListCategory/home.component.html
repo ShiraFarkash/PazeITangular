@@ -20,27 +20,25 @@
     <div class="content">
       <br>
       <div class="topic">Home</div>
-      <div class="contentHome">
-        <ul class="CategoryProducts">
-          <div class="titleCategory" id="FandV">
-            <p>Fruits & Vegetables</p>
+      <div   class="contentHome">
+        <ul *ngFor="let a of allCategory" class="CategoryProducts" >
+          <div class="titleCategory" id={{a.categoryName}}>
+            <p>{{a.categoryName}}</p>
           </div>
           <div class="allProducts">
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
+            <div  *ngFor="let p of CategoryAndProducts[a.Id!];let i=index;">
+            <li  *ngIf="i<3" class="products">
+              <img class="addIcon" src="assets/addIcon.png" alt=""> {{p.productName}}</li>
+              <li *ngIf="i==3" class="products"><ion-icon name="caret-forward-circle-outline"></ion-icon></li>
+            </div>
+           
           </div>
+          
+
         </ul>
 
-        <ul class="CategoryProducts">
-          <div class="titleCategory" id="Dairy">
+        <!-- <ul class="CategoryProducts">
+          <div class="titleCategory" id="DairyAndEggs">
             <p>Dairy & Eggs</p>
           </div>
           <div class="allProducts">
@@ -55,20 +53,22 @@
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
           </div>
-        </ul>
-        <ul class="CategoryProducts">
-          <div class="titleCategory" id="BandB">
+        </ul> -->
+
+        <!-- <ul class="CategoryProducts">
+          <div class="titleCategory" id="BreadAndBakery">
             <p>Bread & Bakery</p>
           </div>
-          <div class="allProducts">
-            <div>
-        <ul class="tableProduct" *ngFor="let a of allMainProduct ">
-          <ion-icon name="caret-forward-outline"></ion-icon>
-          <li (click)="getAllProducts(a) ">{{a.productName}} </li>
+          <div class="allProducts"> -->
+            <!-- <div>
+              <ul class="tableProduct" *ngFor="let a of allMainProduct ">
+                <ion-icon name="caret-forward-outline"></ion-icon>
+                <li (click)="getAllProducts(a) ">{{a.productName}} </li>
 
-        </ul>
-      </div>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
+              </ul>
+
+            </div> -->
+            <!-- <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
@@ -79,8 +79,11 @@
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
           </div>
-        </ul>
-            <ul class="CategoryProducts">
+        </ul> -->
+
+
+<!-- 
+        <ul class="CategoryProducts">
           <div class="titleCategory" id="Beverages">
             <p>Beverages</p>
           </div>
@@ -96,7 +99,7 @@
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
             <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
           </div>
-        </ul>
+        </ul> -->
       </div>
 
     </div>

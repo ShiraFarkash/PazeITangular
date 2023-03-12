@@ -31,6 +31,7 @@ export class HomeCategoryComponent implements OnInit {
   ngAfterViewInit(){
     this.productService.GatCategory().subscribe(data=>{
       this.allCategory=data
+      
     })
   }
 

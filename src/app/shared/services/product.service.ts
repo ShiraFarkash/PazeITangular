@@ -47,6 +47,9 @@ export class ProductService {
     return this.http.get<Array<Category>>(environment.url +'product/GatCategory') 
   }
 
+  GatCategoryProductByCategoryId(categoryID:number):Observable<any>{
+    return this.http.get<Array<Product>>(environment.url +'product/GatCategoryProductByCategoryId?categoryID='+categoryID) 
+  }
   DeleteContantList(c:BasicList):Observable<any>{
     return this.http.post<any>(environment.url +'constantList/DeleteContantList',c);
   }

@@ -116,16 +116,16 @@ ul.CategoryProducts {
     color: #000000;
 }
 
-#FandV {
+#FruitsAndVegetables {
     background-image: url("/../assets/FandV.png");
     background-color: rgba(82, 82, 82, 0.558);
 }
 
-#Dairy {
+#DairyAndEggs {
     background-image: url("/../assets/milkdairy.png");
 }
 
-#BandB {
+#BreadAndBakery {
     background-image: url("/../assets/bakery.png");
 }
 
