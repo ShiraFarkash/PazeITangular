@@ -1,6 +1,5 @@
 .Basic-background {
-    height: 430px;
-
+    height:390px;
 }
 
 .whiteLogo {
@@ -215,7 +214,7 @@ hr {
     font-size: small;
     font-weight: bolder;
     position: relative;
-    bottom: 65px;
+    bottom: 70px;
     background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
     width: 150px;
     height: 30px;
@@ -230,7 +229,7 @@ hr {
     font-size: small;
     font-weight: bolder;
     position: relative;
-    bottom: 65px;
+    bottom: 70px;
     left: 5px;
     background: rgb(250, 180, 179);
     width: 150px;

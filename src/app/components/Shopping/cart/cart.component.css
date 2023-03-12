@@ -6,7 +6,17 @@
 .whiteLogo {
   width: 3.5cm;
 }
-
+.blur{
+  position:absolute; 
+  width: 104%; 
+  height: 104%; 
+  top: -2%; 
+  left: -2%;
+  backdrop-filter: 
+  blur(2.5px);
+  z-index: 4;
+  background-color: rgba(128, 128, 128, 0.452);
+}
 .search {
   color: rgb(152, 149, 149);
   background-color: white;
@@ -46,6 +56,9 @@
   position: relative;
 
 }
+
+
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -54,7 +67,7 @@
   padding-right: 10px !important;
   right: 0;
   position: relative;
-  left: 130px;
+  left: 110px;
   display: flex;
 
 }
@@ -63,8 +76,20 @@ position: relative;
   left: 20px;
   font-size: 25px;
   display: flex;
+  background-color:white;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 0px;
+  font-size: 18px;
+  margin-right:10px;
 
- 
+}
+#count{
+  font-weight: bolder;
+  font-size: 10px;
+  position: relative;
+  bottom: 3px;
+  left: 19px;
 }
 div .topic {
   color: rgb(57, 149, 191);
