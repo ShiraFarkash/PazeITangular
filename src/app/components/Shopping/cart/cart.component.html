@@ -1,7 +1,10 @@
+<div class="my-container" style="position: absolute; z-index: 1;">
+
+<div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
 <img class="whiteLogo" src="assets/whitelogo.png" alt="">
-<div  [ngClass]="clickedOnProduct==true? ' blur':'' ">
-<div class="Basic-background"></div>
-<div class="content">
+
+<div class="Basic-background"style="position: absolute; z-index: 2;"></div>
+<div class="content"style=" z-index: 3;">
   <br>
   <div class="topic">Cart</div>
   <br>
@@ -28,9 +31,9 @@
 </div>
   <hr>
 <!-- the list is here -->
-<div class="center" style=" z-index:5;">
-  <app-add-user-list [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event"
-    [showPage]="clickedOnProduct" ></app-add-user-list>
+<div class="center" style="position: absolute; z-index:5;">
+  <app-add-user-to-list [parentId]="selectedParent" (show)="clickedOnProduct=$event"
+    [showPage]="clickedOnProduct" ></app-add-user-to-list>
 </div>
    <hr>
   </div>
@@ -99,5 +102,6 @@
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+
 
 </div>

@@ -1,5 +1,5 @@
 .Basic-background {
-    height: 400px;
+    height: 390px;
 
 }
 
@@ -66,7 +66,7 @@ div .topic{
         font-size: small;
        font-weight: bolder;
         position: relative;
-        bottom: 35px;
+        bottom: 40px;
         background: rgb(250, 180, 179);
         width:150px;
         height: 30px;
@@ -93,7 +93,7 @@ div .topic{
         font-size: small;
        font-weight: bolder;
         position: relative;
-        bottom: 35px;
+        bottom: 40px;
         left: 5px;
         width:150px;
         height: 30px;

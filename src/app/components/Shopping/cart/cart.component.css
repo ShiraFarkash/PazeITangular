@@ -6,7 +6,17 @@
 .whiteLogo {
   width: 3.5cm;
 }
-
+.blur{
+  position:absolute; 
+  width: 104%; 
+  height: 104%; 
+  top: -2%; 
+  left: -2%;
+  backdrop-filter: 
+  blur(2.5px);
+  z-index: 4;
+  background-color: rgba(128, 128, 128, 0.452);
+}
 .search {
   color: rgb(152, 149, 149);
   background-color: white;

@@ -11,12 +11,13 @@ import { Product } from 'src/app/shared/models/product.models';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  clickedOnProduct=false;
+
+  clickedOnProduct = false;
   menuList = [false, false, false, false, true];
   search: string = "";
-  i:number=0;
+  i: number = 0;
   allMainProduct: Array<Product> = new Array<Product>;
- count=0;
+  count = 0;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -35,16 +36,22 @@ export class CartComponent implements OnInit {
     console.log(this.menuList)
     this.router.navigate(["/" + navigateTo])
   }
-  startShopping(){
+  startShopping() {
     this.router.navigate(["/chooseSuper"])
   }
-  addOne(){
-
-this.count++;
+  addOne() {
+    this.clickedOnProduct = true;
+    if (this.clickedOnProduct = true) {
+      this.count++;
+    }
   }
   onScroll(event: any) {
     if (event.target.scrollTop > 0) {
 
     }
   }
+  selectedParent: number = 0;
+
+
+
 }
