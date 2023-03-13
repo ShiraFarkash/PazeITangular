@@ -23,7 +23,8 @@
     font-size: smaller;
 }
 li.CategoryProducts{
-
+  list-style: none;
+  /* display: flex; */
     list-style-image: none;
     
 }
@@ -71,7 +72,9 @@ div .topic{
         overflow: scroll;
         overflow-x: hidden;
         height: 320px;
-    
+    padding-left: 30px;
+    padding-right: 20px;
+
     
     }
     .button1{
@@ -111,20 +114,42 @@ div .topic{
 
 
 
+      div .contentHome {
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 320px;
+    
+    
+    }
+    ul .list{
+        display: flex;
+        margin-bottom: 7px;
+    }
+    .productPic {
+        width: 50px;
+        position: relative;
+        top: 10px;
+        
+    
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .listpic{
+        border-radius: 50px;
+    }
+    .addIcon {
+        width: 35px;
+        /* position: relative; */
+        top: 60px;
+        left: 50px;
+        align-items: center;
+        text-align: center;
+        margin-top: auto;
+        top: auto;
+    }
+    .listAddIcon{
+        margin-top: auto;
+        margin-bottom: auto;
+      align-items: end;
+         left: auto;
+         margin-left: auto;
+     }

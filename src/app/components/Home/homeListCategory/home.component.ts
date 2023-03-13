@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
   productToOneTimeList_List: Array<Product_To_OneTimeList> = new Array<Product_To_OneTimeList>;
   ScreenMood = true
+ 
   categoryMood: number = 0
   constructor(private productService: ProductService, private router: Router,
     private ElByClassName: ElementRef, public oneTimeListService: OneTimeListService) { }
@@ -102,8 +103,6 @@ export class HomeComponent implements OnInit {
 
   }
   addORincOne(p: Product, i: number) {
-    debugger
-    
     let qty = this.oneTimeListService.ProductToOneTimeList[p.Id!].quantity + i
     if (qty >= 0) {
       this.oneTimeListService.ProductToOneTimeList[p.Id!].quantity = qty;
@@ -135,6 +134,7 @@ export class HomeComponent implements OnInit {
     }
   }
   selectedParent: number = 0;
+  
   getAllProducts(p: Product) {
     this.productService.GatProductsByMainProduct(p).subscribe(
       data => {
