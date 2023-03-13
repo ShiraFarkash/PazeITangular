@@ -3,9 +3,19 @@
   }
   
   .content {
-    height: 350px;
+    height: 100px;
     width: 270px;
   }
+  div .topic{
+    color: rgb(57, 149, 191);
+    font-size: 30px !important;
+    font-weight: bolder;
+   text-align: center;
+   position: relative;
+   top: 35px;
+   right: 10px;
+      
+    }
   .text-danger{
     position: relative;
     left: 20px;
