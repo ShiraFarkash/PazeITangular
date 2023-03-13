@@ -68,7 +68,7 @@ div .contentHome {
 
 ul.CategoryProducts {
     width: 300px;
-    height: 150px;
+    height: 200px;
     background-color: white;
     border-radius: 25px;
     position: relative;
@@ -145,7 +145,7 @@ ul.CategoryProducts {
     min-width: 0px;
     margin: 0px;
     width: 300px;
-    height: 100;
+    height: 150px;
     display: flex;
     border-top: 1px solid rgb(239, 239, 239);
     list-style: none;
@@ -156,15 +156,16 @@ ul.CategoryProducts {
 
 li.products {
     width: 100px;
-    height: 112px;
+    height: 150px;
     border-left: 1px solid rgb(239, 239, 239);
     border-right: 1px solid rgb(239, 239, 239);
     display: flex;
     flex-direction: column;
     flex: 0 0 35%;
     scroll-snap-align: start;
-
-
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    align-items: center;
 }
 
 .CategoryProducts:first-child {
@@ -201,13 +202,22 @@ hr {
 }
 
 .addIcon {
-    width: 50px;
-    position: relative;
+    width: 35px;
+    /* position: relative; */
     top: 60px;
     left: 50px;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    top: auto;
+}
+.productPic {
+    width: 50px;
+    position: relative;
+    top: 10px;
+    
 
 }
-
 .button1 {
     font-weight: lighter;
     background-color: rgb(240, 100, 98);
@@ -243,4 +253,34 @@ hr {
     font-weight: bold;
     box-shadow: 2px 2px 4px #000000;
     display: inline;
+}
+
+.addProductButton{
+
+}
+
+.blur{
+ 
+    width: max-content; 
+    height:300px; 
+    top: -2%; 
+    left: -2%;
+    backdrop-filter: 
+    blur(2.5px);
+    z-index: 4;
+    background-color: rgba(128, 128, 128, 0.452);
+}
+ul .list{
+    display: flex;
+    margin-bottom: 7px;
+}
+.listpic{
+    border-radius: 50px;
+}
+.listAddIcon{
+   margin-top: auto;
+   margin-bottom: auto;
+ align-items: end;
+    left: auto;
+    margin-left: auto;
 }

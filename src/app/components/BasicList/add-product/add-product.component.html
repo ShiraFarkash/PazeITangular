@@ -1,37 +1,35 @@
+<div class="backgroundForList" style="border: 3px, black, solid; height: 250px;" data-closable *ngIf="showPage==true">
 
-<div  class="backgroundForList" style="border: 3px, black, solid; height: 250px;" data-closable  
-*ngIf="showPage==true">
-
-<div style="width: 100%; align-items: flex-end;text-align: right;">
-<button (click)="closeDiv()" id="Xstyle" class="close-button" aria-label="Close alert" type="button" data-close >
-  <span  id="closeX"aria-hidden="true">&times;</span>
-</button>
-</div>
+  <div style="width: 100%; align-items: flex-end;text-align: right;">
+    <button (click)="closeDiv()" id="Xstyle" class="close-button" aria-label="Close alert" type="button" data-close>
+      <span id="closeX" aria-hidden="true">&times;</span>
+    </button>
+  </div>
 
 
 
- <div class="fill" style="text-align:left ; left:0;  overflow: scroll;
+  <div class="fill" style="text-align:left ; left:0;  overflow: scroll;
  overflow-x: hidden;
  height: 250px; ">
-    <ul class="tableProduct"  *ngFor="let a of productService.selectedProducts[parentId];let i=index ">
-        <li class="productName">{{a.productName}} </li>
-       
-        <div class="wrapper" *ngIf="productService.selectedProducts[parentId][i].quantity!=0 ">
+    <ul class="tableProduct" *ngFor="let a of productService.selectedProducts[parentId];let i=index ">
+      <li class="productName">{{a.productName}} </li>
 
-            <span (click)="addORincOne(-1,i)" class="minus">-</span>
+      <div class="wrapper" *ngIf="productService.selectedProducts[parentId][i].quantity!=0 ">
 
-            <input (mouseleave)="addORincOne(productService.selectedProducts[parentId][i].quantity,i)"
-             name="qty"  [(ngModel)]="productService.selectedProducts[parentId][i].quantity" #quantity
-              type="number" id="quantity" name="quantity" class="form-control num"  min="1" max="100">
-          
-            <span (click)="addORincOne(1,i)" class="plus">+</span>
-            
-          </div>
+        <span (click)="addORincOne(-1,i)" class="minus">-</span>
 
-       <ion-button #val *ngIf="productService.selectedProducts[parentId][i].quantity==0" name="add" class="addProductButton" 
-       (click)="addORincOne(1,i)" shape="round">Add</ion-button>
-<!-- 
+        <input (mouseleave)="addORincOne(productService.selectedProducts[parentId][i].quantity,i)" name="qty"
+          [(ngModel)]="productService.selectedProducts[parentId][i].quantity" #quantity type="number" id="quantity"
+          name="quantity" class="form-control num" min="1" max="100">
+
+        <span (click)="addORincOne(1,i)" class="plus">+</span>
+
+      </div>
+
+      <ion-button #val *ngIf="productService.selectedProducts[parentId][i].quantity==0" name="add"
+        class="addProductButton" (click)="addORincOne(1,i)" shape="round">Add</ion-button>
+      <!-- 
        <ion-button #removeVal *ngIf="productService.selectedProducts[parentId][i].isSelected" class="addProductButton" (click)="addProduct(i,'reset')" shape="round">remove all</ion-button> -->
     </ul>
-</div>
+  </div>
 </div>

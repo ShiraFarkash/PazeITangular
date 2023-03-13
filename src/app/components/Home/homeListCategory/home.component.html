@@ -19,93 +19,64 @@
 
     <div class="content">
       <br>
-      <div class="topic">Home</div>
-      <div   class="contentHome">
-        <ul *ngFor="let a of allCategory" class="CategoryProducts" >
+      <div class="topic" [style.left]="ScreenMood==false?'60px':'85px'">
+        <ion-icon style="display: inline-block; ;" *ngIf="ScreenMood==false" name="arrow-undo-outline" 
+        (click)="ScreenMood=!ScreenMood"></ion-icon>
+        Home 
+      </div>
+
+      <div class="contentHome" *ngIf="ScreenMood==true">
+
+        <ul *ngFor="let a of allCategory" class="CategoryProducts">
           <div class="titleCategory" id={{a.categoryName}}>
             <p>{{a.categoryName}}</p>
           </div>
-          <div class="allProducts">
-            <div  *ngFor="let p of CategoryAndProducts[a.Id!];let i=index;">
-            <li  *ngIf="i<3" class="products">
-              <img class="addIcon" src="assets/addIcon.png" alt=""> {{p.productName}}</li>
-              <li *ngIf="i==3" class="products"><ion-icon name="caret-forward-circle-outline"></ion-icon></li>
-            </div>
-           
-          </div>
-          
 
+          <div class="allProducts">
+            <div style="height: max-content;" *ngFor="let p of CategoryAndProducts[a.Id!];let i=index;">
+
+              <li *ngIf="i<4" class="products" style="z-index: 3;">
+
+                <img class="productPic" src={{p.barcode}} alt=""> <br>
+                <p style="margin-bottom: 0px;margin-top: auto;top: auto;">{{p.productName}}</p>
+                <img class="addIcon" src="assets/addIcon.png" alt="">
+              </li>
+
+
+              <li *ngIf="i==4" class="products" style="margin-top: 50px; text-align: center;align-items: center;"
+               (click)="changMood(a)">
+                <ion-icon name="chevron-forward-circle-outline" style="width: 30px;height:30px"></ion-icon>
+              </li>
+
+            </div>
+
+          </div>
         </ul>
 
-        <!-- <ul class="CategoryProducts">
-          <div class="titleCategory" id="DairyAndEggs">
-            <p>Dairy & Eggs</p>
-          </div>
-          <div class="allProducts">
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-          </div>
-        </ul> -->
-
-        <!-- <ul class="CategoryProducts">
-          <div class="titleCategory" id="BreadAndBakery">
-            <p>Bread & Bakery</p>
-          </div>
-          <div class="allProducts"> -->
-            <!-- <div>
-              <ul class="tableProduct" *ngFor="let a of allMainProduct ">
-                <ion-icon name="caret-forward-outline"></ion-icon>
-                <li (click)="getAllProducts(a) ">{{a.productName}} </li>
-
-              </ul>
-
-            </div> -->
-            <!-- <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-          </div>
-        </ul> -->
-
-
-<!-- 
-        <ul class="CategoryProducts">
-          <div class="titleCategory" id="Beverages">
-            <p>Beverages</p>
-          </div>
-          <div class="allProducts">
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-            <li class="products"><img class="addIcon" src="assets/addIcon.png" alt=""></li>
-          </div>
-        </ul> -->
       </div>
 
-    </div>
+     
+        <ul class="contentHome" *ngIf="ScreenMood==false"  >
+         <hr style="width: 200px;margin-left: 0px;margin-right: 0px;">
+            <li class="list" *ngFor="let p of CategoryAndProducts[categoryMood];let i=index;">
+              <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+              <p>{{p.productName}}</p>
+              <img class="addIcon listAddIcon" src="assets/addIcon.png" alt="">
+          
+            </li>
+          
+           
+          
+        </ul>
+
+      </div>
+   
+
+
     <div class="center">
       <div class="center">
-        <button class="button1">List Category</button>
+
+        <button class="button1" >List Category</button>
         <button class="button2" (click)="goToCategory()">Category</button>
       </div>
     </div>

@@ -17,6 +17,7 @@ export class ProductService {
   ChosenProduct:Array<ProductToBasicList>=new Array<ProductToBasicList>()
   selectedProducts:{[mainProduct:number]:Array<ProductToBasicList>}={}
   
+  
  
   gatMainProduct() :Observable<any>
   {
