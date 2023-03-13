@@ -1,0 +1,20 @@
+
+<div  class="backgroundForList" style="border: 3px, black, solid; height: 250px;" data-closable  
+*ngIf="showPage==true">
+
+<div style="width: 100%; align-items: flex-end;text-align: right;">
+<button (click)="closeDiv()" id="Xstyle" class="close-button" aria-label="Close alert" type="button" data-close >
+  <span  id="closeX"aria-hidden="true"><ion-icon name="close-circle-outline"></ion-icon>
+  </span>
+  
+</button>
+</div>
+<div class="explanationDepartment">
+    <p >Not all products are sorted by the department. <br>
+    This is your opportunity to give some helpful information.
+    </p>
+    <button class="button1" (click)="closeDiv()">Got it!</button>
+</div>
+
+</div>
+

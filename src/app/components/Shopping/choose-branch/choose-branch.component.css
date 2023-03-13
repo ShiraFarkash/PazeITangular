@@ -267,31 +267,29 @@ left: 100px;
   
   }
   
-  .button1 {
+  .button1{
     font-weight: lighter;
-    background-color: rgb(240, 100, 98);
     font-size: small;
-    font-weight: bolder;
+   font-weight: bolder;
     position: relative;
-  bottom: 10px;
-    /* background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%); */
-    width: 150px;
+   width: 100px;
+   background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
+   
     height: 30px;
-  left: 200px;
+    right: 30px;
     margin: 0px;
-  
+    display: inline-block;
   }
-  
-  .button2 {
+  .button2{
     font-weight: lighter;
-    background-color: rgb(240, 100, 98);
+    background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%);
+
     font-size: small;
-    font-weight: bolder;
+   font-weight: bolder;
     position: relative;
-    bottom: 65px;
-    left: 5px;
-    background: rgb(250, 180, 179);
-    width: 150px;
+    
+    left: 30px;
+    width:100px;
     height: 30px;
     margin: 0px;
     border-radius: 50px;

@@ -57,7 +57,11 @@
 
 }
 
-
+.addUser{
+  position: relative;
+  width:375px;
+  bottom:230px;
+}
 
 .wrapper {
   display: flex;
@@ -73,7 +77,7 @@
 }
 .addPeople{
 position: relative;
-  left: 20px;
+  left: 19px;
   font-size: 25px;
   display: flex;
   background-color:white;
