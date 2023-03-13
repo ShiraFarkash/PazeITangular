@@ -39,7 +39,20 @@
 
                 <img class="productPic" src={{p.barcode}} alt=""> <br>
                 <p style="margin-bottom: 0px;margin-top: auto;top: auto;">{{p.productName}}</p>
-                <img class="addIcon" src="assets/addIcon.png" alt="">
+
+                <div class="wrapper" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
+                  <span (click)="addORincOne(p,-1)" class="minus">-</span>
+          
+                  <input name="qty"
+                    [(ngModel)]="oneTimeListService.ProductToOneTimeList[p.Id!].quantity" #quantity type="number" id="quantity"
+                    name="quantity" class="form-control num" min="1" max="100">
+          
+                  <span (click)="addORincOne(p,+1)" class="plus">+</span>
+          
+                </div>
+  
+                <img  *ngIf="oneTimeListService.ProductToOneTimeList[(p.Id!)].quantity==0" (click)="addORincOne(p,+1)"
+                 class="addIcon" src="assets/addIcon.png" alt="">
               </li>
 
 
@@ -61,8 +74,21 @@
             <li class="list" *ngFor="let p of CategoryAndProducts[categoryMood];let i=index;">
               <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
               <p>{{p.productName}}</p>
-              <img class="addIcon listAddIcon" src="assets/addIcon.png" alt="">
-          
+
+              <div class="wrapper" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
+                <span (click)="addORincOne(p,-1)" class="minus">-</span>
+        
+                <input name="qty"
+                  [(ngModel)]="oneTimeListService.ProductToOneTimeList[p.Id!].quantity" #quantity type="number" id="quantity"
+                  name="quantity" class="form-control num" min="1" max="100">
+        
+                <span (click)="addORincOne(p,+1)" class="plus">+</span>
+        
+              </div>
+
+              <img  *ngIf="oneTimeListService.ProductToOneTimeList[(p.Id!)].quantity==0" (click)="addORincOne(p,+1)"
+               class="addIcon listAddIcon" src="assets/addIcon.png" alt="">
+
             </li>
           
            

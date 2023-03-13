@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user.service';
 import { User } from 'src/app/shared/models/user.models';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
 
 @Component({
   selector: 'app-log-in',
@@ -12,14 +13,15 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
 
 export class LogInComponent implements OnInit {
 
- AllUsers:Array<User>= new Array<User>;
- loginForm: FormGroup = new FormGroup({});
- userExist:boolean=true
+  AllUsers: Array<User> = new Array<User>;
+  loginForm: FormGroup = new FormGroup({});
+  userExist: boolean = true
 
-  constructor(private userService: UserService, private router:Router) { }
+  constructor(private userService: UserService, private router: Router,
+    private oneTimeListService: OneTimeListService) { }
 
   ngOnInit(): void {
-    
+
     // this.userService.GetAllUsers().subscribe(
     //   res => res.forEach(a => {
     //     this.AllUsers.push(a)
@@ -27,45 +29,50 @@ export class LogInComponent implements OnInit {
     //   err => console.error(err) ,
     // )
     this.loginForm = new FormGroup({
-      userName: new FormControl('',[
-         Validators.required,
-         Validators.email
+      userName: new FormControl('', [
+        Validators.required,
+        Validators.email
         //  Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
       ]),
-      password: new FormControl('',[
-         Validators.required ,
-         Validators.minLength(8)
-        ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8)
+      ]),
 
     })
-this.userService.GetAllUsers().subscribe(
-  data=>{
-    this.AllUsers=data
-    console.log(this.AllUsers)
-  }
-);
+    this.userService.GetAllUsers().subscribe(
+      data => {
+        this.AllUsers = data
+        console.log(this.AllUsers)
+      }
+    );
 
-   
-    
+
+
   }
 
-  LogIn(email:string,pass:string){
+  LogIn(email: string, pass: string) {
     // let newUser = new User(0,"","","");
     // newUser.email= this.loginForm.controls['userName'].value;
     // newUser.password= this.loginForm.controls['password'].value
-    if(this.loginForm.valid){
+    if (this.loginForm.valid) {
       this.userService.isUserExist(email).subscribe(
-        data=>{
-          if(Number(data)!=-1){
-            console.log(true)
-            localStorage.setItem("userId",String(data));
-            localStorage.setItem("email",email)
+        data => {
+          if (Number(data) != -1) {
+            // console.log(true)
+            localStorage.setItem("userId", String(data));
+            localStorage.setItem("email", email)
+
+            this.oneTimeListService.GetOneTimeList(Number(data)).subscribe(data=>{
+            localStorage.setItem("OneTimeListId", String(data))
+            })
+            this.router.navigate(['/home']);
           }
-          else{
-            console.log(false)
-            this.userExist=false
+          else {
+            // console.log(false)
+            this.userExist = false
           }
-        this.router.navigate(['/home']);
+         
         })
 
 
@@ -84,7 +91,7 @@ this.userService.GetAllUsers().subscribe(
       //    } 
       // });
 
-   }
+    }
 
   }
 
