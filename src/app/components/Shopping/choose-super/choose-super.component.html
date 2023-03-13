@@ -5,15 +5,23 @@
   <br>
   <div class="topic">Start Shopping</div>
    <hr>
-   <p class="explanationSuper">Choose the supermarket where you will make the purchase.
+   
+   <p class="explanationSuper">Choose the supermarket where you will make the purchase.</p>
+  <div class="squareSearch">
+    <input [(ngModel)]="search" class="search" placeholder="Search">
+    <button class="btnSearch" (click)="searchForItem()"> <ion-icon name="search"></ion-icon>
+    </button>
+  
+  </div>
+ 
   </div>
 
-
+ 
 
 
 <div class="center">
   <div class="center">
-     <button (click)="startShopping()"class="button1">Skip</button>
+     <button (click)="chooseBranch()"class="button1">Skip</button>
   
   </div>
 

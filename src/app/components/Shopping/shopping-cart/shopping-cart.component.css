@@ -6,7 +6,17 @@
   .whiteLogo {
     width: 3.5cm;
   }
-  
+  .blur{
+    position:absolute; 
+    width: 104%; 
+    height: 104%; 
+    top: -2%; 
+    left: -2%;
+    backdrop-filter: 
+    blur(2.5px);
+    z-index: 4;
+    background-color: rgba(128, 128, 128, 0.452);
+  }
   .search {
     color: rgb(152, 149, 149);
     background-color: white;
@@ -46,15 +56,23 @@
     position: relative;
   
   }
+  
+  .addUser{
+    position: relative;
+    width:375px;
+    bottom:230px;
+  }
+  
   .wrapper {
     display: flex;
     align-items: center;
   }
+
   .eachOrderBy {
     padding-right: 10px !important;
     right: 0;
     position: relative;
-    left: 130px;
+    left: 100px;
     display: flex;
   
   }
@@ -63,21 +81,28 @@
     left: 20px;
     font-size: 25px;
     display: flex;
+    background-color:white;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 0px;
+    font-size: 18px;
+    margin-right:10px;
   
-   
+  }
+  #count{
+    font-weight: bolder;
+    font-size: 10px;
+    position: relative;
+    bottom: 3px;
+    left: 19px;
   }
   div .topic {
     color: rgb(57, 149, 191);
     font-size: 25px;
     font-weight: bolder;
     position: relative;
-    left: 40px;
+    left: 100px;
   
-  }
-  .explanationSuper{
-    position: relative;
-  
-    text-align: center;
   }
   
   div .contentHome {
@@ -99,44 +124,7 @@
   
   
   }
-  .search {
-    color: rgb(152, 149, 149);
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    width: 150px;
-    height: 25px;
-    padding-right: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    margin-left: 0px;
-    padding-bottom: 5px;
-    display: inline;
-    border: 1px solid rgb(116, 114, 114);
-    font-size: smaller;
-    
-}
-.search::placeholder{
-  font-style: italic;
-  color: #c4c1c1;
-}
-
-
-.squareSearch {
-    position: relative;
-  top: 0.1px;
-left: 100px;
-
-}
-
-.btnSearch {
-    position: relative;
-   color: rgb(116, 114, 114);
-    bottom: 20px;
-    display: inline;
-    width: 35px;
-    border-color: transparent;
-    background-color: transparent;
-}
+  
   .titleCategory {
     position: relative;
     margin: 0px;
@@ -275,9 +263,9 @@ left: 100px;
     position: relative;
   bottom: 10px;
     /* background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%); */
-    width: 150px;
+    width: 100px;
     height: 30px;
-  left: 200px;
+  left: 250px;
     margin: 0px;
   
   }

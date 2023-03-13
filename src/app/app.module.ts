@@ -34,6 +34,9 @@ import { HistoryListsComponent } from './components/history-lists/history-lists.
 import { CommonModule } from '@angular/common';
 import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
 import { AddUserToListComponent } from './components/Shopping/add-user-to-list/add-user-to-list.component';
+import { ChooseBranchComponent } from './components/Shopping/choose-branch/choose-branch.component';
+import { ShoppingCartComponent } from './components/Shopping/shopping-cart/shopping-cart.component';
+import { DepartmentExplanationComponent } from './components/Shopping/department-explanation/department-explanation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +64,10 @@ import { AddUserToListComponent } from './components/Shopping/add-user-to-list/a
     HistoryListsComponent,
     CartComponent,
     ChooseSuperComponent,
-    AddUserToListComponent
+    AddUserToListComponent,
+    ChooseBranchComponent,
+    ShoppingCartComponent,
+    DepartmentExplanationComponent
   ],
   imports: [
     BrowserModule,

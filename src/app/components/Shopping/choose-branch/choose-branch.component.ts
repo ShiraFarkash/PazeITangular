@@ -5,11 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Product } from 'src/app/shared/models/product.models';
 
 @Component({
-  selector: 'app-choose-super',
-  templateUrl: './choose-super.component.html',
-  styleUrls: ['./choose-super.component.css']
+  selector: 'app-choose-branch',
+  templateUrl: './choose-branch.component.html',
+  styleUrls: ['./choose-branch.component.css']
 })
-export class ChooseSuperComponent implements OnInit {
+export class ChooseBranchComponent implements OnInit {
   clickedOnProduct=false;
   menuList = [false, false, false, false, true];
   search: string = "";
@@ -35,8 +35,13 @@ export class ChooseSuperComponent implements OnInit {
     console.log(this.menuList)
     this.router.navigate(["/" + navigateTo])
   }
-  chooseBranch(){
-    this.router.navigate(["/chooseBranch"])
+  goBack(){
+    this.router.navigate(["/chooseSuper"])
+
+  }
+  startShopping(){
+    this.router.navigate(["/shoppingCart"])
+
   }
   searchForItem() {
     // console.log('Search Item: ' + this.search);

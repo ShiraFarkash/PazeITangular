@@ -1,0 +1,98 @@
+<div class="my-container" style="position: absolute; z-index: 1;">
+    <div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
+   
+    <img class="whiteLogo" src="assets/whitelogo.png" alt="">
+    
+    <div class="Basic-background"></div>
+    <div class="content">
+      <br>
+      <div class="topic">Cart</div>
+      <br>
+    
+     <div class="orderBy">
+        <select [(ngModel)]="chosenOption" (ngModelChange)="optionClicked()"class="eachOrderBy">
+          <option value="order by">-- Select an option --</option>
+          <hr>
+          <option value="name">Name</option>
+          <option value="category">Category</option>
+          <option value="departments">Departments</option>
+
+        </select>
+      </div>
+    
+      <hr>
+    <!-- the list is here -->
+    
+       <hr>
+      </div>
+      <div class="addUser" style="position: absolute; z-index:5;">
+        <app-department-explanation [parentId]="selectedParent" (show)="clickedOnProduct=$event"
+          [showPage]="clickedOnProduct" ></app-department-explanation>
+      </div>
+    
+    
+    
+    <div class="center">
+      <div class="center">
+         <button (click)="finishList()"class="button1">Done</button>
+      
+      </div>
+    
+    </div>
+    
+     <div class="menu">
+      <nav class="nav">
+        <ul>
+          <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="text">My account</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'HistoryLists')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="refresh-circle-outline"></ion-icon>
+              </span>
+              <span class="text">History</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'listOfAllMyBasicLists')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="reader-outline"></ion-icon>
+              </span>
+              <span class="text">Basics lists</span>
+            </a>
+          </li>
+          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
+            <a>
+              <span class="icon">
+                <ion-icon name="cart-outline"></ion-icon>
+              </span>
+              <span class="text">my cart</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+    
+    
+        </ul>
+      </nav>
+    </div> 
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    
+    
+    </div>
