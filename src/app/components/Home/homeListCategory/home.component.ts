@@ -13,40 +13,50 @@ import { Category } from 'src/app/shared/models/category.models';
 })
 export class HomeComponent implements OnInit {
 
-  
+
   allMyProducts: Array<Product> = new Array<Product>;
   menuList = [true, false, false, false, false]
   clickedOnProduct = false
   search: string = "";
   i: number = 0;
-  allCategory:Array<Category>=new Array<Category>;
-  CategoryAndProducts:{[categoryId: number] :Array<Product>}={}
-
+  allCategory: Array<Category> = new Array<Category>;
+  CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
+  ScreenMood = true
+  categoryMood:number=0
   constructor(private productService: ProductService, private router: Router, private ElByClassName: ElementRef) { }
 
   ngOnInit(): void {
-    this.productService.GatCategory().subscribe(data=>{
-      this.allCategory=data
+    this.productService.GatCategory().subscribe(data => {
+      this.allCategory = data
 
       this.allCategory.forEach(element => {
 
-        this.productService.GatCategoryProductByCategoryId(element.Id!).subscribe(data=>{
-          this.allMyProducts=data
-          let categoryId=element.Id
-        //  let products= this.allMyProducts
-         if(!(categoryId! in this.CategoryAndProducts))
-          this.CategoryAndProducts[categoryId!]= this.allMyProducts
+        this.productService.GatCategoryProductByCategoryId(element.Id!).subscribe(data => {
+          this.allMyProducts = data
+          let categoryId = element.Id
+          //  let products= this.allMyProducts
+          if (!(categoryId! in this.CategoryAndProducts))
+            this.CategoryAndProducts[categoryId!] = this.allMyProducts
         })
 
       });
 
     })
-  console.log(this.CategoryAndProducts)
+    console.log(this.CategoryAndProducts)
 
   }
   ngAfterViewInit() {
   }
+  changMood(a: Category) {
+    this.categoryMood=a.Id!;
+    this.ScreenMood = !this.ScreenMood
 
+  }
+  addORincOne() {
+
+
+
+  }
   setActiveLink(n: number, navigateTo: string) {
 
     for (let index = 0; index < this.menuList.length; index++) {
