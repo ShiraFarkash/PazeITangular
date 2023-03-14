@@ -41,6 +41,7 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
   //   this.router.navigate(['/viewMustHaveList']);
   // }
   ViewList(){
+   this.router.navigate(['/viewMustHaveList']);
 
   }
 
