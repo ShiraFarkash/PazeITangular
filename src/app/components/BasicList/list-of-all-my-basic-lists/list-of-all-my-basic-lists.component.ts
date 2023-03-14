@@ -40,27 +40,24 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
   //   localStorage.setItem('contantListId',(String)(a.Id))
   //   this.router.navigate(['/viewMustHaveList']);
   // }
-  ViewList(){
-   this.router.navigate(['/viewMustHaveList']);
-
+  ViewList(a:BasicList){
+    localStorage.setItem('contantListId',(String)(a.Id))
+    this.router.navigate(['/viewMustHaveList']);
   }
+
 
   goToBasicListComponent(){
     this.router.navigate(['/BLchooseProduct']);
   }
 
-  // DelelteList(a:BasicList){
-  //   this.productService.DeleteContantList(a).subscribe(data=>{
-  //     console.log(data)
-  //     this.BasicListLists=this.BasicListLists.filter(m=> m!=a)
-  //   })
-  //   // location.reload();
-  // }
-  DelelteList(){
-    
-    
+  DelelteList(a:BasicList){
+    this.productService.DeleteContantList(a).subscribe(data=>{
+      console.log(data)
+      this.BasicListLists=this.BasicListLists.filter(m=> m!=a)
+    })
     // location.reload();
   }
+
 
  
 }
