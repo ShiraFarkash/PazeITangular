@@ -1,107 +1,104 @@
 <div class="my-container" style="position: absolute; z-index: 1;">
 
-<div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
-<img class="whiteLogo" src="assets/whitelogo.png" alt="">
+  <div [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
+  <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
-<div class="Basic-background"></div>
-<div class="content">
-  <br>
-  <div class="topic">Cart</div>
-  <br>
-  <div class="wrapper"
- >
-    <span id="count"
-    (scroll)="onScroll($event)" #container style="text-align:left ;    overflow: scroll;
-    overflow-x: hidden;">
-    +{{count}}</span>
-    <button (click)="addOne()"class="addPeople">
-   <ion-icon name="person"></ion-icon>
- </button> 
- <div class="orderByBL">
-    <select class="eachOrderBy">
-      <option value="order by">-- Order by --</option>
-      <hr>
-      <option value="name">
-        <button (click)="sortByName()">Name</button>
-      </option>
+  <div class="Basic-background"></div>
+  <div class="content">
+    <br>
+    <div class="topic">Cart</div>
+    <br>
+    <div class="wrapper">
+      <span id="count" (scroll)="onScroll($event)" #container style="text-align:left ;">
+        +{{count}}</span>
+      <button (click)="addOne()" class="addPeople">
+        <ion-icon name="person"></ion-icon>
+      </button>
+      <div class="orderByBL">
+        <select class="eachOrderBy">
+          <option value="order by">-- Order by --</option>
+          <hr>
+          <option value="name">
+            <button (click)="sortByName()">Name</button>
+          </option>
 
-      <option value="category">Category</option>
-    </select>
-  </div>
-</div>
-  <hr>
-<!-- the list is here -->
+          <option value="category">Category</option>
+        </select>
+      </div>
+    </div>
+    <hr>
+    <!-- the list is here -->
 
-   <hr>
+    <hr>
   </div>
   <div class="addUser" style="position: absolute; z-index:5;">
     <app-add-user-to-list [parentId]="selectedParent" (show)="clickedOnProduct=$event"
-      [showPage]="clickedOnProduct" ></app-add-user-to-list>
+      [showPage]="clickedOnProduct"></app-add-user-to-list>
   </div>
 
 
 
-<div class="center">
   <div class="center">
-     <button (click)="startShopping()"class="button1">Start Shopping</button>
-  
+    <div class="center">
+      <button (click)="startShopping()" class="button1">Start Shopping</button>
+
+    </div>
+
   </div>
 
-</div>
-
- <div class="menu">
-  <nav class="nav">
-    <ul>
-      <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
-        <a>
-          <span class="icon">
-            <ion-icon name="home-outline"></ion-icon>
-          </span>
-          <span class="text">Home</span>
-        </a>
-      </li>
-      <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
-        <a>
-          <span class="icon">
-            <ion-icon name="person-outline"></ion-icon>
-          </span>
-          <span class="text">My account</span>
-        </a>
-      </li>
-      <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'HistoryLists')" class="list">
-        <a>
-          <span class="icon">
-            <ion-icon name="refresh-circle-outline"></ion-icon>
-          </span>
-          <span class="text">History</span>
-        </a>
-      </li>
-      <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'listOfAllMyBasicLists')" class="list">
-        <a>
-          <span class="icon">
-            <ion-icon name="reader-outline"></ion-icon>
-          </span>
-          <span class="text">Basics lists</span>
-        </a>
-      </li>
-      <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
-        <a>
-          <span class="icon">
-            <ion-icon name="cart-outline"></ion-icon>
-          </span>
-          <span class="text">my cart</span>
-        </a>
-      </li>
-      <div class="indicator"></div>
+  <div class="menu">
+    <nav class="nav">
+      <ul>
+        <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[1]==true?'active':''" (click)="setActiveLink(1,'myAccount')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="text">My account</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[2]==true?'active':''" (click)="setActiveLink(2,'HistoryLists')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="refresh-circle-outline"></ion-icon>
+            </span>
+            <span class="text">History</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'listOfAllMyBasicLists')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="reader-outline"></ion-icon>
+            </span>
+            <span class="text">Basics lists</span>
+          </a>
+        </li>
+        <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
+          <a>
+            <span class="icon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+            <span class="text">my cart</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
 
 
-    </ul>
-  </nav>
-</div> 
+      </ul>
+    </nav>
+  </div>
 
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
 </div>

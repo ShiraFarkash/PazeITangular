@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BasicList } from 'src/app/shared/models/basic-list.model';
 import { OneTimeList } from 'src/app/shared/models/OneTimeList.model';
 import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
+
 
 @Component({
   selector: 'app-history-lists',
@@ -10,16 +12,21 @@ import { OneTimeListService } from 'src/app/shared/services/one-time-list.servic
 })
 export class HistoryListsComponent implements OnInit {
   list: Array<OneTimeList> = new Array<OneTimeList>()
+  BasicListLists: Array<BasicList> = new Array<BasicList>()
+
   menuList = [false, false, true, false, false]
-  constructor(private OneTimeListService: OneTimeListService,private router:Router) { }
+  constructor(private OneTimeListService: OneTimeListService, private router: Router) { }
 
   ngOnInit(): void {
     let userId = (Number)(localStorage.getItem("userId"))
-    
     this.OneTimeListService.GetHistoryList(userId).subscribe(data => {
       this.list = data
       console.log(data)
     })
+  }
+  ViewList(a: BasicList) {
+    localStorage.setItem('contantListId', (String)(a.Id))
+    this.router.navigate(['/viewMustHaveList']);
   }
   setActiveLink(n: number, navigateTo: string) {
 

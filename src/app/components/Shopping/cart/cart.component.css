@@ -58,42 +58,53 @@
 }
 
 .addUser{
-  position: relative;
-  width:375px;
-  bottom:230px;
+  position: relative; 
+   width:375px; 
+     bottom:230px;
 }
 
 .wrapper {
-  display: flex;
-  align-items: center;
+  display: flex; 
+   align-items: center;
+   background-color: white;
+   width: 0px;
 }
 .eachOrderBy {
-  padding-right: 10px !important;
-  right: 0;
-  position: relative;
-  left: 110px;
-  display: flex;
+  padding-right: 10px !important; 
+   right: 60px;
+  position: relative; 
+  
+   display: flex;
 
+}
+.orderByBL{
+  background-color: transparent;
+  position: relative;
+  
 }
 .addPeople{
 position: relative;
-  left: 19px;
+  /* left: 19px; */
+  right: 190px;
   font-size: 25px;
   display: flex;
-  background-color:white;
+  background-color:rgb(255, 255, 255);
   border: none;
   color: rgb(0, 0, 0);
   padding: 0px;
   font-size: 18px;
-  margin-right:10px;
+  /* margin-right:10px; */
 
 }
 #count{
   font-weight: bolder;
   font-size: 10px;
   position: relative;
+  width: 40px;
+right: 160px;
+color: #000000;
   bottom: 3px;
-  left: 19px;
+  /* left: 19px; */
 }
 div .topic {
   color: rgb(57, 149, 191);
