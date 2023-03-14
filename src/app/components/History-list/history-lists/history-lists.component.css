@@ -87,3 +87,11 @@ div .InnerContent {
   width: 210px;
   margin-top: 40px;
 }
+.msgCode {
+  margin-top: 50px;
+  font-weight: 500;
+  position: relative;
+  color: rgb(0, 0, 0);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  text-align: center;
+}

@@ -5,7 +5,7 @@
 </div>
 
 <div class="center">
-  <div class="InnerContent">
+  <div class="InnerContent"  *ngIf="list.length>0">
   <table class="table">
     <thead>
       <tr>
@@ -24,6 +24,7 @@
     </tbody>
   </table>
 </div>
+<div class="msgCode" *ngIf="list.length==0">You have not made any purchases yet!</div>
 </div>
 
 <div class="menu">

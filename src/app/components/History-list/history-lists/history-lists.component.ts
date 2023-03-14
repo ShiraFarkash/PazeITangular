@@ -41,11 +41,16 @@ export class HistoryListsComponent implements OnInit {
     this.router.navigate(["/" + navigateTo])
   }
   addProductToOneTimeList(list:OneTimeList){
-    // this.OneTimeListService.GetListOf_ProductToOneTimeList(list.Id).subscribe(data=>{
-    //   this.productInHistoryList=data
-    //   this.OneTimeListService.GetTheProductOfOneTimeList(this.productInHistoryList).subscribe(data=>{
-    //     this.productDetails=data
-    //   })
-    //  })
+    
+    this.OneTimeListService.GetListOf_ProductToOneTimeList(list.Id).subscribe(data=>{
+      this.productInHistoryList=data
+      console.log(data)
+      let listId=(Number)(localStorage.getItem("OneTimeListId"))
+      this.OneTimeListService.AddProductsTo_ProductToOneTimeList(this.productInHistoryList,listId).subscribe(data=>{
+        console.log(data)
+      }
+      
+      )
+     })
   }
 }

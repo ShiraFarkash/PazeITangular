@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { OneTimeList } from '../models/OneTimeList.model';
+import { ProductToBasicList } from '../models/product-to-basic-list.model';
 import { Product } from '../models/product.models';
 import { Product_To_OneTimeList } from '../models/Product_To_OneTimeList.model';
 
@@ -38,6 +39,10 @@ export class OneTimeListService {
   AddProductsTo_ProductToOneTimeList(list:Array<Product_To_OneTimeList>,listId:number ): Observable<any>{
 
     return this.http.post<any>(environment.url + 'OneTimeList/AddProductsTo_ProductToOneTimeList?listId='+listId ,list )
+  }
+
+  AddConstantListProductsTo_ProductToOneTimeList(list:Array<ProductToBasicList>,listId:number): Observable<any>{
+    return this.http.post<any>(environment.url + 'constantList/AddConstantListProductsTo_ProductToOneTimeList?listId='+listId ,list )
   }
 
 }
