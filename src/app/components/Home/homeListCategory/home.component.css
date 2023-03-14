@@ -284,3 +284,7 @@ ul .list{
     left: auto;
     margin-left: auto;
 }
+#home{
+    position: relative;
+    top: 5px;
+ }
