@@ -19,13 +19,15 @@ import { ChangePasswordComponent } from './components/AccountsSettings/change-pa
 import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
 import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
 import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
-import { HistoryListsComponent } from './components/history-lists/history-lists.component';
+
 import { CartComponent } from './components/Shopping/cart/cart.component';
 import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
 import { AddUserToListComponent } from './components/Shopping/add-user-to-list/add-user-to-list.component';
 import { ChooseBranchComponent } from './components/Shopping/choose-branch/choose-branch.component';
 import { ShoppingCartComponent } from './components/Shopping/shopping-cart/shopping-cart.component';
 import { DepartmentExplanationComponent } from './components/Shopping/department-explanation/department-explanation.component';
+import { ViewHistoryListComponent } from './components/History-list/view-history-list/view-history-list.component';
+import { HistoryListsComponent } from './components/History-list/history-lists/history-lists.component';
 
 const routes: Routes = [
   { path: 'logIn', component: LogInComponent },
@@ -53,8 +55,8 @@ const routes: Routes = [
   {path:"addUserList",component:AddUserToListComponent},
   {path:"chooseBranch",component:ChooseBranchComponent},
   {path:"shoppingCart",component:ShoppingCartComponent},
-  {path:"explanationDepartment",component:DepartmentExplanationComponent}
-
+  {path:"explanationDepartment",component:DepartmentExplanationComponent},
+  {path:"ViewHistoryList",component:ViewHistoryListComponent}
 ];
 
 @NgModule({

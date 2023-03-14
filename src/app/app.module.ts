@@ -30,13 +30,14 @@ import { ProductsComponent } from './components/Home/products/products.component
 import { ViewMustHaveListComponent } from './components/BasicList/view-must-have-list/view-must-have-list.component';
 import { ChangeEmailComponent } from './components/AccountsSettings/change-email/change-email.component';
 import { ChangeEmailValidationComponent } from './components/AccountsSettings/change-email-validation/change-email-validation.component';
-import { HistoryListsComponent } from './components/history-lists/history-lists.component';
+import { HistoryListsComponent } from './components/History-list/history-lists/history-lists.component';
 import { CommonModule } from '@angular/common';
 import { ChooseSuperComponent } from './components/Shopping/choose-super/choose-super.component';
 import { AddUserToListComponent } from './components/Shopping/add-user-to-list/add-user-to-list.component';
 import { ChooseBranchComponent } from './components/Shopping/choose-branch/choose-branch.component';
 import { ShoppingCartComponent } from './components/Shopping/shopping-cart/shopping-cart.component';
 import { DepartmentExplanationComponent } from './components/Shopping/department-explanation/department-explanation.component';
+import { ViewHistoryListComponent } from './components/History-list/view-history-list/view-history-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { DepartmentExplanationComponent } from './components/Shopping/department
     AddUserToListComponent,
     ChooseBranchComponent,
     ShoppingCartComponent,
-    DepartmentExplanationComponent
+    DepartmentExplanationComponent,
+    ViewHistoryListComponent
   ],
   imports: [
     BrowserModule,
