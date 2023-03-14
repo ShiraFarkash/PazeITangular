@@ -18,18 +18,55 @@
     
     <div class="content">
       <br>
-      <div class="topic">Home</div>
-      <ul class="contentHome"  >
+      <div class="topic" [style.left]="ScreenMood==false?'60px':'85px'">
+        <ion-icon style="display: inline-block; ;" *ngIf="ScreenMood==false" name="arrow-undo-outline" 
+        (click)="ScreenMood=!ScreenMood"></ion-icon>
+        Home 
+      </div>
+
+      <ul class="contentHome" *ngIf="ScreenMood==true">
         <hr>
         <li class="CategoryProducts" *ngFor="let a of allCategory">
-          <div class="titleCategory" id="FandV" >
-            <p>{{a.categoryName}}</p><i class="arrowFV right"></i>
+       
+          <div class="titleCategory"   (click)="changMood(a)" >
+            <ion-icon name="caret-forward-outline"></ion-icon>
+            {{a.categoryName}}<i class="arrowFV right"></i>
           </div>
           <hr>
         </li>
       </ul>
 
+      <ul class="contentHome" *ngIf="ScreenMood==false"  >
+        <hr style="width: 200px;margin-left: 0px;margin-right: 0px;">
+           <li class="list" *ngFor="let p of CategoryAndProducts[categoryMood];let i=index;">
+             <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+             <p>{{p.productName}}</p>
+
+             <div class="wrapper" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
+               <span (click)="addORincOne(p,-1)" class="minus">-</span>
+       
+               <input name="qty"
+                 [(ngModel)]="oneTimeListService.ProductToOneTimeList[p.Id!].quantity" #quantity type="number" id="quantity"
+                 name="quantity" class="form-control num" min="1" max="100">
+       
+               <span (click)="addORincOne(p,+1)" class="plus">+</span>
+       
+             </div>
+
+             <img  *ngIf="oneTimeListService.ProductToOneTimeList[(p.Id!)].quantity==0" (click)="addORincOne(p,+1)"
+              class="addIcon listAddIcon" src="assets/addIcon.png" alt="">
+
+           </li>
+         
+          
+         
+       </ul>
+
+
+
+
     </div>
+
     <div class="center">
         <button class="button1"(click)="goToHome()">List Category</button>
         <button class="button2">Category</button>
