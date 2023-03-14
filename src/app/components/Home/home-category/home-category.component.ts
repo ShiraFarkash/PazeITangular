@@ -112,6 +112,7 @@ export class HomeCategoryComponent implements OnInit {
 
 
   }
+
   setActiveLink(n: number, navigateTo:string) {
 
     for (let index = 0; index < this.menuList.length; index++) {

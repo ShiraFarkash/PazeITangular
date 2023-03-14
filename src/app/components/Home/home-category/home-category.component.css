@@ -146,10 +146,19 @@ div .topic{
         margin-top: auto;
         top: auto;
     }
+    .form-control-num{
+        font-size: 16px;
+        font-weight: lighter;
+        color: black;
+    }
     .listAddIcon{
         margin-top: auto;
         margin-bottom: auto;
       align-items: end;
          left: auto;
          margin-left: auto;
+     }
+     #home{
+        position: relative;
+        top: 5px;
      }

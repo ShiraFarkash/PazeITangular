@@ -76,15 +76,16 @@
               <p>{{p.productName}}</p>
 
               <div class="wrapper" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
-                <span (click)="addORincOne(p,-1)" class="minus">-</span>
+                <span (click)="addORincOne(p,-1)" class="minus"><ion-icon name="remove"></ion-icon></span>
         
                 <input name="qty"
                   [(ngModel)]="oneTimeListService.ProductToOneTimeList[p.Id!].quantity" #quantity type="number" id="quantity"
-                  name="quantity" class="form-control num" min="1" max="100">
+                  name="quantity" class="form-control-num" min="1" max="100">
         
-                <span (click)="addORincOne(p,+1)" class="plus">+</span>
+                <span (click)="addORincOne(p,+1)" class="plus"><ion-icon name="add"></ion-icon></span>
         
               </div>
+              
 
               <img  *ngIf="oneTimeListService.ProductToOneTimeList[(p.Id!)].quantity==0" (click)="addORincOne(p,+1)"
                class="addIcon listAddIcon" src="assets/addIcon.png" alt="">
@@ -112,7 +113,7 @@
     <div class="menu">
       <nav class="nav">
         <ul>
-          <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" class="list">
+          <li [ngClass]="menuList[0]==true?'active':''" (click)="setActiveLink(0,'home')" id="home"class="list">
             <a>
               <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
