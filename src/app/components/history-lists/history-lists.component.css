@@ -1,128 +1,89 @@
 .Basic-background {
-    height: 425px;
-  }
-  
-  .content {
-    height: 100px;
-    width: 270px;
-    position: relative;
-    bottom: 20px;
-  }
-  div .topic{
-    color: rgb(57, 149, 191);
-    font-size: 30px !important;
-    font-weight: bolder;
-   text-align: center;
-   position: relative;
-   top: 30px;
-   right: 10px;
-      
-    }
-  .text-danger{
-    position: relative;
-    left: 20px;
-    color: red;
-    font-style: italic;
-  }
-  input.text {
-    margin-top: 3px !important;
-    position: relative;
-    width: 250px !important;
+  height: 425px;
+}
 
-  }
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: center;
-    padding: 8px;
+.content {
+  height: 100px;
+  width: 270px;
+  position: relative;
+  bottom: 20px;
+}
 
-  }
-  
-  tr:nth-child(even) {
-    background-color: #deedf4;
-  }
-  .list{
-    
-  }
-  .add{
-    color: #0b7eea;
-    font-size: 30px;
-  }
-  hr{
-    color: grey;
-  }
-  .changePass{
-    margin-left: auto;
-    margin-right: auto;
-    width: 250px;
-    height: 35px;
-    border-radius: 5px;
-    color: black;
-    border-color: rgb(255, 255, 255);
-    border-width: 1px;
-    border-style: solid;
-    display: block;
-    box-shadow: 2px 2px 4px #0000005b;
-    position: relative;
-    top: 20px;
-    background:rgba(232, 232, 232, 0.834);
-    font-size: 13px;
-    
-    
-  }
-  
-  .details_myAccount {
-    position: relative;
-    left: 20px;
-    top: 3px;
-    
-  }
-  
-  div .topic {
-    color: rgb(57, 149, 191);
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: bolder;
-    position: relative;
-  }
-  
-  
-  .form .text {
-    border: #abb6d1 solid 1px;
-    border-radius: 15px;
-    width: 220px;
-    height: 30px;
-    margin-top: 30px;
-    margin-left: 10px;
-  }
-  .personalInfo{
-    width: max-content;
-  }
-  
-  .center .forgot {
-    text-decoration: none;
-    color: #45a4fb;
-    position: relative;
-  
-  }
-  
-  .center {
-    margin-top: 30px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .button1 {
-    font-weight: lighter;
-    font-size: small;
-    font-weight: bolder;
-    position: relative;
-    background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
-    width: 210px;
-    margin-top: 40px;
-  }
+div .topic {
+  color: rgb(57, 149, 191);
+  font-size: 30px !important;
+  font-weight: bolder;
+  text-align: center;
+  position: relative;
+  top: 30px;
+  right: 10px;
+
+}
+
+.text-danger {
+  position: relative;
+  left: 20px;
+  color: red;
+  font-style: italic;
+}
+
+input.text {
+  margin-top: 3px !important;
+  position: relative;
+  width: 250px !important;
+
+}
+
+.table {
+  overflow: scroll;
+  overflow-x: hidden;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #deedf4;
+}
+
+.add {
+  color: #0b7eea;
+  font-size: 30px;
+}
+
+
+.center {
+
+  text-align: center;
+  position: relative;
+  margin-top: 0px;
+  overflow: scroll;
+
+}
+
+div .InnerContent {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 370px;
+  width: 100%;
+
+
+}
+
+.button1 {
+  font-weight: lighter;
+  font-size: small;
+  font-weight: bolder;
+  position: relative;
+  background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
+  width: 210px;
+  margin-top: 40px;
+}

@@ -25,29 +25,66 @@ font-weight: bolder;
     left: 35px;
 } */
 .Basic-background {
-    height: 430px;
+    height: 385px;
 
 }
 .content{
     width: 300px;
-    height: 450px;
+    height: 80px;
 }
 .topic{
     text-align: center;
     margin: 0px;
 }
-.table{
+/* .table{
     position: relative;
     left: 20px;
     width: max-content;
-}
+} */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table.table{
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+
+  }
+  
+  tr:nth-child(even) {
+    background-color: #deedf4;
+  }
+  
+  .add{
+    color: #0b7eea;
+    font-size: 30px;
+  }
 div .InnerContent {
     overflow: scroll;
     overflow-x: hidden;
     height: 320px;
+    width: 100%;
 
 
 }
+.center .forgot {
+    text-decoration: none;
+    color: #45a4fb;
+    position: relative;
+  
+  }
+  
+  .center {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+  }
 .button1{
     font-weight: lighter;
     font-size: small;
@@ -55,7 +92,7 @@ div .InnerContent {
     position: relative;
     background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
     width:210px ;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   .msgCode {

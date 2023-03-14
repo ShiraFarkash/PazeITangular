@@ -1,10 +1,14 @@
 <div class="my-container">
   <img class="whiteLogo" src="assets/whitelogo.png" alt="">
-  <div class="Basic-background"></div>
+  <div class="Basic-background">
+    
+  </div>
   <div class="content">
-
+<br>
     <div class="topic">BasicList</div>
-    <div class="InnerContent" *ngIf="BasicListLists!=null">
+    <hr>
+  </div>
+    <!-- <div class="InnerContent" *ngIf="BasicListLists!=null">
 
       <table class="table">
         <thead >
@@ -34,16 +38,94 @@
 
         </tbody>
       </table>
+    </div> -->
+    <div class="center">
+      <div class="InnerContent" *ngIf="BasicListLists!=null">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="margin-right: 10px;">Name</th>
+              <th scope="col" class="th">Add</th>
+              <th scope="col" class="th">View List</th>
+              <th scope="col" class="th">Delete</th>
+  
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+            <tr>
+              <td class="name">Must</td>
+              <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon>
+              </td>
+              <td class="list" id="click"><a href="" (click)="ViewList()">Click</a></td>
+              <td class="delete" id="delete"><a href=""(click)="DelelteList()">Delete</a></td>
+            </tr>
+  
+  
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <div class="msgCode" *ngIf="BasicListLists==null" >You haven't created a must-have collection yet!<br> <br>
-      Click the button to create a new collection!</div>
     
-      
-      <button  class="button1"  (click)="goToBasicListComponent()">Add Must-Have List</button>
+
+    <div class="msgCode" *ngIf="BasicListLists==null">You haven't created a must-have collection yet!<br> <br>
+      Click the button to create a new collection!</div>
 
 
-</div>
+    <button class="button1" (click)="goToBasicListComponent()">Add Must-Have List</button>
+
+
+  
 
   <div class="menu" style="z-index: 3;">
     <nav class="nav">
