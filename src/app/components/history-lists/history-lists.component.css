@@ -46,6 +46,9 @@
   tr:nth-child(even) {
     background-color: #deedf4;
   }
+  .list{
+    
+  }
   .add{
     color: #0b7eea;
     font-size: 30px;
