@@ -11,15 +11,14 @@
 
   
   <div *ngIf="(loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched) || loginForm.controls['userName'].dirty">
-    <small *ngIf="loginForm.controls['userName'].errors?.['required']" class="text-danger">Primary email is required</small>
+    <small *ngIf="loginForm.controls['userName'].errors?.['required']" class="text-danger">*Email is required</small>
     <small *ngIf="loginForm.controls['userName'].errors?.['email']" class="text-danger">Please provide a valid email address</small>
   </div>
   
   <input type="password" #pass formControlName="password" placeholder=' Password' class='text' required><br>
 
   <div *ngIf="(loginForm.controls['password'].invalid && loginForm.controls['password'].touched) || loginForm.controls['password'].dirty">
-    <small *ngIf="loginForm.controls['password'].errors?.['required']" class="text-danger">Primary password is required</small>
-    <small *ngIf="loginForm.controls['password'].errors?.['minlength']" class="text-danger">It must be at least 8 characters length</small>
+    <small *ngIf="loginForm.controls['password'].errors?.['required']" class="text-danger">*Password is required</small>
   </div>
 
     </form>

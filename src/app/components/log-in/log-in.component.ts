@@ -29,6 +29,7 @@ export class LogInComponent implements OnInit {
     //   err => console.error(err) ,
     // )
     this.loginForm = new FormGroup({
+     
       userName: new FormControl('', [
         Validators.required,
         Validators.email
@@ -71,6 +72,7 @@ export class LogInComponent implements OnInit {
           else {
             // console.log(false)
             this.userExist = false
+            console.log("your")
           }
          
         })

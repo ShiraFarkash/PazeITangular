@@ -9,7 +9,12 @@ position: relative;
   
 }
 
-
+.text-danger{
+  color: red;
+  position: relative;
+  left: 15px;
+  font-style: italic;
+}
  .form .text{
   border: #1349c9 solid 1px ;
   position: relative;
