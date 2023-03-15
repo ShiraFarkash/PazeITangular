@@ -55,10 +55,13 @@ tr:nth-child(even) {
 }
 
 .add {
-  color: #0b7eea;
+  color: #c6074a;
   font-size: 30px;
 }
-
+.added {
+  color: #0baf34;
+  font-size: 30px;
+}
 
 .center {
 

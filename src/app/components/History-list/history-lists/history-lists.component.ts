@@ -18,6 +18,7 @@ export class HistoryListsComponent implements OnInit {
   productInHistoryList: Array<Product_To_OneTimeList> = new Array<Product_To_OneTimeList>()
   productDetails: Array<Product> = new Array<Product>()
   menuList = [false, false, true, false, false]
+  addList=false;
   constructor(private OneTimeListService: OneTimeListService, private router: Router) { }
 
   ngOnInit(): void {
@@ -48,11 +49,13 @@ export class HistoryListsComponent implements OnInit {
       let listId=(Number)(localStorage.getItem("OneTimeListId"))
       this.OneTimeListService.AddProductsTo_ProductToOneTimeList(this.productInHistoryList,listId).subscribe(data=>{
         console.log(data)
-      }
-      
+      }  
       )
      })
+     this.addList=true;
+     console.log("Your list was added succsesfully")
   }
+
   goToHome(){
     this.router.navigate(["/home"])
 

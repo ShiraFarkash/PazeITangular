@@ -3,9 +3,9 @@
 <div class="content">
   <div class="topic">History Lists</div>
 </div>
-
+ 
 <div class="center">
-  <div class="InnerContent"  *ngIf="list.length>0">
+  <div class="InnerContent" *ngIf="list.length>0" >
   <table class="table">
     <thead>
       <tr>
@@ -16,12 +16,23 @@
     </thead>
     <tbody>
       <tr *ngFor="let a of list">
-        <td scope="row" class="add" (click)="addProductToOneTimeList(a)"><ion-icon name="add-circle"></ion-icon></td>
+        <td scope="row" class="add" (click)="addProductToOneTimeList(a)" *ngIf="addList==false"><ion-icon name="add-circle"></ion-icon></td>
+        <td scope="row" class="added" (click)="addProductToOneTimeList(a)" *ngIf="addList==true"><ion-icon name="checkmark-circle"></ion-icon></td>
         <td class="list" id="click" ><a (click)="ViewList(a)">Click</a></td>
         <td class="delete" id="delete">{{ a.endDate | date}}</td>
       </tr>
      
     </tbody>
+    <!-- <tbody>
+      <tr>
+        <td scope="row" class="add" (click)="addProductToOneTimeList()" *ngIf="addList==false"><ion-icon name="add-circle"></ion-icon></td>
+        <td scope="row" class="added" (click)="addProductToOneTimeList()" *ngIf="addList==true"><ion-icon name="checkmark-circle"></ion-icon></td>
+
+        <td class="list" id="click" ><a>Click</a></td>
+        <td class="delete" id="delete">11/03/2023</td>
+      </tr>
+     
+    </tbody> -->
   </table>
 </div>
 <div class="msgCode" *ngIf="list.length==0">You have not made any purchases yet!</div>
