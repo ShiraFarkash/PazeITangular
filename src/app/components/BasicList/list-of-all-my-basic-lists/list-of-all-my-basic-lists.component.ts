@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicList } from 'src/app/shared/models/basic-list.model';
+import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
 import { ProductService } from 'src/app/shared/services/product.service';
-
+import{ OneTimeListService } from 'src/app/shared/services/one-time-list.service';
 @Component({
   selector: 'app-list-of-all-my-basic-lists',
   templateUrl: './list-of-all-my-basic-lists.component.html',
@@ -11,7 +12,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
 export class ListOfAllMyBasicListsComponent implements OnInit {
   menuList=[false,false,false,true,false ]
   BasicListLists:Array<BasicList>=new Array<BasicList>()
-  constructor(private router:Router, private productService:ProductService) { }
+  productInBasicList: Array<ProductToBasicList> = new Array<ProductToBasicList>()
+  constructor(private router:Router, private productService:ProductService,
+    private oneTimeListService: OneTimeListService) { }
 
   ngOnInit(): void {
     let userId:number=Number(localStorage.getItem("userId"))
@@ -25,7 +28,18 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
   ngAfterViewInit(){
 
   }
-
+  addProductToOneTimeList(b:BasicList){
+    this.productService.GatOneContantList(b.Id!).subscribe(data => {
+      let listId = (Number)(localStorage.getItem("OneTimeListId"))
+      this.productInBasicList = data
+      console.log(data)
+    this.oneTimeListService.AddConstantListProductsTo_ProductToOneTimeList(this.productInBasicList,listId).subscribe(data=>{
+      console.log(data)
+    }
+      
+    )
+    })
+  }
   setActiveLink(n: number, navigateTo:string) {
 
     for (let index = 0; index < this.menuList.length; index++) {

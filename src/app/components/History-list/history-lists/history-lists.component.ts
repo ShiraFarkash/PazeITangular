@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BasicList } from 'src/app/shared/models/basic-list.model';
 import { OneTimeList } from 'src/app/shared/models/OneTimeList.model';
+import { Product } from 'src/app/shared/models/product.models';
+import { Product_To_OneTimeList } from 'src/app/shared/models/Product_To_OneTimeList.model';
 import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
 
 
@@ -13,7 +15,8 @@ import { OneTimeListService } from 'src/app/shared/services/one-time-list.servic
 export class HistoryListsComponent implements OnInit {
   list: Array<OneTimeList> = new Array<OneTimeList>()
   BasicListLists: Array<BasicList> = new Array<BasicList>()
-
+  productInHistoryList: Array<Product_To_OneTimeList> = new Array<Product_To_OneTimeList>()
+  productDetails: Array<Product> = new Array<Product>()
   menuList = [false, false, true, false, false]
   constructor(private OneTimeListService: OneTimeListService, private router: Router) { }
 
@@ -24,9 +27,9 @@ export class HistoryListsComponent implements OnInit {
       console.log(data)
     })
   }
-  ViewList(a: BasicList) {
-    localStorage.setItem('contantListId', (String)(a.Id))
-    this.router.navigate(['/viewMustHaveList']);
+  ViewList(a: OneTimeList) {
+    localStorage.setItem('OldDontantListId',(String)(a.Id))
+    this.router.navigate(['/ViewHistoryList']);
   }
   setActiveLink(n: number, navigateTo: string) {
 
@@ -36,5 +39,18 @@ export class HistoryListsComponent implements OnInit {
     this.menuList[n] = true
     console.log(this.menuList)
     this.router.navigate(["/" + navigateTo])
+  }
+  addProductToOneTimeList(list:OneTimeList){
+    
+    this.OneTimeListService.GetListOf_ProductToOneTimeList(list.Id).subscribe(data=>{
+      this.productInHistoryList=data
+      console.log(data)
+      let listId=(Number)(localStorage.getItem("OneTimeListId"))
+      this.OneTimeListService.AddProductsTo_ProductToOneTimeList(this.productInHistoryList,listId).subscribe(data=>{
+        console.log(data)
+      }
+      
+      )
+     })
   }
 }

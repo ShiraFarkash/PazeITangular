@@ -5,7 +5,7 @@
 </div>
 
 <div class="center">
-  <div class="InnerContent">
+  <div class="InnerContent"  *ngIf="list.length>0">
   <table class="table">
     <thead>
       <tr>
@@ -15,15 +15,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td scope="row" class="add"><ion-icon name="add-circle"></ion-icon></td>
-        <td class="list" id="click"><a href="">Click</a></td>
-        <td class="delete" id="delete">20/11/2023</td>
+      <tr *ngFor="let a of list">
+        <td scope="row" class="add" (click)="addProductToOneTimeList(a)"><ion-icon name="add-circle"></ion-icon></td>
+        <td class="list" id="click" ><a (click)="ViewList(a)">Click</a></td>
+        <td class="delete" id="delete">{{ a.endDate | date}}</td>
       </tr>
      
     </tbody>
   </table>
 </div>
+<div class="msgCode" *ngIf="list.length==0">You have not made any purchases yet!</div>
 </div>
 
 <div class="menu">

@@ -3,7 +3,7 @@
     <div class="Basic-background"></div>
     <div class="content">
 
-        <div class="topic">BasicList</div>
+        <div class="topic">History Lists</div>
         <div class="InnerContent">
 
             <table class="table">
@@ -13,49 +13,24 @@
                         <th scope="col" class="th">Quntity</th>
                     </tr>
                 </thead>
-          
-               
-                <tbody *ngFor="let p of allProductInList let i=index " >
+                <hr>
+                <div style="overflow: scroll; height: 250px;" >
+                <tbody>
                    
-                    <tr>
-                        <td>{{allProductInList[i].productName}}</td>
-                        <td>{{productInBasicList[i].quantity}}</td>
-                    </tr>
-              
-            
-
-            </tbody>
-               
-          
-            </table>
-            
-            <!-- <table class="table">
-
-                <thead style="overflow: hidden;">
-                    <tr>
-                        <th scope="col" class="th">Product Name</th>
-                        <th scope="col" class="th">Quantity</th>
-                    </tr>
-                </thead>            
-                <tbody >
-                        <tr>
-                            <td>Apple</td>
-                            <td>8</td>
+                        <tr *ngFor="let p of productDetails let i=index">
+                            <td>{{p.productName}}</td>
+                            <td>{{productInHistoryList[i].quantity}}</td>
                         </tr>
-                    
-                        <tr>
-                            <td>Meat</td>
-                            <td>1</td>
-                        </tr>
-             
+                
 
                 </tbody>
-            
+            </div>
+            </table>
+
            
-            </table> -->
         </div>
 
-        <button class="button1" (click)="goToListOfAllMyBasicList()">Go Back</button>
+        <button class="button1" (click)="goToHistoryList()">go back</button>
     </div>
 </div>
 
