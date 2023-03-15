@@ -113,6 +113,12 @@ div .topic{
       position: relative;
     
     } 
+    .text-danger{
+      color: red;
+      font-style:italic ;
+      position: relative;
+      left:10px;
+    }
     .center{
       z-index: 3;
       margin-top: 30px;
@@ -178,6 +184,7 @@ div .topic{
       
        
       }
+
        .active {
         height: 40px;
         width: 40px;

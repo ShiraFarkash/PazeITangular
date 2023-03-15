@@ -53,4 +53,8 @@ export class HistoryListsComponent implements OnInit {
       )
      })
   }
+  goToHome(){
+    this.router.navigate(["/home"])
+
+  }
 }

@@ -8,15 +8,19 @@
     <br> <br> 
     <div class='form'>
    <div class="topic"><br>Change Email</div>
-      <form> 
+      <form>
+        <div class="details">
     <input [(ngModel)]="EnteredCode"  #text name="entercode" type="number" placeholder='  Validation Code' class='text' id='validationCode' required><br>
     <h5 class="msgCode">Enter the code that was send to your email</h5>
     <br>
     
     <h5 class="msgSendAgain" (click)="sendingEmail()">Send again</h5>
-      </form>
+  </div>     
+  </form>
+      
     </div>
   </div>
+  
 
   <div class="centerButton"> 
   <button class="button1" (click)="goToPrevious()">Previous</button>

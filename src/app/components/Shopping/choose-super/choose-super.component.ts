@@ -36,7 +36,7 @@ export class ChooseSuperComponent implements OnInit {
     this.router.navigate(["/" + navigateTo])
   }
   chooseBranch(){
-    this.router.navigate(["/chooseBranch"])
+    this.router.navigate(["/shoppingCart"])
   }
   searchForItem() {
     // console.log('Search Item: ' + this.search);

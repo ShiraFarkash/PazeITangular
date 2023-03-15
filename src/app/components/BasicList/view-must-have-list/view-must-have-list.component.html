@@ -9,26 +9,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col" class="th">product name</th>
-                        <th scope="col" class="th">Quntity</th>
+                        <th scope="col" class="th">Product Name</th>
+                        <th scope="col" class="th">Quantity</th>
                     </tr>
                 </thead>
-          
-               
-                <tbody *ngFor="let p of allProductInList let i=index " >
-                   
+                <tbody *ngFor="let p of allProductInList let i=index ">
                     <tr>
                         <td>{{allProductInList[i].productName}}</td>
                         <td>{{productInBasicList[i].quantity}}</td>
                     </tr>
-              
-            
-
-            </tbody>
-               
-          
+                </tbody>
+                <tbody></tbody>
             </table>
-            
             <!-- <table class="table">
 
                 <thead style="overflow: hidden;">
@@ -47,14 +39,9 @@
                             <td>Meat</td>
                             <td>1</td>
                         </tr>
-             
-
                 </tbody>
-            
-           
             </table> -->
         </div>
-
         <button class="button1" (click)="goToListOfAllMyBasicList()">Go Back</button>
     </div>
 </div>
@@ -88,7 +75,8 @@
                     <span class="text">History</span>
                 </a>
             </li>
-            <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'listOfAllMyBasicLists')" class="list">
+            <li [ngClass]="menuList[3]==true?'active':''" (click)="setActiveLink(3,'listOfAllMyBasicLists')"
+                class="list">
                 <a>
                     <span class="icon">
                         <ion-icon name="reader-outline"></ion-icon>

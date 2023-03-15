@@ -2,22 +2,22 @@
 <div class="Basic-background"></div>
 
 <div class="content">
-    <br> <br> 
+    
     <div class='form'>
         <div class="topic">Sign up</div>
         <form [formGroup]="SignUpForm">
 
              <input #name formControlName="Name" type="text" placeholder='Name' class='text' id='username' ><br>
-              <small *ngIf="SignUpForm.controls['Name'].errors?.['required']&&SignUpForm.controls['Name'].touched" class="text-danger">Primary name is required</small>
+              <small *ngIf="SignUpForm.controls['Name'].errors?.['required']&&SignUpForm.controls['Name'].touched" class="text-danger">*Name is required</small>
             
 
              <input #fname formControlName="LastN" type="text" placeholder='Last Name' class='text' ><br>
-             <small *ngIf="SignUpForm.controls['LastN'].errors?.['required']&&SignUpForm.controls['LastN'].touched" class="text-danger">Primary last name is required</small>
+             <small *ngIf="SignUpForm.controls['LastN'].errors?.['required']&&SignUpForm.controls['LastN'].touched" class="text-danger">*Last name is required</small>
 
 
              <input #email formControlName="Email" type="email" placeholder='Email' class='text'><br>
              <div *ngIf="(SignUpForm.controls['Email'].invalid && SignUpForm.controls['Email'].touched) || SignUpForm.controls['Email'].dirty">
-              <small *ngIf="SignUpForm.controls['Email'].errors?.['required']" class="text-danger">Primary email is required</small>
+              <small *ngIf="SignUpForm.controls['Email'].errors?.['required']" class="text-danger">*Email is required</small>
               <small *ngIf="SignUpForm.controls['Email'].errors?.['email']" class="text-danger">Please provide a valid email address</small>
               <small *ngIf="IsExist==true" class="text-danger">Email exist</small>
 

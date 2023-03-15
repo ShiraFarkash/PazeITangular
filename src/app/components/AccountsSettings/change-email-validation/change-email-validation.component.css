@@ -3,6 +3,11 @@
     width: 270px;
 
 }
+.topic{
+    position: relative;
+    height: 50px;
+    bottom: 50px;
+}
 .button1 {
     font-weight: lighter;
     font-size: small;
@@ -57,4 +62,8 @@
     text-align: center;
     text-decoration: underline;
 
+}
+.details{
+    position: relative;
+    bottom:30px;
 }

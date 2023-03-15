@@ -9,6 +9,12 @@
   .Basic-background {
     height: 430px;
   }
+  .text-danger{
+    color: red;
+    font-style:italic ;
+    position: relative;
+    left:10px;
+  }
   div .topic {
     color: rgb(57, 149, 191);
     margin-left: 20px;

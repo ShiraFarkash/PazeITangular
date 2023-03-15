@@ -87,12 +87,12 @@ div .InnerContent {
   }
 .button1{
     font-weight: lighter;
-    font-size: small;
+    font-size: medium;
    font-weight: bolder;
     position: relative;
     background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
     width:210px ;
-    margin-top: 10px;
+    margin-top: 30px;
   }
 
   .msgCode {
@@ -102,4 +102,5 @@ div .InnerContent {
     color: rgb(0, 0, 0);
     /* font-family: Arial, Helvetica, sans-serif; */
     text-align: center;
+    font-size: 20px;
 }

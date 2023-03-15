@@ -3,7 +3,12 @@
     
 
 }
-
+.text-danger{
+  color: red;
+  font-style: italic;
+  position: relative;
+  left: 10px;
+}
 .button1{
     font-weight: lighter;
     font-size: small;
@@ -14,7 +19,10 @@
     width:210px ;
     margin-top: 40px;
   }
-  
+  .topic{
+    position: relative;
+    top:10px;
+  }
   .Basic-background{
     height: 430px;
   }

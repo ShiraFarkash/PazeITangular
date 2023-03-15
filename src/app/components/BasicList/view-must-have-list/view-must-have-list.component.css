@@ -35,12 +35,27 @@ table {
   td, th {
     border: 1px solid #dddddd;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
 
   }
+  th{
+    position:sticky;
+    top:0;
+    background-color: #eee;
+    z-index: 1;
+  }
+  thead th{
+    overflow: visible;
+  }
+  tbody td{
+    overflow-x: hidden;
+  }
   tbody{
-    overflow:scroll;
-    height: 300px;
+    overflow-y:scroll;
+    height: 200px;
+  }
+  thead{
+    background-color: #eee;
   }
  
   tr:nth-child(even) {
