@@ -38,6 +38,8 @@ import { ChooseBranchComponent } from './components/Shopping/choose-branch/choos
 import { ShoppingCartComponent } from './components/Shopping/shopping-cart/shopping-cart.component';
 import { DepartmentExplanationComponent } from './components/Shopping/department-explanation/department-explanation.component';
 import { ViewHistoryListComponent } from './components/History-list/view-history-list/view-history-list.component';
+import { ExplanationMustHaveListComponent } from './components/BasicList/explanation-must-have-list/explanation-must-have-list.component';
+import { ExplanationHomeComponent } from './components/Home/explanation-home/explanation-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +71,9 @@ import { ViewHistoryListComponent } from './components/History-list/view-history
     ChooseBranchComponent,
     ShoppingCartComponent,
     DepartmentExplanationComponent,
-    ViewHistoryListComponent
+    ViewHistoryListComponent,
+    ExplanationMustHaveListComponent,
+    ExplanationHomeComponent
   ],
   imports: [
     BrowserModule,

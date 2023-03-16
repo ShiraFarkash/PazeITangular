@@ -17,6 +17,16 @@
     z-index: 4;
     background-color: rgba(128, 128, 128, 0.452);
 }
+.help{
+    position: relative;
+    bottom: 92px;
+    left: 93%;
+    border-radius: 10px;
+}
+.explanationMHL{
+    position: relative;
+    bottom: 180px;
+}
 .search {
     color: rgb(152, 149, 149);
     background-color: white;

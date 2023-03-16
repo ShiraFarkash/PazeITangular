@@ -1,5 +1,7 @@
 <div class="my-container" style="position: absolute; z-index: 1;">
   <div [ngClass]="clickedOnProduct==true? 'blur':'' "></div>
+  <div  [ngClass]="clickedOnExplanation==true? ' blur':'' "></div>
+
 
   <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
@@ -8,7 +10,7 @@
     <div class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></div>
   </div>
 
-
+<button class="help" (click)="explanationMHL()">  <ion-icon name="help"></ion-icon></button>
   <div class="Basic-background"></div>
 
   <br>
@@ -35,7 +37,7 @@
         <option value="category">Category</option>
       </select>
     </div>
-
+   
     <!-- showing all the main product -->
     <div (scroll)="onScroll($event)" #container style="text-align:left ; left:0;   overflow: scroll;
       overflow-x: hidden;
@@ -60,7 +62,11 @@
     <div class="DL"> <button (click)="done()" class="doneList">Done</button></div>
 
   </div>
-
+    <!-- Shows the explanation of the must have list-->
+  <div class="explanationMHL" style="position: absolute; z-index:6;">
+    <app-explanation-must-have-list [parentId]="selectedParent" (show)="clickedOnExplanation=$event"
+      [showPage]="clickedOnExplanation" ></app-explanation-must-have-list>
+  </div>
 
   <!-- Shows the product that related to certain main product -->
   <div class="center" style=" z-index:5;">

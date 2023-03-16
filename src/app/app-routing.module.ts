@@ -28,6 +28,8 @@ import { ShoppingCartComponent } from './components/Shopping/shopping-cart/shopp
 import { DepartmentExplanationComponent } from './components/Shopping/department-explanation/department-explanation.component';
 import { ViewHistoryListComponent } from './components/History-list/view-history-list/view-history-list.component';
 import { HistoryListsComponent } from './components/History-list/history-lists/history-lists.component';
+import { ExplanationMustHaveListComponent } from './components/BasicList/explanation-must-have-list/explanation-must-have-list.component';
+import { ExplanationHomeComponent } from './components/Home/explanation-home/explanation-home.component';
 
 const routes: Routes = [
   { path: 'logIn', component: LogInComponent },
@@ -56,7 +58,11 @@ const routes: Routes = [
   {path:"chooseBranch",component:ChooseBranchComponent},
   {path:"shoppingCart",component:ShoppingCartComponent},
   {path:"explanationDepartment",component:DepartmentExplanationComponent},
-  {path:"ViewHistoryList",component:ViewHistoryListComponent}
+  {path:"ViewHistoryList",component:ViewHistoryListComponent},
+  {path:"explanationMHL",component:ExplanationMustHaveListComponent},
+  {path:"explanationHome",component:ExplanationHomeComponent}
+
+
 ];
 
 @NgModule({

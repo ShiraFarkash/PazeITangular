@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
   productToOneTimeList_List: Array<Product_To_OneTimeList> = new Array<Product_To_OneTimeList>;
   ScreenMood = true
- 
+  clickedOnExplanation=false
   categoryMood: number = 0
   constructor(private productService: ProductService, private router: Router,
     private ElByClassName: ElementRef, public oneTimeListService: OneTimeListService) { }
@@ -96,7 +96,9 @@ export class HomeComponent implements OnInit {
 
   }
 
-
+  explanationMHL(){
+    this.clickedOnExplanation=true;
+  }
   changMood(a: Category) {
     this.categoryMood = a.Id!;
     this.ScreenMood = !this.ScreenMood

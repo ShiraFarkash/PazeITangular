@@ -18,6 +18,7 @@ export class BasicListChooseProductComponent implements OnInit {
   listName: string = "Must-Have"
   tooltip = "click to edit and clcik again to save changes"
   clickedOnProduct = false
+  clickedOnExplanation=false
   // allChosenProduct:Array<Product>=new Array<Product>;
   toAdd = { i: 0, amount: 0 }
   allMainProductQuntity = new Array<{ id: number, amount: number }>()
@@ -65,7 +66,9 @@ export class BasicListChooseProductComponent implements OnInit {
     this.listName = s
 
   }
-
+  explanationMHL(){
+    this.clickedOnExplanation=true;
+  }
   sortByName() {
     this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
     console.log(this.allMainProduct[0].productName)
