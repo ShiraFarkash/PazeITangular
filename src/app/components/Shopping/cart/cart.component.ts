@@ -11,7 +11,7 @@ import { Product } from 'src/app/shared/models/product.models';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  chosenOption:string="";
   clickedOnProduct = false;
   menuList = [false, false, false, false, true];
   search: string = "";
@@ -22,10 +22,25 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  sortByName() {
-    this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-    console.log(this.allMainProduct[0].productName)
-    console.log(this.allMainProduct)
+  // sortByName() {
+  //   this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+  //   console.log(this.allMainProduct[0].productName)
+  //   console.log(this.allMainProduct)
+  // }
+  optionClicked() {
+    switch (this.chosenOption) {
+      case "name":{
+        
+         this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+        console.log(this.allMainProduct[0].productName);
+        console.log(this.allMainProduct);
+        break;
+      }    
+      case "category":{
+        // console.log("hello");
+        break;
+      }        
+    }
   }
   setActiveLink(n: number, navigateTo: string) {
 
