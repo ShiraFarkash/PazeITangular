@@ -24,7 +24,7 @@ export class BasicListChooseProductComponent implements OnInit {
   chosenMod: string = "";
   search: string = "";
   i: number = 0;
-
+  chosenOption:string="";
   constructor(public productService: ProductService, private router: Router, private ElByClassName: ElementRef) { }
 
   ngOnInit(): void {
@@ -80,7 +80,21 @@ export class BasicListChooseProductComponent implements OnInit {
       }
     }
   }
-
+  optionClicked() {
+    switch (this.chosenOption) {
+      case "name":{
+         this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+        console.log(this.allMainProduct[0].productName);
+        console.log(this.allMainProduct);
+        break;
+      }
+       
+      case "category":{
+        break;
+      }
+        
+    }
+  }
   modoNorC() {
     switch (this.chosenMod) {
       case "mod1": {
@@ -113,6 +127,7 @@ export class BasicListChooseProductComponent implements OnInit {
     console.log(this.clickedOnProduct)
 
   }
+ 
 
   public quntity(a: any): any {
     let count = 0

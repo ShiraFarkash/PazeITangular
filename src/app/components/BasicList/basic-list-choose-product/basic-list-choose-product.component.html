@@ -26,18 +26,12 @@
     </div>
 
   </div>
-
-
-
   <div #center class="center" style="z-index: 3;">
     <div class="orderByBL">
-      <select class="eachOrderBy">
+      <select [(ngModel)]="chosenOption" (ngModelChange)="optionClicked()"class="eachOrderBy">
         <option value="order by">-- Order by --</option>
         <hr>
-        <option value="name">
-          <button (click)="sortByName()">Name</button>
-        </option>
-
+        <option value="name">Name</option>
         <option value="category">Category</option>
       </select>
     </div>
@@ -52,7 +46,7 @@
         <input  *ngIf="quntity(a.Id)>0" [value]="">
       </ul>
     </div>
-
+ 
     <!-- arrow -->
     <div style="width: auto; align-items: right; text-align: right;">
       <div>
