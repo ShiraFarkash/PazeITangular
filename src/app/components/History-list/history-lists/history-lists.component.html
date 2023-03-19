@@ -15,9 +15,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let a of list">
-        <td scope="row" class="add" (click)="addProductToOneTimeList(a)" *ngIf="addList==false"><ion-icon name="add-circle"></ion-icon></td>
-        <td scope="row" class="added" (click)="addProductToOneTimeList(a)" *ngIf="addList==true"><ion-icon name="checkmark-circle"></ion-icon></td>
+      <tr *ngFor="let a of list; let i=index">
+        <!-- <td scope="row" (click)="addProductToOneTimeList(a,i)"
+        ngClass="isChosen[i]==false ? add : added"><ion-icon name="isChosen[i]==false ? add-circle : checkmark-circle"></ion-icon></td> -->
+        <td scope="row" class="add"   (click)="addProductToOneTimeList(a,i)" *ngIf="isChosen[i]==false"><ion-icon name="add-circle"></ion-icon></td>
+        <td scope="row" class="added" (click)="addProductToOneTimeList(a,i)" *ngIf="isChosen[i]==true"><ion-icon name="checkmark-circle"></ion-icon></td>
         <td class="list" id="click" ><a (click)="ViewList(a)">Click</a></td>
         <td class="delete" id="delete">{{ a.endDate | date}}</td>
       </tr>
@@ -36,7 +38,7 @@
   </table>
 </div>
 <div class="msgCode" *ngIf="list.length==0">You have not made any purchases yet!</div>
-<button class="button1" (click)="goToHome()">Create a List</button>
+
 </div>
 
 <div class="menu">

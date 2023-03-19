@@ -162,3 +162,77 @@ div .topic{
         position: relative;
         top: 5px;
      }
+
+     
+
+
+.addOdDec{
+    /* margin-top: 15px; */
+    opacity: 1;
+    margin-right: 25px;
+    margin-left:auto;
+    height: 25px;
+    width: 80px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color: #3171e0;
+   border-radius: 64px;
+   margin-top: auto;
+   margin-bottom: auto;
+  }
+  .addOdDec span{
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    /* background: #FFF; */
+    color: white;
+    text-align: center;
+    /* border-radius: 12px; */
+    /* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
+  }
+  .addOdDec input{
+    width:25px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: max-content;
+    border: 0px 0px 0px 0px;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .addOdDec span.num{
+  
+  
+    /* border-right: 2px solid rgba(0,0,0,0.2);
+    border-left: 2px solid rgba(0,0,0,0.2); */
+    pointer-events: none;
+    text-align: center;
+    font-size:15px ;
+  }
+  .addOdDec .minus{
+    text-align: center;
+    font-size:15px ;
+    font-weight: bolder;
+  }
+  .list p{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  }
+  div .contentHome2 {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 250px;
+  width: fit-content;
+  padding-left: 10px;
+  
+  }
+  

@@ -12,10 +12,15 @@
 <div class="topic">Share the List</div>
 <p>This list will be editable by the users you choose:</p>
 <div class="squareSearch">
-    <input class="search" placeholder="Type User Email">
+    <input #email class="search" type="email" (input)="getUsersEmails(email.value)" placeholder="Type User Email">
     <button class="btnSearch" > <ion-icon name="search"></ion-icon>
     </button>
-  
+    <div *ngIf="userEmail.length>0 ">
+      <ul *ngFor="let u of userEmail let i=index" >
+        <li *ngIf="i<5" (click)="addUserToMyList(u)">{{u.userName}} {{u.userLastName}}</li>
+      </ul>
+    </div>
+
   </div>
 </div>
 

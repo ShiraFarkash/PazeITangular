@@ -40,10 +40,11 @@ export class BasicListChooseProductComponent implements OnInit {
         console.log(this.allMainProductQuntity)
       }
     );
-
+  
 
   }
   ngAfterViewInit() {
+    
     console.log(Object.keys(this.productService.selectedProducts).length)
   }
 
@@ -98,20 +99,7 @@ export class BasicListChooseProductComponent implements OnInit {
         
     }
   }
-  modoNorC() {
-    switch (this.chosenMod) {
-      case "mod1": {
-        this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-        console.log(this.allMainProduct[0].productName)
-        console.log(this.allMainProduct)
-        break;
-      }
-      case "mod2": {
-        //do something
-        break;
-      }
-    }
-  }
+
 
   selectedParent: number = 0;
 
@@ -119,7 +107,7 @@ export class BasicListChooseProductComponent implements OnInit {
     this.productService.GatProductsByMainProduct(p).subscribe(
       data => {
         this.allMyProducts = data;
-        console.log(this.allMyProducts)
+        // console.log(this.allMyProducts)
         this.selectedParent = p.Id!;
 
         if (!(p.Id! in this.productService.selectedProducts))
@@ -127,7 +115,7 @@ export class BasicListChooseProductComponent implements OnInit {
       }
     );
     this.clickedOnProduct = true;
-    console.log(this.clickedOnProduct)
+    // console.log(this.clickedOnProduct)
 
   }
  
@@ -177,6 +165,13 @@ export class BasicListChooseProductComponent implements OnInit {
         this.router.navigate(['/listOfAllMyBasicLists']);
       })
     }
+
+    Object.keys(this.productService.selectedProducts).forEach((key) => {
+     delete this.productService.selectedProducts[Number(key)];
+
+     });
+
+
     this.router.navigate(['/listOfAllMyBasicLists']);
   }
 

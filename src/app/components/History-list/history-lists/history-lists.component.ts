@@ -17,6 +17,7 @@ export class HistoryListsComponent implements OnInit {
   BasicListLists: Array<BasicList> = new Array<BasicList>()
   productInHistoryList: Array<Product_To_OneTimeList> = new Array<Product_To_OneTimeList>()
   productDetails: Array<Product> = new Array<Product>()
+  isChosen:Array<boolean>=new Array<boolean>()
   menuList = [false, false, true, false, false]
   addList=false;
   constructor(private OneTimeListService: OneTimeListService, private router: Router) { }
@@ -25,6 +26,10 @@ export class HistoryListsComponent implements OnInit {
     let userId = (Number)(localStorage.getItem("userId"))
     this.OneTimeListService.GetHistoryList(userId).subscribe(data => {
       this.list = data
+      this.list.forEach(element => {
+        this.isChosen.push(false)
+      });
+      
       console.log(data)
     })
   }
@@ -41,7 +46,7 @@ export class HistoryListsComponent implements OnInit {
     console.log(this.menuList)
     this.router.navigate(["/" + navigateTo])
   }
-  addProductToOneTimeList(list:OneTimeList){
+  addProductToOneTimeList(list:OneTimeList, i:number){
     
     this.OneTimeListService.GetListOf_ProductToOneTimeList(list.Id).subscribe(data=>{
       this.productInHistoryList=data
@@ -52,7 +57,7 @@ export class HistoryListsComponent implements OnInit {
       }  
       )
      })
-     this.addList=true;
+     this.isChosen[i]=true
      console.log("Your list was added succsesfully")
   }
 

@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Product } from 'src/app/shared/models/product.models';
+import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
+import { Product_To_OneTimeList } from 'src/app/shared/models/Product_To_OneTimeList.model';
+import { User } from 'src/app/shared/models/user.models';
 
 
 @Component({
@@ -18,15 +21,30 @@ export class CartComponent implements OnInit {
   i: number = 0;
   allMainProduct: Array<Product> = new Array<Product>;
   count = 0;
-  constructor(private router: Router) { }
+ 
+  // cartProducts: Array<Product> = new Array<Product>;
+  cartProductsQuntity = new Array<Product_To_OneTimeList>();
+
+  constructor(private router: Router, public oneTimeListService:OneTimeListService) { }
 
   ngOnInit(): void {
+  let listId=(Number)(localStorage.getItem("OneTimeListId"))
+   this.oneTimeListService.GetTheProductByOneTimeListId(listId!).subscribe(data=>{
+    this.allMainProduct=data
+    console.log(data)
+    this.oneTimeListService.GetListOf_ProductToOneTimeList(listId!).subscribe(data=>{
+      this.cartProductsQuntity=data
+      
+      console.log(data)
+    })
+   })
   }
-  // sortByName() {
-  //   this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-  //   console.log(this.allMainProduct[0].productName)
-  //   console.log(this.allMainProduct)
-  // }
+
+  sortByName() {
+    this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+    console.log(this.allMainProduct[0].productName)
+    console.log(this.allMainProduct)
+  }
   optionClicked() {
     switch (this.chosenOption) {
       case "name":{
@@ -41,6 +59,18 @@ export class CartComponent implements OnInit {
         break;
       }        
     }
+  }
+
+  addORincOne(p: Product, i: number) {
+    let qty = this.oneTimeListService.ProductToOneTimeList[p.Id!].quantity + i
+    if (qty >= 0) {
+      this.oneTimeListService.ProductToOneTimeList[p.Id!].quantity = qty;
+      // console.log(this.oneTimeListService.ProductToOneTimeList[p.Id!])
+      this.oneTimeListService.IncreaseOrDecreaseProductQuantity
+      (this.oneTimeListService.ProductToOneTimeList[p.Id!]).subscribe()
+    }
+
+
   }
   setActiveLink(n: number, navigateTo: string) {
 

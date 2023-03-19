@@ -92,7 +92,7 @@ div .InnerContent {
     position: relative;
     background: linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%);
     width:210px ;
-    margin-top: 30px;
+    margin-top: 5px;
   }
 
   .msgCode {
@@ -103,4 +103,12 @@ div .InnerContent {
     /* font-family: Arial, Helvetica, sans-serif; */
     text-align: center;
     font-size: 20px;
+}
+.add {
+  color: #c6074a;
+  font-size: 30px;
+}
+.added {
+  color: #0baf34;
+  font-size: 30px;
 }

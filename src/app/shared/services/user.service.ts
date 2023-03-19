@@ -35,4 +35,7 @@ EditUserDetails(user:User) :Observable<any>
   return this.http.post(environment.url + 'User/EditUserDetails',user)
 }
 
+GetUserEmail(email:String):Observable<any>{
+  return this.http.get<Array<User>>(environment.url +'user/GetUserEmail?email='+email)
+}
 }

@@ -28,6 +28,7 @@ export class SignUpFinalDetailsComponent implements OnInit {
 
         this.oneTimeListService.AddOneTimeList(data).subscribe(data2 => {
           localStorage.setItem("OneTimeListId", String(data2))
+          
         })
       })
 

@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductToBasicList } from 'src/app/shared/models/product-to-basic-list.model';
 import { Product } from 'src/app/shared/models/product.models';
+import { User } from 'src/app/shared/models/user.models';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-add-user-to-list',
@@ -17,9 +19,10 @@ export class AddUserToListComponent implements OnInit {
   // @Output() ALLchosenProduct=new EventEmitter<Array<Product>>()
   @Output() show = new EventEmitter<boolean>();
   @Output() count = new EventEmitter<number>();
+  @Output() UserEmailCount=new EventEmitter<number>();
   // ChosenProduct:Array<Product>=new Array<Product>()
-
-  constructor(public productService: ProductService) { }
+  userEmail=new Array<User>();
+  constructor(public productService: ProductService ,private UserService:UserService) { }
 
   ngOnInit(): void {
 
@@ -40,7 +43,13 @@ export class AddUserToListComponent implements OnInit {
       this.productService.selectedProducts[this.parentId][i].isSelected = false
     }
 
+  
+  }
 
+  getUsersEmails(email:String){
+      this.UserService.GetUserEmail(email).subscribe(data=>{
+        this.userEmail=data
+      })
   }
   closeDiv() {
     this.showPage = false;
@@ -50,7 +59,9 @@ export class AddUserToListComponent implements OnInit {
       this.count.emit(quntity)
     }
 
-  
+    addUserToMyList(u:User){
+      
+    }
 
   // addProduct(i:number, btName:string){
   //   this.productService.selectedProducts[this.parentId][i].quantity+=1

@@ -12,6 +12,7 @@ import{ OneTimeListService } from 'src/app/shared/services/one-time-list.service
 export class ListOfAllMyBasicListsComponent implements OnInit {
   menuList=[false,false,false,true,false ]
   BasicListLists:Array<BasicList>=new Array<BasicList>()
+  isChosen=new Array<boolean>()
   productInBasicList: Array<ProductToBasicList> = new Array<ProductToBasicList>()
   constructor(private router:Router, private productService:ProductService,
     private oneTimeListService: OneTimeListService) { }
@@ -21,6 +22,9 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
     console.log(userId)
     this.productService.GatContantList(userId).subscribe(data=>{
      this.BasicListLists=data
+     this.BasicListLists.forEach(element => {
+      this.isChosen.push(false)
+     });
     console.log(data)  
     })
   }
@@ -28,7 +32,7 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
   ngAfterViewInit(){
 
   }
-  addProductToOneTimeList(b:BasicList){
+  addProductToOneTimeList(b:BasicList, i:number){
     this.productService.GatOneContantList(b.Id!).subscribe(data => {
       let listId = (Number)(localStorage.getItem("OneTimeListId"))
       this.productInBasicList = data
@@ -39,6 +43,7 @@ export class ListOfAllMyBasicListsComponent implements OnInit {
       
     )
     })
+    this.isChosen[i]=true
   }
   setActiveLink(n: number, navigateTo:string) {
 

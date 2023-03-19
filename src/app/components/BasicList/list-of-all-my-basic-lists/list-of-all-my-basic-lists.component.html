@@ -24,31 +24,36 @@
         <hr>
         <tbody>
 
-          <tr *ngFor="let b of BasicListLists">
+          <tr *ngFor="let b of BasicListLists, let i=index">
             <td class="name">{{b.name}}</td>
 
-            <td scope="row"  class="add" (click)="addProductToOneTimeList(b)"><ion-icon name="add-circle"></ion-icon> </td>
+            <td scope="row" class="add"   (click)="addProductToOneTimeList(b,i)" *ngIf="isChosen[i]==false"><ion-icon name="add-circle"></ion-icon></td>
+            <td scope="row" class="added" (click)="addProductToOneTimeList(b,i)" *ngIf="isChosen[i]==true"><ion-icon name="checkmark-circle"></ion-icon></td>
 
 
             <td class="list" id="click" ><a (click)="ViewList(b)">Click</a></td>
 
             <td class="delete" id="delete"><a  (click)="DelelteList(b)">Delete</a></td>
+
           </tr>
 
 
         </tbody>
       </table>
+            
+ 
 
     </div>
     
     <div class="msgCode" *ngIf="BasicListLists.length==0">You haven't created a must-have collection yet!<br> <br>
       Click the button to create a new collection!</div>
+      <button class="button1" (click)="goToBasicListComponent()">Add Must-Have List</button>
+
   </div>
 
 
 
 
-  <button class="button1" (click)="goToBasicListComponent()">Add Must-Have List</button>
 
 
 

@@ -291,3 +291,21 @@
     box-shadow: 2px 2px 4px #000000;
     display: inline;
   }
+  .list p{
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+  }
+
+  .productPic {
+    height:40px;
+    position: relative;
+    top: 10px;
+  }  
+  ul .list{
+    display: flex;
+    margin-bottom: 7px;
+  }
+  .listpic{
+    border-radius: 50px;
+  }

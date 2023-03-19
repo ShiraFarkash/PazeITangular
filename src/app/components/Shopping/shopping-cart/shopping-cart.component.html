@@ -13,16 +13,43 @@
         <select [(ngModel)]="chosenOption" (ngModelChange)="optionClicked()"class="eachOrderBy">
           <option value="order by">-- Select an option --</option>
           <hr>
-          <option value="name">Name</option>
-          <option value="category">Category</option>
-          <option value="departments">Departments</option>
+          <option   value="name">Name</option>
+          <option   value="category">Category</option>
+          <option *ngIf="oneTimeListService.chooseSupperOrNot==true" value="departments">Departments</option>
 
         </select>
       </div>
     
       <hr>
-    <!-- the list is here -->
-    
+  <ul class="contentHome" *ngIf="sortCategory==false">
+
+      <li class="list" *ngFor="let p of allProduct;let i=index; " >
+      
+          <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+          <p>{{p.productName}}</p>
+          <p *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
+          <input type="checkbox" >
+
+      </li>
+
+    </ul>
+<div  *ngIf="sortCategory==true">
+    <ul class="contentHome" *ngFor="let a of allCategory" class="CategoryProducts">
+      <div class="titleCategory" id={{a.categoryName}}>
+        <p>{{a.categoryName}}</p>
+      </div>
+      <li class="list" *ngFor="let p of CategoryAndProducts[a.Id!];let i=index; " >
+
+          <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+          <p>{{p.productName}}</p>
+          <!-- <p *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p> -->
+          <input type="checkbox" >
+
+      </li>
+
+    </ul>
+</div>
+
        <hr>
       </div>
       <div class="addUser" style="position: absolute; z-index:5;">
