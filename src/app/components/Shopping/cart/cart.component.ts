@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
   menuList = [false, false, false, false, true];
   search: string = "";
   i: number = 0;
-  allMainProduct: Array<Product> = new Array<Product>;
+  allMyProduct: Array<Product> = new Array<Product>;
   count = 0;
  
   // cartProducts: Array<Product> = new Array<Product>;
@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   let listId=(Number)(localStorage.getItem("OneTimeListId"))
    this.oneTimeListService.GetTheProductByOneTimeListId(listId!).subscribe(data=>{
-    this.allMainProduct=data
+    this.allMyProduct=data
     console.log(data)
     this.oneTimeListService.GetListOf_ProductToOneTimeList(listId!).subscribe(data=>{
       this.cartProductsQuntity=data
@@ -41,17 +41,17 @@ export class CartComponent implements OnInit {
   }
 
   sortByName() {
-    this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-    console.log(this.allMainProduct[0].productName)
-    console.log(this.allMainProduct)
+    this.allMyProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+    console.log(this.allMyProduct[0].productName)
+    console.log(this.allMyProduct)
   }
   optionClicked() {
     switch (this.chosenOption) {
       case "name":{
         
-         this.allMainProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-        console.log(this.allMainProduct[0].productName);
-        console.log(this.allMainProduct);
+         this.allMyProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+        console.log(this.allMyProduct[0].productName);
+        console.log(this.allMyProduct);
         break;
       }    
       case "category":{

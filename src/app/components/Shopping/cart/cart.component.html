@@ -27,12 +27,12 @@
 
     <ul class="contentHome">
 
-      <li class="list" *ngFor="let p of allMainProduct;let i=index; " >
+      <li class="list" *ngFor="let p of allMyProduct;let i=index; " >
       
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
           <p>{{p.productName}}</p>
           <div class="addOdDec">
-            <!--חובה לפתוח קודם  את עמוד הבית ע"מ שיטען את כל המוצרים הקשורים לרשימה החד"פ-->
+    
             <span (click)="addORincOne(p,-1)" class="minus"><ion-icon name="remove"></ion-icon></span>
             <input *ngIf="cartProductsQuntity[i]!=null" name="qty" [(ngModel)]="cartProductsQuntity[i].quantity" type="number"
               id="quantity" name="quantity" class="form-control-num" min="1" max="100">

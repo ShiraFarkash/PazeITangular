@@ -45,6 +45,7 @@ export class ShoppingCartComponent implements OnInit {
 
         console.log(data)
       })
+      //שליפת הקטגוריות
       this.productService.GatCategory().subscribe(data => {
         this.allCategory = data
 

@@ -33,8 +33,8 @@
       </li>
 
     </ul>
-<div  *ngIf="sortCategory==true">
-    <ul class="contentHome" *ngFor="let a of allCategory" class="CategoryProducts">
+<div  class="contentHome" *ngIf="sortCategory==true">
+    <ul *ngFor="let a of allCategory" class="CategoryProducts">
       <div class="titleCategory" id={{a.categoryName}}>
         <p>{{a.categoryName}}</p>
       </div>
