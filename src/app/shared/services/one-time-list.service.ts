@@ -48,5 +48,8 @@ export class OneTimeListService {
   GetTheProductByOneTimeListId(listId:number):Observable<any>{
     return this.http.get<Array<Product>>(environment.url + 'OneTimeList/GetTheProductByOneTimeListId?listId=' + listId)
   }
-
+  
+  ChangeIsTaken(product_To_OneTimeListDTO:Product_To_OneTimeList):Observable<any>{
+    return this.http.post<boolean>(environment.url + 'OneTimeList/ChangeIsTaken',product_To_OneTimeListDTO)
+  }
 }
