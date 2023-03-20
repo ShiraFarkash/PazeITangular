@@ -61,6 +61,8 @@
     
     <div class="center">
       <div class="center">
+        <button class="button2">Cancel</button>
+
          <button (click)="finishList()"class="button1">Done</button>
       
       </div>
@@ -102,7 +104,7 @@
               <span class="text">Basics lists</span>
             </a>
           </li>
-          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
+          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'shoppingCart')" class="list">
             <a>
               <span class="icon">
                 <ion-icon name="cart-outline"></ion-icon>

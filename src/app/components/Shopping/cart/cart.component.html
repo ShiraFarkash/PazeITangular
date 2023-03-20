@@ -25,7 +25,7 @@
     </div>
     <hr>
 
-    <ul class="contentHome">
+    <ul class="contentHome" *ngIf="sortCategory==false">
 
       <li class="list" *ngFor="let p of allMyProduct;let i=index; " >
       
@@ -34,16 +34,39 @@
           
           <div class="addOdDec">
     
-            <span (click)="addORincOne(p,-1)" class="minus bold"><ion-icon name="remove"></ion-icon></span>
+            <span (click)="addORincOne(p,-1, i)" class="minus bold"><ion-icon name="remove"></ion-icon></span>
             <input *ngIf="cartProductsQuntity[i]!=null" name="qty" [(ngModel)]="cartProductsQuntity[i].quantity" type="number"
               id="quantity" name="quantity" class="form-control-num bold" min="1" max="100">
-            <span (click)="addORincOne(p,+1)" class="minus bold"><ion-icon name="add"></ion-icon></span>
+            <span (click)="addORincOne(p,+1, i)" class="minus bold"><ion-icon name="add"></ion-icon></span>
           </div>
 
 
       </li>
 
     </ul>
+
+    <div  class="contentHome" *ngIf="sortCategory==true">
+      <ul *ngFor="let a of allCategory" class="CategoryProductsCart">
+        <div class="titleCategory" id={{a.categoryName}}>
+          <p class="productNameCat" >{{a.categoryName}}</p>
+        </div>
+        <li class="list" *ngFor="let p of CategoryAndProducts[a.Id!];let i=index; " >
+  
+            <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+            <p class="productName">{{p.productName}}</p>
+      
+            <div class="addOdDec">
+    
+              <span (click)="addORincOne(a,-1, i)" class="minus bold"><ion-icon name="remove"></ion-icon></span>
+              <input *ngIf="CategoryAndProductsQuntity[a.Id!][i]!=null" name="qty" [(ngModel)]="CategoryAndProductsQuntity[a.Id!][i].quantity" type="number"
+                id="quantity" name="quantity" class="form-control-num bold" min="1" max="100">
+              <span (click)="addORincOne(a,+1, i)" class="minus bold"><ion-icon name="add"></ion-icon></span>
+            </div>
+  
+        </li>
+  
+      </ul>
+  </div>
     <hr>
 
   </div>

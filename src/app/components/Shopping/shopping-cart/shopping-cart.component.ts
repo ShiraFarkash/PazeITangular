@@ -37,13 +37,13 @@ export class ShoppingCartComponent implements OnInit {
     let listId = (Number)(localStorage.getItem("OneTimeListId"))
     this.oneTimeListService.GetTheProductByOneTimeListId(listId!).subscribe(data => {
       this.allProduct = data
-      console.log("all products:")
-      console.log(data)
+      // console.log("all products:")
+      // console.log(data)
       this.oneTimeListService.GetListOf_ProductToOneTimeList(listId!).subscribe(data => {
-        console.log("quntity")
+        // console.log("quntity")
         this.cartProductsQuntity = data
 
-        console.log(data)
+        // console.log(data)
       })
       //שליפת הקטגוריות
       this.productService.GatCategory().subscribe(data => {

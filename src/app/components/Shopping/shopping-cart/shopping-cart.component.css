@@ -284,7 +284,7 @@
     font-size: small;
     font-weight: bolder;
     position: relative;
-  bottom: 10px;
+  bottom: 25px;
     /* background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%); */
     width: 100px;
     height: 30px;
@@ -299,10 +299,11 @@
     font-size: small;
     font-weight: bolder;
     position: relative;
-    bottom: 65px;
-    left: 5px;
+    /* bottom: 65px; */
+    /* left: 5px; */
+    right: 50px;
     background: rgb(250, 180, 179);
-    width: 150px;
+    width: 100px;
     height: 30px;
     margin: 0px;
     border-radius: 50px;
@@ -332,3 +333,25 @@
   .listpic{
     border-radius: 50px;
   }
+
+  #recentPro {
+    color: #000000;
+  }
+  
+  #FruitsAndVegetables {
+    background-image: url("/../assets/FandV.png");
+    background-color: rgba(82, 82, 82, 0.558);
+  }
+  
+  #DairyAndEggs {
+    background-image: url("/../assets/milkdairy.png");
+  }
+  
+  #BreadAndBakery {
+    background-image: url("/../assets/bakery.png");
+  }
+  
+  #Beverages {
+    background-image: url("/../assets/drinks.png");
+  }
+  
