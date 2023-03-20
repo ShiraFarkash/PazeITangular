@@ -150,6 +150,7 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(["/" + navigateTo])
   }
   finishList() {
+    // listId=localStorage.getItem("OneTimeListId")
     this.router.navigate(["/HistoryLists"])
   }
 
