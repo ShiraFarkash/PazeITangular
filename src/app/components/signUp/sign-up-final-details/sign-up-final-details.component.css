@@ -16,5 +16,15 @@
   .Basic-background{
     height: 430px;
   }
+  .personalInfo{
+    width: max-content;
+    position: relative;
+    left: 10px;
+  }
+  input.text {
+    margin-top: 3px !important;
+    position: relative;
+    width: 220px !important;
   
+  }
   

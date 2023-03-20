@@ -179,7 +179,9 @@
               <span class="text">Basics lists</span>
             </a>
           </li>
-          <li [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
+          <li *ngIf="oneTimeListService.startShopping==false" [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'myCart')" class="list">
+          <li *ngIf="oneTimeListService.startShopping==true" [ngClass]="menuList[4]==true?'active':''" (click)="setActiveLink(4,'shoppingCart')" class="list">
+
             <a>
               <span class="icon">
                 <ion-icon name="cart-outline"></ion-icon>

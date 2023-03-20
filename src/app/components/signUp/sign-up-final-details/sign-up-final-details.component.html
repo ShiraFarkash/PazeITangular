@@ -5,16 +5,51 @@
     <br> <br> 
     <div class='form'>
    <div class="topic">Sign up</div>
-      <form>
+      <!-- <form>
 
     <input type="password" #pass placeholder='  Password' class='text'><br>
     <input type="password" #ConPass placeholder='  Confirm Password' class='text'><br>
 
+      </form> -->
+<br>
+      <form [formGroup]="PasswordForm">
+        <div class="personalInfo"><span class="details_myAccount">New Password:</span><br>
+          <input #newPassword formControlName="newPassword" type="password" value="" class='text'><br>
+
+          <div
+            *ngIf="PasswordForm.controls['newPassword'].invalid && PasswordForm.controls['newPassword'].touched ">
+            <small *ngIf="PasswordForm.controls['newPassword'].errors?.['required']" class="text-danger">A primary
+              password is required</small>
+            <small *ngIf="PasswordForm.controls['newPassword'].errors?.['minlength']" class="text-danger">It must be at
+              least 8 characters length</small>
+          </div>
+        </div>
+<br>
+        <div class="personalInfo"><span class="details_myAccount">Confirm new Password:</span><br>
+          <input formControlName="ConfirmPassword" #confirmNewPassword type="password" value="" class='text'><br>
+
+          <div
+          *ngIf="PasswordForm.controls['ConfirmPassword'].invalid && PasswordForm.controls['ConfirmPassword'].touched ">
+          <small *ngIf="PasswordForm.controls['ConfirmPassword'].errors?.['required']" class="text-danger">Password verification is missing <br></small>
+          <small *ngIf="newPassword.value!=confirmNewPassword.value && confirmNewPassword.value!=''" class="text-danger">Passwords does not match</small>
+        </div>
+
+        </div>
+
+
+
+
       </form>
+
+
+
+
+
+
     </div>
   </div>
 
-  <button (click)="createUser(pass.value ,ConPass.value)" class="button1" >Sign Up</button>
+  <button (click)="createUser(newPassword.value ,confirmNewPassword.value)" class="button1" >Sign Up</button>
 
   <div class="container">
     <div class="progress-container">
