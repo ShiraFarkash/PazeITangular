@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Product } from 'src/app/shared/models/product.models';
+import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
 
 @Component({
   selector: 'app-choose-super',
@@ -17,7 +18,7 @@ export class ChooseSuperComponent implements OnInit {
   allMyProducts:Array<Product>=new Array<Product>;
   
   allMainProduct: Array<Product> = new Array<Product>;
-  constructor(private router: Router) { }
+  constructor(private router: Router,private oneTimeListService:OneTimeListService) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +37,7 @@ export class ChooseSuperComponent implements OnInit {
     this.router.navigate(["/" + navigateTo])
   }
   chooseBranch(){
+    this.oneTimeListService.startShopping=true;
     this.router.navigate(["/shoppingCart"])
   }
   searchForItem() {
