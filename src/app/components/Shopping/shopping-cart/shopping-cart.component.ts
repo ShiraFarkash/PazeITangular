@@ -20,7 +20,9 @@ export class ShoppingCartComponent implements OnInit {
   //   {label:'Category',value:"category"},
   //   {label:'Departments',value:"departments"},
   // ];
-  CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
+
+  CategoryAndProducts: { [categoryId: number]: Array<Product> } = {} 
+  CategoryAndProductsQuntity: { [categoryId: number]: Array<Product_To_OneTimeList> } = {}
   chosenOption: string = "";
   clickedOnProduct = false;
   menuList = [false, false, false, false, true];
@@ -43,6 +45,7 @@ export class ShoppingCartComponent implements OnInit {
         // console.log("quntity")
         this.cartProductsQuntity = data
 
+
         // console.log(data)
       })
       //שליפת הקטגוריות
@@ -61,11 +64,18 @@ export class ShoppingCartComponent implements OnInit {
             if (!(element.Id! in this.CategoryAndProducts)) {
               this.CategoryAndProducts[element.Id!] = this.allProduct.filter(p => p.categoryID == element.Id!)
             }
+            if (!(element.Id! in this.CategoryAndProductsQuntity)) {
+              let products = this.allProduct.filter(p => p.categoryID == element.Id!)
+
+              this.CategoryAndProductsQuntity[element.Id!] = this.cartProductsQuntity.filter(p => products.find(pro => pro.Id == p.productID))
+
+            }
+
           }
           else{
             this.allCategory=this.allCategory.filter(p=>p.Id!=element.Id)
 
-          console.log(this.allCategory)
+          // console.log(this.allCategory)
           }
 
         })
@@ -76,15 +86,45 @@ export class ShoppingCartComponent implements OnInit {
 
   }
   cancelCart(){
+    let IsTakenList=this.cartProductsQuntity.filter(p=>p.isTaken==true)
+    IsTakenList.forEach(pro=>
+      this.oneTimeListService.ChangeIsTaken(pro).subscribe(data=>{})
+      )
     this.router.navigate(["/myCart"]);
+  }
+
+  IsChecked(i:number){
+    
+    this.oneTimeListService.ChangeIsTaken(this.cartProductsQuntity[i]).subscribe(data=>{})
+    this.cartProductsQuntity[i].isTaken= this.cartProductsQuntity[i].isTaken!
+
+  }
+  IsChecked2(categoryId:number, i:number){
+    this.oneTimeListService.ChangeIsTaken(this.CategoryAndProductsQuntity[categoryId!][i]).subscribe(data=>{})
+    this.CategoryAndProductsQuntity[categoryId!][i].isTaken=this.CategoryAndProductsQuntity[categoryId!][i].isTaken!
   }
   optionClicked() {
     switch (this.chosenOption) {
       case "name": {
         this.allProduct.sort((a, b) => a.productName.localeCompare(b.productName));
-        console.log(this.allProduct[0].productName);
-        console.log(this.allProduct);
+        // console.log(this.allProduct[0].productName);
+        // console.log(this.allProduct);
         this.sortCategory=false
+        let product:Product_To_OneTimeList
+        let ProductsQuntityFix = new Array<Product_To_OneTimeList>()
+
+        this.allProduct.forEach(pro => {
+          this.cartProductsQuntity.forEach(p=> {
+           if( p.productID==pro.Id)
+            product=p
+          })
+          
+        
+          ProductsQuntityFix.push(product)
+
+        })
+        this.cartProductsQuntity=ProductsQuntityFix
+
         break;
       }
 

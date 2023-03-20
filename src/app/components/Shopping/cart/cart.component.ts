@@ -115,11 +115,11 @@ export class CartComponent implements OnInit {
       }
       case "category": {
         // console.log("hello");
-        console.log(this.cartProductsQuntity)
-        console.log(this.allMyProduct)
-        console.log(this.allCategory)
-        console.log(this.CategoryAndProducts)
-        console.log(this.CategoryAndProductsQuntity)
+        // console.log(this.cartProductsQuntity)
+        // console.log(this.allMyProduct)
+        // console.log(this.allCategory)
+        // console.log(this.CategoryAndProducts)
+        // console.log(this.CategoryAndProductsQuntity)
         this.sortCategory = true
         break;
       }

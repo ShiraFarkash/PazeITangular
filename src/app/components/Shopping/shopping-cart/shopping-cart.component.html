@@ -28,7 +28,7 @@
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
           <p class="productName" >{{p.productName}}</p>
           <p class="productQty" *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
-          <input class="check" type="checkbox" >
+          <input class="check" *ngIf="cartProductsQuntity[i]!=null" type="checkbox" (change)="IsChecked(i);" [(ngModel)]="cartProductsQuntity[i]!.isTaken!">
 
       </li>
 
@@ -42,8 +42,10 @@
 
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
           <p class="productName">{{p.productName}}</p>
-          <p class="productQty" *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
-          <input class="check"  type="checkbox" >
+          <p class="productQty" *ngIf="CategoryAndProductsQuntity[a.Id!][i]!=null">{{CategoryAndProductsQuntity[a.Id!][i].quantity}}</p>
+          <input class="check"  type="checkbox" checked="true" 
+          (change)="IsChecked2(a.Id!,i);"  *ngIf="CategoryAndProductsQuntity[a.Id!][i]!=null"
+           [(ngModel)]="CategoryAndProductsQuntity[a.Id!][i].isTaken">
 
       </li>
 
