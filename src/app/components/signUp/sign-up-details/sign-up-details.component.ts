@@ -56,12 +56,12 @@ export class SignUpDetailsComponent implements OnInit {
        data=>{
        this.isExistId=data
        if(data>-1){
-        console.log("משתמש קיים")
+        // console.log("משתמש קיים")
         this.IsExist=true
-        console.log(this.isExistId)
+        // console.log(this.isExistId)
     }
     else{
-      console.log(this.isExistId)
+      // console.log(this.isExistId)
       // localStorage.setItem(this.NewUser.email,this.NewUser.userName+" "+this.NewUser.userLastName);
       localStorage.setItem("email" , this.NewUser.email)
       localStorage.setItem("userName" , this.NewUser.userName)

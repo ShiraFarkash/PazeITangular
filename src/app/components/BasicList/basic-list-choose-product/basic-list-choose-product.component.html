@@ -31,6 +31,19 @@
     </div>
 
   </div>
+  <div class="searchContent"*ngIf="allSearchProducts.length>0" style="z-index: 5; position: absolute;">
+    <ul class="searchContent" >
+         <li class="list" *ngFor="let p of allSearchProducts;let i=index;">
+           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+           <p class="productName">{{p.productName}}</p>
+          
+
+          
+        </li>
+         
+     </ul>
+
+  </div>
   <div #center class="center" style="z-index: 3;">
     <div class="orderByBL">
       <select [(ngModel)]="chosenOption" (ngModelChange)="optionClicked()"class="eachOrderBy">
@@ -72,7 +85,7 @@
   </div>
 
   <!-- Shows the product that related to certain main product -->
-  <div class="center" style=" z-index:5;">
+  <div class="center" style=" z-index:6;">
     <app-add-product [parentId]="selectedParent" [Products]="allMyProducts" (show)="clickedOnProduct=$event"
       [showPage]="clickedOnProduct" ></app-add-product>
   </div>
