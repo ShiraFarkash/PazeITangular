@@ -11,7 +11,9 @@ import { BasicList } from 'src/app/shared/models/basic-list.model';
   styleUrls: ['./basic-list-choose-product.component.css']
 })
 export class BasicListChooseProductComponent implements OnInit {
-  allMainProduct: Array<Product> = new Array<Product>;
+  
+  allSearchProducts: Array<Product> = new Array<Product>;
+  clickedOnSearch=false;allMainProduct: Array<Product> = new Array<Product>;
   allMyProducts: Array<Product> = new Array<Product>;
   menuList = [false, false, false, true, false]
   editable: boolean = false
@@ -75,14 +77,19 @@ export class BasicListChooseProductComponent implements OnInit {
     console.log(this.allMainProduct[0].productName)
     console.log(this.allMainProduct)
   }
-  searchForItem() {
+  searchForItem(productName:string) {
     // console.log('Search Item: ' + this.search);
-    for (this.i = 0; this.i <= this.allMyProducts.length; this.i++) {
-      if (this.allMyProducts[this.i].productName == this.search) {
-        console.log(this.allMyProducts[this.i].productName)
+  //   for (this.i = 0; this.i <= this.allMyProducts.length; this.i++) {
+  //     if (this.allMyProducts[this.i].productName == this.search) {
+  //       console.log(this.allMyProducts[this.i].productName)
 
-      }
-    }
+  //     }
+  //   }
+this.clickedOnSearch=true;
+  this.productService.GetProductsByName(productName).subscribe(data=>{
+    this.allSearchProducts=data
+    console.log(data)
+  })
   }
   optionClicked() {
     switch (this.chosenOption) {
