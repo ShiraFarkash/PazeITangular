@@ -31,14 +31,15 @@
       
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
           <p>{{p.productName}}</p>
+          
           <div class="addOdDec">
     
-            <span (click)="addORincOne(p,-1)" class="minus"><ion-icon name="remove"></ion-icon></span>
+            <span (click)="addORincOne(p,-1)" class="minus bold"><ion-icon name="remove"></ion-icon></span>
             <input *ngIf="cartProductsQuntity[i]!=null" name="qty" [(ngModel)]="cartProductsQuntity[i].quantity" type="number"
-              id="quantity" name="quantity" class="form-control-num" min="1" max="100">
-            <span (click)="addORincOne(p,+1)" class="minus"><ion-icon name="add"></ion-icon></span>
+              id="quantity" name="quantity" class="form-control-num bold" min="1" max="100">
+            <span (click)="addORincOne(p,+1)" class="minus bold"><ion-icon name="add"></ion-icon></span>
           </div>
- 
+
 
       </li>
 

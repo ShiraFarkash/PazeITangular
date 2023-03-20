@@ -14,7 +14,8 @@ import { OneTimeListService } from 'src/app/shared/services/one-time-list.servic
   styleUrls: ['./home-category.component.css']
 })
 export class HomeCategoryComponent implements OnInit {
-
+  allSearchProducts: Array<Product> = new Array<Product>;
+  clickedOnSearch=false;
   // allMainProduct:Array<Product>=new Array<Product>;
   allMyProducts:Array<Product>=new Array<Product>;
   menuList=[true,false, false,false,false ]
@@ -125,13 +126,19 @@ export class HomeCategoryComponent implements OnInit {
   goToHome(){
     this.router.navigate(['/home'])
   }
-  searchForItem() {
+  searchForItem(productName:string) {
     // console.log('Search Item: ' + this.search);
-    for(this.i=0;this.i<=this.allMyProducts.length;this.i++){
-       if(this.allMyProducts[this.i].productName==this.search){
-        console.log(this.allMyProducts[this.i].productName)
-        
-       }
-      }}
+  //   for (this.i = 0; this.i <= this.allMyProducts.length; this.i++) {
+  //     if (this.allMyProducts[this.i].productName == this.search) {
+  //       console.log(this.allMyProducts[this.i].productName)
+
+  //     }
+  //   }
+this.clickedOnSearch=true;
+  this.productService.GetProductsByName(productName).subscribe(data=>{
+    this.allSearchProducts=data
+    console.log(data)
+  })
+  }
 
 }

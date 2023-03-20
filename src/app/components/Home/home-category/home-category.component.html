@@ -2,20 +2,45 @@
 
 
     <div  [ngClass]="clickedOnProduct==true? ' blur':'' ">
+  <div  [ngClass]="allSearchProducts.length>0? 'white':'' "></div>
     
     <img class="whiteLogo" src="assets/whitelogo.png" alt="">
     
     
     <div class="Basic-background"></div>
     <div class="squareSearch">
-      <input [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
-      <button class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></button>
-    
+      <input type="text" #search (input)="searchForItem(search.value)" class="search" placeholder="Search for Item" >
+      <button class="btnSearch" > <img class="searchIcon"
+          src="assets/search-icon.png"></button>
+
     </div>
     <br>
     <br>
     
-    
+    <div class="searchContent"*ngIf="allSearchProducts.length>0" style="z-index: 5; position: absolute;">
+      <ul class="searchContent" >
+           <li class="list" *ngFor="let p of allSearchProducts;let i=index;">
+             <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
+             <p class="productName">{{p.productName}}</p>
+             <div class="addOdDec" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
+                
+              <span (click)="addORincOne(p,-1)" class="minus"><ion-icon name="remove"></ion-icon></span>
+      
+              <input name="qty"
+                [(ngModel)]="oneTimeListService.ProductToOneTimeList[p.Id!].quantity" #quantity type="number" id="quantity"
+                name="quantity" class="form-control-num" min="1" max="100">
+      
+              <span (click)="addORincOne(p,+1)" class="minus"><ion-icon name="add"></ion-icon></span>
+      
+            </div>
+
+            <img  *ngIf="oneTimeListService.ProductToOneTimeList[(p.Id!)].quantity==0" (click)="addORincOne(p,+1)"
+             class="addIcon listAddIcon addInSearch" src="assets/addIcon.png" alt="">
+          </li>
+           
+       </ul>
+
+    </div>
     <div class="content">
       <br>
       <div class="topic" [style.left]="ScreenMood==false?'60px':'85px'">
@@ -37,10 +62,10 @@
       </ul>
 
       <ul class="contentHome" *ngIf="ScreenMood==false"  >
-        <hr style="width: 200px;margin-left: 0px;margin-right: 0px;">
+        <!-- <hr style="width: 246px;"> -->
            <li class="list" *ngFor="let p of CategoryAndProducts[categoryMood];let i=index;">
              <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
-             <p>{{p.productName}}</p>
+             <p class="productName">{{p.productName}}</p>
 
               <div class="addOdDec" *ngIf="oneTimeListService.ProductToOneTimeList[p.Id!].quantity!=0 ">
                 

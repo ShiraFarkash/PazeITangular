@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
 
 
   allMyProducts: Array<Product> = new Array<Product>;
+  allSearchProducts: Array<Product> = new Array<Product>;
+  clickedOnSearch=false;
   menuList = [true, false, false, false, false]
   clickedOnProduct = false
   search: string = "";
@@ -126,15 +128,22 @@ export class HomeComponent implements OnInit {
   goToCategory() {
     this.router.navigate(['/homeCategory'])
   }
-  searchForItem() {
+  searchForItem(productName:string) {
     // console.log('Search Item: ' + this.search);
-    for (this.i = 0; this.i <= this.allMyProducts.length; this.i++) {
-      if (this.allMyProducts[this.i].productName == this.search) {
-        console.log(this.allMyProducts[this.i].productName)
+  //   for (this.i = 0; this.i <= this.allMyProducts.length; this.i++) {
+  //     if (this.allMyProducts[this.i].productName == this.search) {
+  //       console.log(this.allMyProducts[this.i].productName)
 
-      }
-    }
+  //     }
+  //   }
+this.clickedOnSearch=true;
+  this.productService.GetProductsByName(productName).subscribe(data=>{
+    this.allSearchProducts=data
+    console.log(data)
+  })
   }
+
+
   selectedParent: number = 0;
   
   getAllProducts(p: Product) {

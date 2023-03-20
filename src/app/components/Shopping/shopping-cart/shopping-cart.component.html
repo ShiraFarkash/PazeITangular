@@ -26,31 +26,31 @@
       <li class="list" *ngFor="let p of allProduct;let i=index; " >
       
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
-          <p>{{p.productName}}</p>
-          <p *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
-          <input type="checkbox" >
+          <p class="productName" >{{p.productName}}</p>
+          <p class="productQty" *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
+          <input class="check" type="checkbox" >
 
       </li>
 
     </ul>
 <div  class="contentHome" *ngIf="sortCategory==true">
-    <ul *ngFor="let a of allCategory" class="CategoryProducts">
+    <ul *ngFor="let a of allCategory" class="CategoryProductsCart">
       <div class="titleCategory" id={{a.categoryName}}>
-        <p>{{a.categoryName}}</p>
+        <p class="productNameCat" >{{a.categoryName}}</p>
       </div>
       <li class="list" *ngFor="let p of CategoryAndProducts[a.Id!];let i=index; " >
 
           <img class="productPic listpic" src={{p.barcode}} alt=""> <br>
-          <p>{{p.productName}}</p>
-          <!-- <p *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p> -->
-          <input type="checkbox" >
+          <p class="productName">{{p.productName}}</p>
+          <p class="productQty" *ngIf="cartProductsQuntity[i]!=null">{{cartProductsQuntity[i].quantity}}</p>
+          <input class="check"  type="checkbox" >
 
       </li>
 
     </ul>
 </div>
 
-       <hr>
+       <!-- <hr> -->
       </div>
       <div class="addUser" style="position: absolute; z-index:5;">
         <app-department-explanation [parentId]="selectedParent" (show)="clickedOnProduct=$event"

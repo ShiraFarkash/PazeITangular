@@ -62,6 +62,9 @@ export class ProductService {
  GatAllproductFromOneContantList(list:Array<ProductToBasicList>):Observable<any>{
   return this.http.post<Array<Product>>(environment.url +'constantList/GatAllproductFromOneContantList',list);
  }
+ GetProductsByName(productName:string):Observable<any>{
+  return this.http.get<Array<Product>>(environment.url +'product/GetProductsByName?productName='+productName)
+ }
 
 
 }

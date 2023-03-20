@@ -66,6 +66,9 @@ div .topic {
     left: 85px;
 
 }
+.productName{
+    padding-left: 10px;
+}
 
 div .contentHome {
     overflow: scroll;
@@ -73,6 +76,12 @@ div .contentHome {
     height: 320px;
 
 
+}
+.contentHomeCat{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 320px;
+    padding-left: 10px;
 }
 
 ul.CategoryProducts {
@@ -86,7 +95,15 @@ ul.CategoryProducts {
 
 
 }
-
+.searchContent{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 600px;
+    width: 360px;
+    padding-left: 10px;
+    position: relative;
+    bottom: 0px;
+}
 .titleCategory {
     position: relative;
     margin: 0px;
@@ -210,23 +227,26 @@ hr {
 
 }
 
-.addIcon {
-    width: 35px;
-    /* position: relative; */
-    top: 60px;
-    left: 50px;
-    align-items: center;
-    text-align: center;
-    margin-top: auto;
-    top: auto;
+
+.wrapper{
+    position: relative;
+    bottom: 15px;
+}
+.addInSearch{
+    margin-right: 45px;
+    position: relative;
+    top:3px;
 }
 .productPic {
-    width: 50px;
+    /* width: 50px; */
     position: relative;
     top: 10px;
-    
+    height: 40px;
 
 }
+.listpic{
+    border-radius: 50px;
+  }
 .button1 {
     font-weight: lighter;
     background-color: rgb(240, 100, 98);
@@ -265,11 +285,23 @@ hr {
 }
 
 
+.white{
+    position:absolute; 
+    width: 104%; 
+    height: 90.5%; 
+    bottom: -2%; 
+    border-radius: 30px;
+    left: -2%;
+    /* backdrop-filter: 
+    blur(10px); */
+    z-index: 4;
+    background-color: rgb(255, 255, 255);
 
+}
 .blur{
- 
-    width: max-content; 
-    /* height:300px;  */
+    position:absolute; 
+    width: 104%; 
+    height: 104%; 
     top: -2%; 
     left: -2%;
     backdrop-filter: 
@@ -295,3 +327,118 @@ ul .list{
     position: relative;
     top: 5px;
  }
+ ul .list{
+    display: flex;
+    margin-bottom: 7px;
+}
+
+.addIcon {
+    width: 35px;
+    /* position: relative; */
+    /* top: 60px; */
+    /* left: 50px; */
+    align-items: center;
+    text-align: center;
+    /* margin-top: auto; */
+    /* right: 50px; */
+    /* top: auto; */
+    position: relative;
+bottom: 15px;
+}
+.form-control-num{
+    font-size: 16px;
+    font-weight: lighter !important;
+    color: black;
+}
+.bold{
+    font-weight: lighter;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.listAddIcon{
+    margin-top: auto;
+    margin-bottom: auto;
+  align-items: end;
+     left: auto;
+     margin-left: auto;
+ }
+ #home{
+    position: relative;
+    top: 5px;
+ }
+
+ 
+
+
+.addOdDec{
+/* margin-top: 15px; */
+opacity: 1;
+margin-right: 25px;
+margin-left:auto;
+height: 20px;
+width: 80px;
+height: max-content;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #3171e0;
+border-radius: 64px;
+margin-top: auto;
+margin-bottom: auto;
+position: relative;
+font-weight:lighter ;
+
+}
+.addOdDec span{
+width: 20px;
+text-align: center;
+font-size: 20px;
+font-weight: lighter;
+cursor: pointer;
+user-select: none;
+/* background: #FFF; */
+color: white;
+text-align: center;
+/* border-radius: 12px; */
+/* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
+}
+.addOdDec input{
+width:25px;
+text-align: center;
+font-size: 15px;
+font-weight: lighter;
+cursor: pointer;
+user-select: none;
+margin-right: 10px;
+margin-left: 10px;
+height: max-content;
+border: 0px 0px 0px 0px;
+font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.addOdDec span.num{
+
+
+/* border-right: 2px solid rgba(0,0,0,0.2);
+border-left: 2px solid rgba(0,0,0,0.2); */
+pointer-events: none;
+text-align: center;
+font-size:15px ;
+}
+.addOdDec .minus{
+text-align: center;
+font-size:15px ;
+font-weight: lighter;
+}
+.list p{
+font-size: 14px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: bold;
+}
+div .contentHome2 {
+overflow: scroll;
+overflow-x: hidden;
+height: 250px;
+width: fit-content;
+padding-left: 10px;
+
+}

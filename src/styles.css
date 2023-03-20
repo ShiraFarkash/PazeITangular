@@ -360,6 +360,7 @@ align-items: center;
   font-weight: 600;
   cursor: pointer;
   user-select: none;
+  font-weight: lighter;
   /* background: #FFF; */
   color: white;
   /* border-radius: 12px; */

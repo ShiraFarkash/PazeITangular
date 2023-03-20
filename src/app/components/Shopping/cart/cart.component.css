@@ -309,12 +309,18 @@ ul .list{
 .listpic{
   border-radius: 50px;
 }
+
 .listAddIcon{
  margin-top: auto;
  margin-bottom: auto;
 align-items: end;
   left: auto;
   margin-left: auto;
+}
+.bold{
+  font-weight: lighter !important;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 .addIcon {
   width: 35px;
@@ -326,6 +332,7 @@ align-items: end;
   margin-top: auto;
   top: auto;
 }
+
 .productPic {
   height:40px;
   position: relative;
@@ -340,23 +347,26 @@ align-items: end;
   /* margin-top: 15px; */
   opacity: 1;
   margin-right: 25px;
-  margin-left:auto !important;
-  height: 25px;
+  margin-left:auto;
+  height: 20px;
   width: 80px;
   height: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
- background-color: #3171e0;
- border-radius: 64px;
- margin-top: auto;
- margin-bottom: auto;
-}
-.addOdDec span{
+  background-color: #3171e0;
+  border-radius: 64px;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  font-weight:lighter ;
+  
+  }
+  .addOdDec span{
   width: 20px;
   text-align: center;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: lighter;
   cursor: pointer;
   user-select: none;
   /* background: #FFF; */
@@ -364,12 +374,12 @@ align-items: end;
   text-align: center;
   /* border-radius: 12px; */
   /* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
-}
-.addOdDec input{
+  }
+  .addOdDec input{
   width:25px;
   text-align: center;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: lighter;
   cursor: pointer;
   user-select: none;
   margin-right: 10px;
@@ -377,21 +387,21 @@ align-items: end;
   height: max-content;
   border: 0px 0px 0px 0px;
   font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.addOdDec span.num{
-
-
+  }
+  .addOdDec span.num{
+  
+  
   /* border-right: 2px solid rgba(0,0,0,0.2);
   border-left: 2px solid rgba(0,0,0,0.2); */
   pointer-events: none;
   text-align: center;
   font-size:15px ;
-}
-.addOdDec .minus{
+  }
+  .addOdDec .minus{
   text-align: center;
   font-size:15px ;
-  font-weight: bolder;
-}
+  font-weight: lighter;
+  }
 .list p{
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

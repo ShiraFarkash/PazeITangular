@@ -73,7 +73,7 @@ import { ExplanationHomeComponent } from './components/Home/explanation-home/exp
     DepartmentExplanationComponent,
     ViewHistoryListComponent,
     ExplanationMustHaveListComponent,
-    ExplanationHomeComponent
+    ExplanationHomeComponent,
   ],
   imports: [
     BrowserModule,

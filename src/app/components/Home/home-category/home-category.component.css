@@ -72,8 +72,8 @@ div .topic{
         overflow: scroll;
         overflow-x: hidden;
         height: 320px;
-    padding-left: 30px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     
     }
@@ -126,7 +126,10 @@ div .topic{
         margin-bottom: 7px;
     }
     .productPic {
-        width: 50px;
+        /* width: 50px; */
+        height: 40px;
+        /* margin-right: auto; */
+        /* margin-left: auto; */
         position: relative;
         top: 10px;
         
@@ -140,11 +143,12 @@ div .topic{
         width: 35px;
         /* position: relative; */
         top: 60px;
-        left: 50px;
+        /* left: 30px; */
+        right:40px;
         align-items: center;
         text-align: center;
-        margin-top: auto;
-        top: auto;
+        
+        
     }
     .form-control-num{
         font-size: 16px;
@@ -155,21 +159,48 @@ div .topic{
         margin-top: auto;
         margin-bottom: auto;
       align-items: end;
-         left: auto;
+         /* left: auto;
+         margin-left: auto; */
          margin-left: auto;
+         left: auto;
+         margin-right: 45px;
+        
+         
      }
      #home{
         position: relative;
         top: 5px;
      }
-
+     .searchContent{
+      overflow: scroll;
+      overflow-x: hidden;
+      height: 600px;
+      width: 360px;
+      padding-left: 10px;
+      position: relative;
+      bottom:0px;
+  }
      
-
-
+     .white{
+      position:absolute; 
+      width: 104%; 
+      height: 90.5%; 
+      bottom: -2%; 
+      border-radius: 30px;
+      left: -2%;
+      /* backdrop-filter: 
+      blur(10px); */
+      z-index: 4;
+      background-color: rgb(255, 255, 255);
+  
+  }
+.productName{
+  padding-left: 10px;
+}
 .addOdDec{
     /* margin-top: 15px; */
     opacity: 1;
-    margin-right: 25px;
+    margin-right: 20px;
     margin-left:auto;
     height: 25px;
     width: 80px;
@@ -186,7 +217,7 @@ div .topic{
     width: 20px;
     text-align: center;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: lighter;
     cursor: pointer;
     user-select: none;
     /* background: #FFF; */
@@ -199,7 +230,7 @@ div .topic{
     width:25px;
     text-align: center;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: lighter;
     cursor: pointer;
     user-select: none;
     margin-right: 10px;
