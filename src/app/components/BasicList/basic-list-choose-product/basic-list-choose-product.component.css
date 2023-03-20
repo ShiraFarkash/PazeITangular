@@ -27,7 +27,7 @@
     left: -2%;
     backdrop-filter: 
     blur(2.5px);
-    z-index: 4;
+    z-index: 5;
     background-color: rgba(128, 128, 128, 0.452);
 }
 .help{
@@ -203,4 +203,30 @@ div .editName img {
 .Test{
     color: black;
     position: relative;
+}
+.productName{
+    padding-left: 10px;
+  }
+.searchContent{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 600px;
+    width: 360px;
+    padding-left: 10px;
+    position: relative;
+    bottom:0px;
+}
+.productPic {
+    /* width: 50px; */
+    height: 40px;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    position: relative;
+    top: 10px;
+    
+
+}
+
+.listpic{
+    border-radius: 50px;
 }
