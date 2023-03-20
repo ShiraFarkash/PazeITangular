@@ -41,6 +41,7 @@ import { ViewHistoryListComponent } from './components/History-list/view-history
 import { ExplanationMustHaveListComponent } from './components/BasicList/explanation-must-have-list/explanation-must-have-list.component';
 import { ExplanationHomeComponent } from './components/Home/explanation-home/explanation-home.component';
 import { CancelCartComponent } from './components/Shopping/cancel-cart/cancel-cart.component';
+import { IsSureDoneComponent } from './components/Shopping/is-sure-done/is-sure-done.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ import { CancelCartComponent } from './components/Shopping/cancel-cart/cancel-ca
     ExplanationMustHaveListComponent,
     ExplanationHomeComponent,
     CancelCartComponent,
+    IsSureDoneComponent,
   ],
   imports: [
     BrowserModule,

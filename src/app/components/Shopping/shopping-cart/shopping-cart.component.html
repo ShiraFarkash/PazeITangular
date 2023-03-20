@@ -1,5 +1,6 @@
 <div class="my-container" style="position: absolute; z-index: 1;">
   <div  [ngClass]="isCanceled==true? ' blur':'' "></div>
+  <div  [ngClass]="IsDoneAlert==true? ' blur':'' "></div>
     
   <div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
     
@@ -56,6 +57,7 @@
 
        <!-- <hr> -->
       </div>
+      
       <div class="addUser" style="position: absolute; z-index:5;">
         <app-department-explanation [parentId]="selectedParent" (show)="clickedOnProduct=$event"
           [showPage]="clickedOnProduct" ></app-department-explanation>
@@ -65,6 +67,11 @@
         <app-cancel-cart [parentId]="selectedParent" (show)="isCanceled=$event"
           [showPage]="isCanceled" (cancelCart)="cancelCart()"></app-cancel-cart>
       </div>
+
+       <div class="addUser" style="position: absolute; z-index:5;">
+        <app-is-sure-done [parentId]="selectedParent" (show)="IsDoneAlert=$event"
+          [showPage]="IsDoneAlert"></app-is-sure-done>
+       </div> 
     
     <div class="center">
       <div class="center">

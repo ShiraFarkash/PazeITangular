@@ -31,6 +31,7 @@ import { HistoryListsComponent } from './components/History-list/history-lists/h
 import { ExplanationMustHaveListComponent } from './components/BasicList/explanation-must-have-list/explanation-must-have-list.component';
 import { ExplanationHomeComponent } from './components/Home/explanation-home/explanation-home.component';
 import { CancelCartComponent } from './components/Shopping/cancel-cart/cancel-cart.component';
+import { IsSureDoneComponent } from './components/Shopping/is-sure-done/is-sure-done.component';
 
 const routes: Routes = [
   { path: 'logIn', component: LogInComponent },
@@ -62,7 +63,9 @@ const routes: Routes = [
   {path:"ViewHistoryList",component:ViewHistoryListComponent},
   {path:"explanationMHL",component:ExplanationMustHaveListComponent},
   {path:"explanationHome",component:ExplanationHomeComponent},
-  {path:"cancelCart",component:CancelCartComponent}
+  {path:"cancelCart",component:CancelCartComponent},
+  {path:"isSureDone",component:IsSureDoneComponent},
+
 
 
 

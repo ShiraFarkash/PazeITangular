@@ -21,9 +21,8 @@ export class ShoppingCartComponent implements OnInit {
   //   {label:'Category',value:"category"},
   //   {label:'Departments',value:"departments"},
   // ];
-  parentMsg = ""
-
   isCanceled = false;
+  IsDoneAlert=false;
   CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
   CategoryAndProductsQuntity: { [categoryId: number]: Array<Product_To_OneTimeList> } = {}
   chosenOption: string = "";
@@ -161,19 +160,24 @@ export class ShoppingCartComponent implements OnInit {
   }
 
 
-  IsDoneAlert:boolean=false
-  finishList() {
-    let IsTakenList = this.cartProductsQuntity.filter(p => p.isTaken == false)
-    if(IsTakenList.length>0){
-      this.IsDoneAlert=true
-    }
-    else{
-      let listId = (Number)(localStorage.getItem("OneTimeListId"))
+finalFinish(){
+  let listId = (Number)(localStorage.getItem("OneTimeListId"))
       let userId = (Number)(localStorage.getItem("userId"))
       this.oneTimeListService.WhenListIsDone(listId, userId).subscribe(data => {
         localStorage.setItem("OneTimeListId", (String)(data))
       })
       this.router.navigate(["/HistoryLists"])
+}
+
+  finishList() {
+   
+    let IsTakenList = this.cartProductsQuntity.filter(p => p.isTaken == false)
+    if(IsTakenList.length>0){
+     this.IsDoneAlert=true;
+      
+    }
+    else{
+     this.finalFinish();
     }
  
   }
