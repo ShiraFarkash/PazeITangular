@@ -40,6 +40,7 @@ import { DepartmentExplanationComponent } from './components/Shopping/department
 import { ViewHistoryListComponent } from './components/History-list/view-history-list/view-history-list.component';
 import { ExplanationMustHaveListComponent } from './components/BasicList/explanation-must-have-list/explanation-must-have-list.component';
 import { ExplanationHomeComponent } from './components/Home/explanation-home/explanation-home.component';
+import { CancelCartComponent } from './components/Shopping/cancel-cart/cancel-cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +75,7 @@ import { ExplanationHomeComponent } from './components/Home/explanation-home/exp
     ViewHistoryListComponent,
     ExplanationMustHaveListComponent,
     ExplanationHomeComponent,
+    CancelCartComponent,
   ],
   imports: [
     BrowserModule,

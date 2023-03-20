@@ -37,7 +37,7 @@ export class SignUpCodeComponent implements OnInit {
     this.email.sendEmail(userEmail!, this.SendedCode).subscribe(
       data=>{
         // console.log(data)
-        // console.log(this.SendedCode)
+        console.log(this.SendedCode)
       }
     );
     console.log("sended")
