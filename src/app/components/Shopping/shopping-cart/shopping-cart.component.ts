@@ -21,7 +21,7 @@ export class ShoppingCartComponent implements OnInit {
   //   {label:'Departments',value:"departments"},
   // ];
 
-  CategoryAndProducts: { [categoryId: number]: Array<Product> } = {} 
+  CategoryAndProducts: { [categoryId: number]: Array<Product> } = {}
   CategoryAndProductsQuntity: { [categoryId: number]: Array<Product_To_OneTimeList> } = {}
   chosenOption: string = "";
   clickedOnProduct = false;
@@ -56,7 +56,7 @@ export class ShoppingCartComponent implements OnInit {
           this.exist = false
 
           this.allProduct.forEach(p => {
-            if (p.categoryID == element.Id) 
+            if (p.categoryID == element.Id)
               this.exist = true
           })
 
@@ -72,10 +72,10 @@ export class ShoppingCartComponent implements OnInit {
             }
 
           }
-          else{
-            this.allCategory=this.allCategory.filter(p=>p.Id!=element.Id)
+          else {
+            this.allCategory = this.allCategory.filter(p => p.Id != element.Id)
 
-          // console.log(this.allCategory)
+            // console.log(this.allCategory)
           }
 
         })
@@ -85,23 +85,23 @@ export class ShoppingCartComponent implements OnInit {
     })
 
   }
-  cancelCart(){
-    let IsTakenList=this.cartProductsQuntity.filter(p=>p.isTaken==true)
-    IsTakenList.forEach(pro=>
-      this.oneTimeListService.ChangeIsTaken(pro).subscribe(data=>{})
-      )
+  cancelCart() {
+    let IsTakenList = this.cartProductsQuntity.filter(p => p.isTaken == true)
+    IsTakenList.forEach(pro =>
+      this.oneTimeListService.ChangeIsTaken(pro).subscribe(data => { })
+    )
     this.router.navigate(["/myCart"]);
   }
 
-  IsChecked(i:number){
-    
-    this.oneTimeListService.ChangeIsTaken(this.cartProductsQuntity[i]).subscribe(data=>{})
-    this.cartProductsQuntity[i].isTaken= this.cartProductsQuntity[i].isTaken!
+  IsChecked(i: number) {
+
+    this.oneTimeListService.ChangeIsTaken(this.cartProductsQuntity[i]).subscribe(data => { })
+    this.cartProductsQuntity[i].isTaken = this.cartProductsQuntity[i].isTaken!
 
   }
-  IsChecked2(categoryId:number, i:number){
-    this.oneTimeListService.ChangeIsTaken(this.CategoryAndProductsQuntity[categoryId!][i]).subscribe(data=>{})
-    this.CategoryAndProductsQuntity[categoryId!][i].isTaken=this.CategoryAndProductsQuntity[categoryId!][i].isTaken!
+  IsChecked2(categoryId: number, i: number) {
+    this.oneTimeListService.ChangeIsTaken(this.CategoryAndProductsQuntity[categoryId!][i]).subscribe(data => { })
+    this.CategoryAndProductsQuntity[categoryId!][i].isTaken = this.CategoryAndProductsQuntity[categoryId!][i].isTaken!
   }
   optionClicked() {
     switch (this.chosenOption) {
@@ -109,27 +109,27 @@ export class ShoppingCartComponent implements OnInit {
         this.allProduct.sort((a, b) => a.productName.localeCompare(b.productName));
         // console.log(this.allProduct[0].productName);
         // console.log(this.allProduct);
-        this.sortCategory=false
-        let product:Product_To_OneTimeList
+        this.sortCategory = false
+        let product: Product_To_OneTimeList
         let ProductsQuntityFix = new Array<Product_To_OneTimeList>()
 
         this.allProduct.forEach(pro => {
-          this.cartProductsQuntity.forEach(p=> {
-           if( p.productID==pro.Id)
-            product=p
+          this.cartProductsQuntity.forEach(p => {
+            if (p.productID == pro.Id)
+              product = p
           })
-          
-        
+
+
           ProductsQuntityFix.push(product)
 
         })
-        this.cartProductsQuntity=ProductsQuntityFix
+        this.cartProductsQuntity = ProductsQuntityFix
 
         break;
       }
 
       case "category": {
-        this.sortCategory=true
+        this.sortCategory = true
         break;
       }
 
@@ -150,7 +150,13 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(["/" + navigateTo])
   }
   finishList() {
-    // listId=localStorage.getItem("OneTimeListId")
+    debugger
+    let listId = (Number)(localStorage.getItem("OneTimeListId"))
+    let userId=(Number)(localStorage.getItem("userId"))
+    this.oneTimeListService.WhenListIsDone(listId,userId).subscribe(data=>{
+      debugger
+      localStorage.setItem("OneTimeListId",(String)(data))
+    })
     this.router.navigate(["/HistoryLists"])
   }
 

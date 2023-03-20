@@ -9,11 +9,11 @@ import { Product_To_OneTimeList } from '../models/Product_To_OneTimeList.model';
 
 @Injectable({
   providedIn: 'root'
-  
+
 })
 export class OneTimeListService {
-  chooseSupperOrNot:boolean=false
-  startShopping:boolean=false
+  chooseSupperOrNot: boolean = false
+  startShopping: boolean = false
   ProductToOneTimeList: { [productId: number]: Product_To_OneTimeList } = {}
   constructor(private http: HttpClient) { }
 
@@ -36,22 +36,27 @@ export class OneTimeListService {
   GetListOf_ProductToOneTimeList(listId: number): Observable<any> {
     return this.http.get<Array<Product_To_OneTimeList>>(environment.url + 'OneTimeList/GetListOf_ProductToOneTimeList?listId=' + listId)
   }
-  GetTheProductOfOneTimeList(list:Array<Product_To_OneTimeList>): Observable<any>{
-    return this.http.post<Array<Product>>(environment.url + 'OneTimeList/GetTheProductOfOneTimeList',list)
+  GetTheProductOfOneTimeList(list: Array<Product_To_OneTimeList>): Observable<any> {
+    return this.http.post<Array<Product>>(environment.url + 'OneTimeList/GetTheProductOfOneTimeList', list)
   }
-  AddProductsTo_ProductToOneTimeList(list:Array<Product_To_OneTimeList>,listId:number ): Observable<any>{
+  AddProductsTo_ProductToOneTimeList(list: Array<Product_To_OneTimeList>, listId: number): Observable<any> {
 
-    return this.http.post<any>(environment.url + 'OneTimeList/AddProductsTo_ProductToOneTimeList?listId='+listId ,list )
+    return this.http.post<any>(environment.url + 'OneTimeList/AddProductsTo_ProductToOneTimeList?listId=' + listId, list)
   }
 
-  AddConstantListProductsTo_ProductToOneTimeList(list:Array<ProductToBasicList>,listId:number): Observable<any>{
-    return this.http.post<any>(environment.url + 'constantList/AddConstantListProductsTo_ProductToOneTimeList?listId='+listId ,list )
+  AddConstantListProductsTo_ProductToOneTimeList(list: Array<ProductToBasicList>, listId: number): Observable<any> {
+    return this.http.post<any>(environment.url + 'constantList/AddConstantListProductsTo_ProductToOneTimeList?listId=' + listId, list)
   }
-  GetTheProductByOneTimeListId(listId:number):Observable<any>{
+  GetTheProductByOneTimeListId(listId: number): Observable<any> {
     return this.http.get<Array<Product>>(environment.url + 'OneTimeList/GetTheProductByOneTimeListId?listId=' + listId)
   }
-  
-  ChangeIsTaken(product_To_OneTimeListDTO:Product_To_OneTimeList):Observable<any>{
-    return this.http.post<boolean>(environment.url + 'OneTimeList/ChangeIsTaken',product_To_OneTimeListDTO)
+
+  ChangeIsTaken(product_To_OneTimeListDTO: Product_To_OneTimeList): Observable<any> {
+    return this.http.post<boolean>(environment.url + 'OneTimeList/ChangeIsTaken', product_To_OneTimeListDTO)
+  }
+
+  WhenListIsDone(listId: number, userId: number): Observable<any> {
+    return this.http.get<any>(environment.url + 'OneTimeList/WhenListIsDone?listId=' + listId+'&userId='+ userId)
+
   }
 }
