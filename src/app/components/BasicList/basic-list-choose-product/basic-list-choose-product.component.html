@@ -1,13 +1,16 @@
 <div class="my-container" style="position: absolute; z-index: 1;">
   <div [ngClass]="clickedOnProduct==true? 'blur':'' "></div>
   <div  [ngClass]="clickedOnExplanation==true? ' blur':'' "></div>
+  <div  [ngClass]="allSearchProducts.length>0? 'white':'' "></div>
 
 
   <img class="whiteLogo" src="assets/whitelogo.png" alt="">
 
-  <div class="squareSearch" style="display: flex; ;left:45% ;right: 5px">
-    <input style="margin-left: 0px; " [(ngModel)]="search" class="search" placeholder="Search for Item" value=>
-    <div class="btnSearch" (click)="searchForItem()"> <img class="searchIcon" src="assets/search-icon.png"></div>
+  <div class="squareSearch">
+    <input type="text" #search (input)="searchForItem(search.value)" class="search" placeholder="Search for Item" >
+    <button class="btnSearch" > <img class="searchIcon"
+        src="assets/search-icon.png"></button>
+
   </div>
 
 <button class="help" (click)="explanationMHL()">  <ion-icon name="help"></ion-icon></button>
