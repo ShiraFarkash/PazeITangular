@@ -94,15 +94,22 @@ export class CartComponent implements OnInit {
       case "name": {
 
         this.allMyProduct.sort((a, b) => a.productName.localeCompare(b.productName));
+   
+
+        let product:Product_To_OneTimeList
+        let ProductsQuntityFix = new Array<Product_To_OneTimeList>()
+
+        this.allMyProduct.forEach(pro => {
+          this.cartProductsQuntity.forEach(p=> {
+           if( p.productID==pro.Id)
+            product=p
+          })
+          
         
-        console.log(this.allMyProduct);
-        this.cartProductsQuntity=new Array<Product_To_OneTimeList>()
-        console.log(this.cartProductsQuntity);
-        this.allMyProduct.forEach(pro=>{
-          this.cartProductsQuntity.push(this.cartProductsQuntity.find(p=>{p.productID!==pro.Id!})!)
+          ProductsQuntityFix.push(product)
+
         })
-       
-        console.log(this.cartProductsQuntity);
+        this.cartProductsQuntity=ProductsQuntityFix
         this.sortCategory = false
         break;
       }
