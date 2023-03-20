@@ -14,6 +14,7 @@ import { Product_To_OneTimeList } from '../models/Product_To_OneTimeList.model';
 export class OneTimeListService {
   chooseSupperOrNot:boolean=false
   startShopping:boolean=false
+  doYouWantToCancel:boolean=false
   ProductToOneTimeList: { [productId: number]: Product_To_OneTimeList } = {}
   constructor(private http: HttpClient) { }
 

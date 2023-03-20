@@ -1,6 +1,8 @@
 <div class="my-container" style="position: absolute; z-index: 1;">
-    <div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
-   
+  <div  [ngClass]="isCanceled==true? ' blur':'' "></div>
+    
+  <div  [ngClass]="clickedOnProduct==true? ' blur':'' "></div>
+    
     <img class="whiteLogo" src="assets/whitelogo.png" alt="">
     
     <div class="Basic-background"></div>
@@ -59,11 +61,14 @@
           [showPage]="clickedOnProduct" ></app-department-explanation>
       </div>
     
-    
+      <div class="addUser" style="position: absolute; z-index:5;">
+        <app-cancel-cart [parentId]="selectedParent" (show)="isCanceled=$event"
+          [showPage]="isCanceled" (cancelCart)="cancelCart()"></app-cancel-cart>
+      </div>
     
     <div class="center">
       <div class="center">
-        <button (click)="cancelCart()"class="button2">Cancel</button>
+        <button (click)="cancelCart()" class="button2">Cancel</button>
 
          <button (click)="finishList()"class="button1">Done</button>
       

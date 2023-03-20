@@ -7,6 +7,7 @@ import { OneTimeListService } from 'src/app/shared/services/one-time-list.servic
 import { Product_To_OneTimeList } from 'src/app/shared/models/Product_To_OneTimeList.model';
 import { Category } from 'src/app/shared/models/category.models';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { CancelCartComponent } from '../cancel-cart/cancel-cart.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -20,7 +21,9 @@ export class ShoppingCartComponent implements OnInit {
   //   {label:'Category',value:"category"},
   //   {label:'Departments',value:"departments"},
   // ];
+  parentMsg=""
 
+  isCanceled=false;
   CategoryAndProducts: { [categoryId: number]: Array<Product> } = {} 
   CategoryAndProductsQuntity: { [categoryId: number]: Array<Product_To_OneTimeList> } = {}
   chosenOption: string = "";
@@ -85,12 +88,18 @@ export class ShoppingCartComponent implements OnInit {
     })
 
   }
+ 
   cancelCart(){
-    let IsTakenList=this.cartProductsQuntity.filter(p=>p.isTaken==true)
+    this.isCanceled=true;
+if(this.oneTimeListService.doYouWantToCancel==true){
+  let IsTakenList=this.cartProductsQuntity.filter(p=>p.isTaken==true)
     IsTakenList.forEach(pro=>
       this.oneTimeListService.ChangeIsTaken(pro).subscribe(data=>{})
       )
+  
     this.router.navigate(["/myCart"]);
+}
+    
   }
 
   IsChecked(i:number){
