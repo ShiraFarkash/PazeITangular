@@ -284,25 +284,26 @@
     font-size: small;
     font-weight: bolder;
     position: relative;
-  bottom: 25px;
-    /* background: linear-gradient(90deg, rgb(242, 85, 83) 0%, rgb(247, 125, 106) 100%); */
+  bottom: 10px;
     width: 100px;
     height: 30px;
-  left: 250px;
+  left: 50px;
     margin: 0px;
+    display: inline;
   
   }
   
   .button2 {
+    display: inline;
     font-weight: lighter;
     background-color: rgb(240, 100, 98);
     font-size: small;
     font-weight: bolder;
     position: relative;
-    /* bottom: 65px; */
+    bottom: 10px;
     /* left: 5px; */
     right: 50px;
-    background: rgb(250, 180, 179);
+    
     width: 100px;
     height: 30px;
     margin: 0px;

@@ -75,6 +75,9 @@ export class ShoppingCartComponent implements OnInit {
     })
 
   }
+  cancelCart(){
+    this.router.navigate(["/myCart"]);
+  }
   optionClicked() {
     switch (this.chosenOption) {
       case "name": {
