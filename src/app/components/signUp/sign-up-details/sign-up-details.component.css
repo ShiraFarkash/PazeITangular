@@ -19,9 +19,18 @@
     width:210px ;
     margin-top: 40px;
   }
+  .center{
+    /* margin-top: 30px; */
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+  }
   .topic{
     position: relative;
     top:10px;
+  }
+  .container{
+    margin-top: 0px;
   }
   .Basic-background{
     height: 430px;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/models/user.models';
 import { OneTimeListService } from 'src/app/shared/services/one-time-list.service';
@@ -11,10 +12,17 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class SignUpFinalDetailsComponent implements OnInit {
   newUser: User = new User("", "", "");
+  PasswordForm: FormGroup = new FormGroup({});
+
   constructor(private userService: UserService, private router: Router,
     private oneTimeListService: OneTimeListService) { }
 
   ngOnInit(): void {
+    this.PasswordForm = new FormGroup({
+      currentPssword: new FormControl('', [Validators.required,]),
+      newPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      ConfirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    })
   }
   createUser(pass: string, ConPass: string) {
     if (pass == ConPass) {

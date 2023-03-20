@@ -28,7 +28,11 @@
 
   <button [formGroup]="SignUpForm" class="button1" (click)="goToSignUpCode()"  
   [style.background] =" SignUpForm.valid ? 'linear-gradient(90deg, rgb(138, 198, 226) 0%, rgb(51, 74, 220) 100%)' :('rgb(127, 126, 126)' )" >Next</button>
- 
+  
+  <div class="center">
+    <p style="color:gray ; margin: 65px 0px 0px;">Already have an account?</p>
+    <a href="http://localhost:4200/logIn" class='forgot'>Log in</a>
+  </div>
  
   <div class="container">
     <div class="progress-container">
